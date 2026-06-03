@@ -101,33 +101,30 @@ window.addEventListener('scroll', () => {
 
 console.log('%c Zave Digital ', 'background: linear-gradient(135deg, #6c5ce7, #00cec9); color: white; font-size: 16px; padding: 8px 16px; border-radius: 8px;');
 
-// === CATEGORY FILTER TABS ===
-const filterBtns = document.querySelectorAll('.filter-btn');
-const serviceCards = document.querySelectorAll('.service-card');
+// === PORTFOLIO FILTER TABS ===
+const portfolioFilterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-filterBtns.forEach(btn => {
+portfolioFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Update active button
-        filterBtns.forEach(b => b.classList.remove('active'));
+        portfolioFilterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
 
-        serviceCards.forEach(card => {
+        portfolioItems.forEach(item => {
             if (filter === 'all') {
-                card.style.display = '';
-                card.classList.remove('category-hidden');
-                card.classList.add('category-shown');
+                item.style.display = '';
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
             } else {
-                const category = card.getAttribute('data-category');
+                const category = item.getAttribute('data-category');
                 if (category === filter) {
-                    card.style.display = '';
-                    card.classList.remove('category-hidden');
-                    card.classList.add('category-shown');
+                    item.style.display = '';
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
                 } else {
-                    card.style.display = 'none';
-                    card.classList.add('category-hidden');
-                    card.classList.remove('category-shown');
+                    item.style.display = 'none';
                 }
             }
         });
