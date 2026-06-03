@@ -1249,6 +1249,35 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     letter-spacing: 0.5px;
 }
 
+/* ─── PREMIUM / HIGH DEMAND SERVICE CARDS ─── */
+.service-card.premium {
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.04) 0%, rgba(251, 146, 60, 0.04) 100%);
+}
+
+.service-card.premium:hover {
+    border-color: rgba(251, 191, 36, 0.5);
+    box-shadow: 0 8px 30px rgba(251, 191, 36, 0.15);
+}
+
+.service-card.premium .service-icon {
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+}
+
+.premium-tag {
+    background: linear-gradient(135deg, #fbbf24, #f97316) !important;
+    color: #1a1a1a !important;
+    font-size: 11px !important;
+    padding: 3px 10px !important;
+    border-radius: 20px !important;
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* ─── TESTIMONIALS / PORTFOLIO / RESPONSIVE ─── */
 @media (max-width: 968px) {
     .testimonials-grid { grid-template-columns: 1fr 1fr; }
