@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Samples — Zave Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Gallery-specific styles */
+        .gallery-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(108,92,231,0.1) 0%, transparent 100%);
+        }
+        .gallery-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .gallery-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .gallery-nav a {
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .gallery-nav a:hover, .gallery-nav a.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .gallery-section {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+        }
+        .gallery-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .gallery-section .section-desc {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        .sample-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        .sample-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .sample-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(108,92,231,0.15);
+        }
+        .sample-preview {
+            background: #1a1a2e;
+            padding: 30px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .sample-info {
+            padding: 20px;
+        }
+        .sample-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .sample-info p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        .sample-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .sample-tag {
+            padding: 4px 12px;
+            border-radius: 50px;
+            background: rgba(108,92,231,0.15);
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .sample-tag.green { background: rgba(37,211,102,0.15); color: #25D366; }
+        .sample-tag.gold { background: rgba(255,193,7,0.15); color: #ffc107; }
+        .sample-tag.red { background: rgba(231,76,60,0.15); color: #e74c3c; }
+        .sample-tag.blue { background: rgba(52,152,219,0.15); color: #3498db; }
+        
+        /* Embedded sample previews */
+        .logo-preview {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .logo-item {
+            text-align: center;
+        }
+        .logo-item svg {
+            width: 80px;
+            height: 80px;
+        }
+        .logo-item span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        .post-preview {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 16px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .menu-preview {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 2px solid #c9a96e;
+            border-radius: 8px;
+            padding: 20px;
+            width: 220px;
+            color: #c9a96e;
+            font-family: 'Georgia', serif;
+        }
+        .menu-preview h4 {
+            text-align: center;
+            border-bottom: 1px solid #c9a96e;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .menu-preview .menu-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            margin-bottom: 6px;
+            color: #e0d5c0;
+        }
+        
+        .card-preview {
+            width: 280px;
+            height: 160px;
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-preview::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .invoice-preview {
+            background: white;
+            color: #333;
+            border-radius: 8px;
+            padding: 16px;
+            width: 240px;
+            font-size: 0.7rem;
+        }
+        .invoice-preview .inv-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #6c5ce7;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        .invoice-preview .inv-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+        .invoice-preview .inv-total {
+            border-top: 1px solid #ddd;
+            margin-top: 8px;
+            padding-top: 8px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .cyber-preview {
+            background: #0a0a0a;
+            border: 1px solid #00ff41;
+            border-radius: 8px;
+            padding: 16px;
+            width: 280px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            color: #00ff41;
+        }
+        .cyber-preview .cyber-line {
+            margin-bottom: 4px;
+        }
+        .cyber-preview .cyber-highlight { color: #ff4444; }
+        .cyber-preview .cyber-ok { color: #00ff41; }
+        
+        .chatbot-preview {
+            background: #0b141a;
+            border-radius: 12px;
+            padding: 16px;
+            width: 260px;
+        }
+        .chatbot-preview .chat-msg {
+            padding: 8px 12px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-size: 0.75rem;
+            max-width: 80%;
+        }
+        .chatbot-preview .chat-user {
+            background: #005c4b;
+            color: white;
+            margin-left: auto;
+        }
+        .chatbot-preview .chat-bot {
+            background: #1f2c34;
+            color: #e9edef;
+        }
+        
+        .brand-preview {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .brand-color {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .ad-preview {
+            width: 220px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            color: #333;
+        }
+        .ad-preview .ad-img {
+            height: 120px;
+            background: linear-gradient(135deg, #6c5ce7, #00cec9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        .ad-preview .ad-body {
+            padding: 12px;
+        }
+        .ad-preview .ad-title {
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+        .ad-preview .ad-text {
+            font-size: 0.7rem;
+            color: #666;
+        }
+        
+        .gallery-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+        .gallery-back:hover { color: white; }
+        
+        @media (max-width: 768px) {
+            .sample-grid { grid-template-columns: 1fr; }
+            .gallery-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html#home" class="logo">
+                <span class="logo-shield">
+                    <svg width="36" height="36" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="navShield" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M20,2 L36,8 L36,28 Q36,40 20,44 Q4,40 4,28 L4,8 Z" 
+                              fill="url(#navShield)" stroke="#a855f7" stroke-width="1.5"/>
+                        <text x="20" y="30" text-anchor="middle" font-size="22" font-weight="900" 
+                              font-family="'Space Grotesk','Segoe UI',sans-serif" fill="white">Z</text>
+                    </svg>
+                </span>
+                <span class="logo-text-wrap"><span class="logo-zave">Zave</span><span class="logo-digital">Digital</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/923194051964" class="nav-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i> Get Quote
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- GALLERY HERO -->
+    <section class="gallery-hero">
+        <div class="container">
+            <a href="index.html#portfolio" class="gallery-back"><i class="fas fa-arrow-left"></i> Back to Website</a>
+            <h1>Our <span class="gradient-text">Portfolio & Samples</span></h1>
+            <p>Real work samples across all our services. Click any category below to jump to that section.</p>
+            <div class="gallery-nav">
+                <a href="#logos"><i class="fas fa-pen-nib"></i> Logos</a>
+                <a href="#social"><i class="fab fa-instagram"></i> Social Media</a>
+                <a href="#menus"><i class="fas fa-utensils"></i> Menus</a>
+                <a href="#branding"><i class="fas fa-id-card"></i> Branding</a>
+                <a href="#cyber"><i class="fas fa-shield-alt"></i> Cybersecurity</a>
+                <a href="#ai"><i class="fas fa-robot"></i> AI Chatbot</a>
+                <a href="#ads"><i class="fas fa-bullhorn"></i> Ads & Marketing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="gallery-section" id="logos">
+        <div class="container">
+            <h2><i class="fas fa-pen-nib"></i> Logo Designs</h2>
+            <p class="section-desc">5 professional logo concepts for Zave Digital — each with unique style and brand identity.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="logo-preview">
+                            <div class="logo-item">
+                                <svg viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+                                    <path d="M50,5 L90,15 L90,55 Q90,95 50,110 Q10,95 10,55 L10,15 Z" fill="url(#g1)" stroke="#a855f7" stroke-width="2"/>
+                                    <text x="50" y="72" text-anchor="middle" font-size="45" font-weight="900" font-family="Impact,sans-serif" fill="white">Z</text>
+                                </svg>
+                                <span>Shield Z</span>
+                            </div>
+                            <div class="logo-item">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="#6c5ce7" stroke-width="3"/>
+                                    <circle cx="50" cy="50" r="25" fill="none" stroke="#00cec9" stroke-width="2"/>
+                                    <text x="50" y="58" text-anchor="middle" font-size="30" font-weight="900" font-family="monospace" fill="#6c5ce7">Z</text>
+                                </svg>
+                                <span>Tech Circuit</span>
+                            </div>
+                            <div class="logo-item">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="15" y="15" width="70" height="70" rx="10" fill="none" stroke="#a855f7" stroke-width="3"/>
+                                    <text x="50" y="62" text-anchor="middle" font-size="35" font-weight="300" font-family="Georgia,serif" fill="#a855f7" font-style="italic">Z</text>
+                                </svg>
+                                <span>Minimal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Logo Design Collection</h3>
+                        <p>5 unique logo concepts — Shield Z (chosen), Tech Circuit Z, Minimal Monogram, Monogram Z, Flame Z</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag">Logo</span>
+                            <span class="sample-tag blue">Branding</span>
+                            <span class="sample-tag green">5 Concepts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="gallery-section" id="social">
+        <div class="container">
+            <h2><i class="fab fa-instagram"></i> Social Media Posts</h2>
+            <p class="section-desc">Professional social media content designed for restaurants, hotels & local businesses.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="post-preview" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <div style="font-size:2.5rem;font-weight:900;">50% OFF</div>
+                            <div style="font-size:0.8rem;margin-top:8px;">Today Only!</div>
+                            <div style="font-size:0.7rem;margin-top:12px;opacity:0.8;">The Pizza House</div>
+                            <div style="font-size:0.6rem;margin-top:4px;opacity:0.6;">Order Now →</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Promo Post — 50% OFF</h3>
+                        <p>Eye-catching discount offer post with bold typography and brand colors. Facebook + Instagram ready.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag red">Promo</span>
+                            <span class="sample-tag">Social Media</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="post-preview" style="background: linear-gradient(135deg, #6c5ce7, #00cec9);">
+                            <div style="font-size:1rem;font-weight:700;margin-bottom:12px;">Our Services</div>
+                            <div style="font-size:0.65rem;line-height:1.6;text-align:left;padding:0 10px;">
+                                ✓ Social Media<br>
+                                ✓ Logo Design<br>
+                                ✓ Video Production<br>
+                                ✓ Web Development<br>
+                                ✓ SEO & Ads
+                            </div>
+                            <div style="font-size:0.6rem;margin-top:12px;opacity:0.8;">DM for details →</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Services Showcase Post</h3>
+                        <p>Clean service listing post with gradient background. Perfect for Instagram feed and stories.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag blue">Services</span>
+                            <span class="sample-tag">Instagram</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="post-preview" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+                            <div style="font-size:2rem;color:#f1c40f;">★★★★★</div>
+                            <div style="font-size:0.7rem;margin-top:12px;font-style:italic;">"Best digital marketing<br>service in town!<br>Highly recommended!"</div>
+                            <div style="font-size:0.6rem;margin-top:12px;opacity:0.7;">— Ahmed Raza</div>
+                            <div style="font-size:0.6rem;opacity:0.5;">Restaurant Owner</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Testimonial Post</h3>
+                        <p>Client testimonial design with star rating and quote. Builds trust and social proof.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag gold">Testimonial</span>
+                            <span class="sample-tag">Trust</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div style="display:flex;gap:4px;">
+                            <div style="width:90px;height:180px;background:linear-gradient(135deg,#555,#333);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.6rem;text-align:center;padding:8px;">BEFORE<br><br>Dull<br>Unedited</div>
+                            <div style="font-size:1.5rem;color:#6c5ce7;align-self:center;">→</div>
+                            <div style="width:90px;height:180px;background:linear-gradient(135deg,#6c5ce7,#00cec9);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.6rem;text-align:center;padding:8px;">AFTER<br><br>Professional<br>Edited</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Before / After Post</h3>
+                        <p>Transformation showcase — before and after editing. Great for photo editing services promotion.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag">Photo Editing</span>
+                            <span class="sample-tag blue">Comparison</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="post-preview" style="background: linear-gradient(135deg, #00b894, #00cec9);">
+                            <div style="font-size:0.8rem;font-weight:700;margin-bottom:8px;">💡 5 Tips</div>
+                            <div style="font-size:0.6rem;line-height:1.5;text-align:left;padding:0 15px;">
+                                1. Post daily<br>
+                                2. Use hashtags<br>
+                                3. Reply to DMs<br>
+                                4. Go live weekly<br>
+                                5. Run ads
+                            </div>
+                            <div style="font-size:0.6rem;margin-top:8px;opacity:0.8;">Save this! 📌</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Tips Carousel Post</h3>
+                        <p>Educational carousel content — 5 social media growth tips. Builds authority and engagement.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag green">Tips</span>
+                            <span class="sample-tag">Carousel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENUS -->
+    <section class="gallery-section" id="menus">
+        <div class="container">
+            <h2><i class="fas fa-utensils"></i> Menu Designs</h2>
+            <p class="section-desc">Professional menu designs for restaurants, cafes & service businesses.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="menu-preview">
+                            <h4>🍕 The Pizza House</h4>
+                            <div style="text-align:center;font-size:0.6rem;color:#8a7a5a;margin-bottom:10px;">DC Chowk, Sargodha Road</div>
+                            <div style="font-size:0.65rem;font-weight:700;color:#c9a96e;margin-bottom:6px;">PIZZAS</div>
+                            <div class="menu-item"><span>Cheese Lover</span><span>Rs.800</span></div>
+                            <div class="menu-item"><span>Chicken Tikka</span><span>Rs.900</span></div>
+                            <div class="menu-item"><span>BBQ Chicken</span><span>Rs.950</span></div>
+                            <div class="menu-item"><span>Supreme</span><span>Rs.1200</span></div>
+                            <div style="font-size:0.65rem;font-weight:700;color:#c9a96e;margin:8px 0 6px;">DRINKS</div>
+                            <div class="menu-item"><span>Fresh Juice</span><span>Rs.150</span></div>
+                            <div class="menu-item"><span>Soft Drinks</span><span>Rs.80</span></div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Restaurant Menu — The Pizza House</h3>
+                        <p>Elegant restaurant menu with gold accents, food categories, and pricing. Print-ready PDF.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag gold">Restaurant</span>
+                            <span class="sample-tag">Menu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="menu-preview" style="border-color:#6c5ce7;color:#6c5ce7;">
+                            <h4>⚡ Zave Digital</h4>
+                            <div style="text-align:center;font-size:0.6rem;color:#888;margin-bottom:10px;">Digital Marketing Services</div>
+                            <div style="font-size:0.65rem;font-weight:700;color:#6c5ce7;margin-bottom:6px;">BUDGET</div>
+                            <div class="menu-item" style="color:#aaa;"><span>Photo Editing</span><span>Rs.100</span></div>
+                            <div class="menu-item" style="color:#aaa;"><span>Single Post</span><span>Rs.200</span></div>
+                            <div style="font-size:0.65rem;font-weight:700;color:#6c5ce7;margin:8px 0 6px;">STANDARD</div>
+                            <div class="menu-item" style="color:#aaa;"><span>Menu Design</span><span>Rs.2000</span></div>
+                            <div class="menu-item" style="color:#aaa;"><span>Video (30s)</span><span>Rs.2500</span></div>
+                            <div style="font-size:0.65rem;font-weight:700;color:#6c5ce7;margin:8px 0 6px;">PREMIUM IT</div>
+                            <div class="menu-item" style="color:#aaa;"><span>Cybersecurity</span><span>Rs.5000</span></div>
+                            <div class="menu-item" style="color:#aaa;"><span>AI Chatbot</span><span>Rs.8000</span></div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Services Price Menu</h3>
+                        <p>Professional pricing menu for Zave Digital services. 4 tiers: Budget, Standard, Premium IT, Premium.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag blue">Pricing</span>
+                            <span class="sample-tag">Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDING -->
+    <section class="gallery-section" id="branding">
+        <div class="container">
+            <h2><i class="fas fa-id-card"></i> Business Cards & Branding</h2>
+            <p class="section-desc">Complete brand identity materials — business cards, invoices, brand guides & more.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="card-preview" style="background: linear-gradient(135deg, #0a0a0f, #1a1a2e);">
+                            <div style="font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Zave</div>
+                            <div style="font-size:0.6rem;color:#06b6d4;letter-spacing:3px;">DIGITAL</div>
+                            <div style="position:absolute;bottom:16px;left:20px;font-size:0.55rem;color:#666;">
+                                <div>Sarmad Zave</div>
+                                <div>+92 319 4051964</div>
+                            </div>
+                            <div style="position:absolute;bottom:16px;right:20px;">
+                                <svg width="30" height="30" viewBox="0 0 40 46"><path d="M20,2 L36,8 L36,28 Q36,40 20,44 Q4,40 4,28 L4,8 Z" fill="url(#g1)" opacity="0.5"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Business Card — Front</h3>
+                        <p>Premium dark business card with gradient logo, contact details, and QR code. Front side design.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag">Business Card</span>
+                            <span class="sample-tag blue">Premium</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="invoice-preview">
+                            <div class="inv-header">
+                                <div>
+                                    <div style="font-weight:900;color:#6c5ce7;">Zave Digital</div>
+                                    <div style="font-size:0.6rem;color:#888;">Invoice #001</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-weight:700;">Rs. 5,000</div>
+                                    <div style="font-size:0.6rem;color:#888;">Due: June 10</div>
+                                </div>
+                            </div>
+                            <div class="inv-row"><span>Social Media Management</span><span>Rs.3,000</span></div>
+                            <div class="inv-row"><span>Logo Design</span><span>Rs.2,000</span></div>
+                            <div class="inv-total"><span>TOTAL</span><span>Rs.5,000</span></div>
+                            <div style="margin-top:10px;font-size:0.55rem;color:#999;text-align:center;">WhatsApp: +92 319 4051964</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Invoice Template</h3>
+                        <p>Professional invoice with branding, itemized services, totals, and payment info. Print-ready PDF.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag">Invoice</span>
+                            <span class="sample-tag green">Business</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="brand-preview">
+                            <div class="brand-color" style="background:#6c5ce7;">#6C5CE7</div>
+                            <div class="brand-color" style="background:#00cec9;">#00CEC9</div>
+                            <div class="brand-color" style="background:#a855f7;">#A855F7</div>
+                            <div class="brand-color" style="background:#06b6d4;">#06B6D4</div>
+                            <div class="brand-color" style="background:#0a0a0f;border:1px solid #333;">#0A0A0F</div>
+                        </div>
+                        <div style="width:100%;text-align:center;margin-top:12px;">
+                            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;color:#f0f0f5;">Space Grotesk</div>
+                            <div style="font-family:'Inter',sans-serif;font-size:0.8rem;color:#a0a0b0;">Inter — Body Text</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Brand Guide — Colors & Typography</h3>
+                        <p>Complete brand identity guide with 5-color palette, font pair selection, and usage guidelines.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag">Brand Guide</span>
+                            <span class="sample-tag gold">Identity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CYBERSECURITY -->
+    <section class="gallery-section" id="cyber">
+        <div class="container">
+            <h2><i class="fas fa-shield-alt"></i> Cybersecurity Reports</h2>
+            <p class="section-desc">Professional security audit reports, penetration testing & network assessments.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="cyber-preview">
+                            <div class="cyber-line" style="color:#fff;font-weight:700;">═══ SECURITY AUDIT REPORT ═══</div>
+                            <div class="cyber-line">Target: 192.168.1.0/24</div>
+                            <div class="cyber-line">Date: 2026-06-03</div>
+                            <div class="cyber-line">Auditor: Zave Digital</div>
+                            <div class="cyber-line">─────────────────────────</div>
+                            <div class="cyber-line cyber-highlight">[CRITICAL] Open port 22 (SSH)</div>
+                            <div class="cyber-line cyber-highlight">[HIGH] Outdated Apache 2.4.41</div>
+                            <div class="cyber-line" style="color:#ffaa00;">[MEDIUM] No firewall rules</div>
+                            <div class="cyber-line" style="color:#ffaa00;">[MEDIUM] Weak passwords</div>
+                            <div class="cyber-line cyber-ok">[OK] SSL certificate valid</div>
+                            <div class="cyber-line cyber-ok">[OK] No malware detected</div>
+                            <div class="cyber-line">─────────────────────────</div>
+                            <div class="cyber-line" style="color:#fff;">Risk Score: <span class="cyber-highlight">7.2/10</span></div>
+                            <div class="cyber-line" style="color:#fff;">Status: <span class="cyber-highlight">NEEDS ATTENTION</span></div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Security Audit Report</h3>
+                        <p>Comprehensive vulnerability scan with risk scoring, findings, and remediation recommendations.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag red">Security</span>
+                            <span class="sample-tag">Audit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="cyber-preview">
+                            <div class="cyber-line" style="color:#fff;font-weight:700;">═══ PENTEST REPORT ═══</div>
+                            <div class="cyber-line">Target: example.com</div>
+                            <div class="cyber-line">Type: Web Application</div>
+                            <div class="cyber-line">─────────────────────────</div>
+                            <div class="cyber-line cyber-highlight">[CRITICAL] SQL Injection</div>
+                            <div class="cyber-line cyber-highlight">[HIGH] XSS (Stored)</div>
+                            <div class="cyber-line" style="color:#ffaa00;">[MEDIUM] CSRF Token Missing</div>
+                            <div class="cyber-line" style="color:#ffaa00;">[MEDIUM] Info Disclosure</div>
+                            <div class="cyber-line cyber-ok">[OK] HTTPS Enforced</div>
+                            <div class="cyber-line">─────────────────────────</div>
+                            <div class="cyber-line" style="color:#fff;">Overall: <span class="cyber-highlight">VULNERABLE</span></div>
+                            <div class="cyber-line" style="color:#00ff41;">Remediation: 5 steps</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Penetration Testing Report</h3>
+                        <p>Web app pentest with SQL injection, XSS findings, and step-by-step remediation guidance.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag red">Pentest</span>
+                            <span class="sample-tag">Web App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="cyber-preview">
+                            <div class="cyber-line" style="color:#fff;font-weight:700;">═══ NETWORK DIAGRAM ═══</div>
+                            <div class="cyber-line">┌─────────┐</div>
+                            <div class="cyber-line">│ Internet │</div>
+                            <div class="cyber-line">└────┬────┘</div>
+                            <div class="cyber-line">     │</div>
+                            <div class="cyber-line">┌────▼────┐</div>
+                            <div class="cyber-line">│ Firewall │</div>
+                            <div class="cyber-line">└────┬────┘</div>
+                            <div class="cyber-line">  ┌──┴──┐</div>
+                            <div class="cyber-line">┌─▼─┐ ┌─▼─┐</div>
+                            <div class="cyber-line">│LAN│ │WiFi│</div>
+                            <div class="cyber-line">└─┬─┘ └─┬─┘</div>
+                            <div class="cyber-line">  │     │</div>
+                            <div class="cyber-line">┌─▼─────▼─┐</div>
+                            <div class="cyber-line">│ Devices  │</div>
+                            <div class="cyber-line">└─────────┘</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Network Diagram</h3>
+                        <p>Professional network topology diagram showing firewall, LAN, WiFi, and device connections.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag blue">Network</span>
+                            <span class="sample-tag">Diagram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI CHATBOT -->
+    <section class="gallery-section" id="ai">
+        <div class="container">
+            <h2><i class="fas fa-robot"></i> AI Chatbot Demo</h2>
+            <p class="section-desc">WhatsApp-style AI chatbot for automated customer support & engagement.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="chatbot-preview">
+                            <div style="text-align:center;font-size:0.6rem;color:#888;margin-bottom:12px;">🤖 Zave AI Assistant</div>
+                            <div class="chat-msg chat-user">Hi! What's on the menu?</div>
+                            <div class="chat-msg chat-bot">🍕 Welcome to The Pizza House!<br><br>We have 9 premium flavors:<br>• Cheese Lover — Rs.800<br>• Chicken Tikka — Rs.900<br>• BBQ Chicken — Rs.950<br>• Supreme — Rs.1200<br><br>Would you like to order?</div>
+                            <div class="chat-msg chat-user">Do you deliver?</div>
+                            <div class="chat-msg chat-bot">🚚 Yes! We deliver within<br>Mandi Bahauddin city.<br>Delivery time: 30-45 mins<br>Delivery fee: Rs.100<br><br>Share your address to order!</div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>AI Chatbot — Restaurant Support</h3>
+                        <p>WhatsApp-style AI chatbot handling menu queries, delivery info, and order placement automatically.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag green">AI</span>
+                            <span class="sample-tag blue">Chatbot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADS & MARKETING -->
+    <section class="gallery-section" id="ads">
+        <div class="container">
+            <h2><i class="fas fa-bullhorn"></i> Ads & Marketing</h2>
+            <p class="section-desc">Facebook ads, WhatsApp catalogs & email marketing templates.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="ad-preview">
+                            <div class="ad-img"><i class="fas fa-utensils"></i></div>
+                            <div class="ad-body">
+                                <div class="ad-title">🍕 The Pizza House</div>
+                                <div class="ad-text">Best pizza in Mandi Bahauddin! 9 premium flavors starting from Rs.800. Order now on WhatsApp!</div>
+                                <div style="margin-top:8px;font-size:0.6rem;color:#1877f2;font-weight:600;">Sponsored</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>Facebook Ad Creative</h3>
+                        <p>Professional Facebook/Instagram ad with compelling copy, CTA, and targeting suggestions.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag blue">Facebook</span>
+                            <span class="sample-tag">Ad</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview">
+                        <div class="chatbot-preview" style="background:#f0f2f5;">
+                            <div style="text-align:center;font-size:0.6rem;color:#888;margin-bottom:12px;">📋 WhatsApp Catalog</div>
+                            <div style="background:white;border-radius:8px;padding:10px;margin-bottom:8px;display:flex;gap:10px;align-items:center;">
+                                <div style="width:50px;height:50px;background:linear-gradient(135deg,#e74c3c,#c0392b);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;">🍕</div>
+                                <div><div style="font-size:0.7rem;font-weight:700;color:#333;">Cheese Lover Pizza</div><div style="font-size:0.6rem;color:#25D366;font-weight:600;">Rs. 800</div></div>
+                            </div>
+                            <div style="background:white;border-radius:8px;padding:10px;margin-bottom:8px;display:flex;gap:10px;align-items:center;">
+                                <div style="width:50px;height:50px;background:linear-gradient(135deg,#f39c12,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;">🍕</div>
+                                <div><div style="font-size:0.7rem;font-weight:700;color:#333;">Chicken Tikka Pizza</div><div style="font-size:0.6rem;color:#25D366;font-weight:600;">Rs. 900</div></div>
+                            </div>
+                            <div style="background:white;border-radius:8px;padding:10px;display:flex;gap:10px;align-items:center;">
+                                <div style="width:50px;height:50px;background:linear-gradient(135deg,#27ae60,#2ecc71);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;">🥤</div>
+                                <div><div style="font-size:0.7rem;font-weight:700;color:#333;">Fresh Juice</div><div style="font-size:0.6rem;color:#25D366;font-weight:600;">Rs. 150</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sample-info">
+                        <h3>WhatsApp Business Catalog</h3>
+                        <p>Product catalog with photos, prices & descriptions. Customers browse and order directly on WhatsApp.</p>
+                        <div class="sample-tags">
+                            <span class="sample-tag green">WhatsApp</span>
+                            <span class="sample-tag">Catalog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:60px 0;text-align:center;background:linear-gradient(180deg,transparent,rgba(108,92,231,0.1));">
+        <div class="container">
+            <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;margin-bottom:12px;">Ready to <span class="gradient-text">Get Started?</span></h2>
+            <p style="color:var(--text-secondary);margin-bottom:30px;">Let's discuss how we can help grow your business.</p>
+            <a href="https://wa.me/923194051964?text=Hi%20Zave!%20I%20saw%20your%20portfolio%20and%20I'm%20interested!" class="btn btn-primary" target="_blank" style="font-size:1.1rem;padding:16px 32px;">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+            <br><br>
+            <a href="index.html" style="color:var(--accent-light);font-size:0.9rem;">← Back to Homepage</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Zave Digital. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Mandi Bahauddin</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923194051964?text=Hi%20Zave!%20I'm%20interested%20in%20your%20services." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

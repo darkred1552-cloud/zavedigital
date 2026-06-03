@@ -1293,3 +1293,123 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .portfolio-grid { grid-template-columns: 1fr; }
     .privacy-block { padding: 20px; }
 }
+
+/* ============================================
+   CATEGORY FILTER TABS
+   ============================================ */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 4px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-btn i {
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent-light);
+    background: rgba(108, 92, 231, 0.08);
+}
+
+.filter-btn.active {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(108, 92, 231, 0.3);
+}
+
+/* Service card category animation */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card.category-hidden {
+    display: none;
+}
+
+.service-card.category-shown {
+    animation: categoryFadeIn 0.4s ease forwards;
+}
+
+@keyframes categoryFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Portfolio CTA */
+.portfolio-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Gallery link on portfolio items */
+.portfolio-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Mobile filter */
+@media (max-width: 768px) {
+    .category-filter {
+        gap: 6px;
+        margin-bottom: 30px;
+    }
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+    .filter-btn span {
+        display: none;
+    }
+}
+
+/* Budget / Mid / Premium card tags */
+.budget-card {
+    border-color: rgba(37, 211, 102, 0.25);
+}
+.budget-card:hover {
+    border-color: rgba(37, 211, 102, 0.5);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.1);
+}
+.mid-card {
+    border-color: rgba(108, 92, 231, 0.25);
+}
+.mid-card:hover {
+    border-color: rgba(108, 92, 231, 0.5);
+    box-shadow: 0 8px 32px rgba(108, 92, 231, 0.1);
+}
+.premium-card {
+    border-color: rgba(255, 193, 7, 0.25);
+}
+.premium-card:hover {
+    border-color: rgba(255, 193, 7, 0.5);
+    box-shadow: 0 8px 32px rgba(255, 193, 7, 0.1);
+}
