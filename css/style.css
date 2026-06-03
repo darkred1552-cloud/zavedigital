@@ -1220,6 +1220,35 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     letter-spacing: 0.5px;
 }
 
+/* ─── MID-RANGE SERVICE CARDS ─── */
+.service-card.mid {
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, rgba(168, 85, 247, 0.03) 100%);
+}
+
+.service-card.mid:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.15);
+}
+
+.service-card.mid .service-icon {
+    background: linear-gradient(135deg, #06b6d4, #a855f7);
+}
+
+.mid-tag {
+    background: linear-gradient(135deg, #06b6d4, #a855f7) !important;
+    color: white !important;
+    font-size: 11px !important;
+    padding: 3px 10px !important;
+    border-radius: 20px !important;
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* ─── TESTIMONIALS / PORTFOLIO / RESPONSIVE ─── */
 @media (max-width: 968px) {
     .testimonials-grid { grid-template-columns: 1fr 1fr; }
