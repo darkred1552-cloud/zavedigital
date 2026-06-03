@@ -79,7 +79,7 @@
             box-shadow: 0 8px 32px rgba(108,92,231,0.15);
         }
         .sample-preview {
-            background: #1a1a2e;
+            background: var(--bg-secondary);
             padding: 30px;
             min-height: 200px;
             display: flex;
@@ -237,9 +237,10 @@
             font-size: 0.7rem;
             color: #00ff41;
         }
-        .cyber-preview .cyber-line {
-            margin-bottom: 4px;
+        @media (prefers-color-scheme: light) {
+            .cyber-preview { background: #16161f; }
         }
+        .cyber-preview .cyber-line { margin-bottom: 4px; }
         .cyber-preview .cyber-highlight { color: #ff4444; }
         .cyber-preview .cyber-ok { color: #00ff41; }
         
@@ -249,9 +250,11 @@
             padding: 16px;
             width: 260px;
         }
+        @media (prefers-color-scheme: light) {
+            .chatbot-preview { background: #1a1a2e; }
+        }
         .chatbot-preview .chat-msg {
             padding: 8px 12px;
-            border-radius: 12px;
             margin-bottom: 8px;
             font-size: 0.75rem;
             max-width: 80%;
@@ -323,7 +326,7 @@
             margin-bottom: 20px;
             text-decoration: none;
         }
-        .gallery-back:hover { color: white; }
+        .gallery-back:hover { color: var(--text-primary); }
         
         @media (max-width: 768px) {
             .sample-grid { grid-template-columns: 1fr; }

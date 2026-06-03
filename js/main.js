@@ -101,6 +101,36 @@ window.addEventListener('scroll', () => {
 
 console.log('%c Zave Digital ', 'background: linear-gradient(135deg, #6c5ce7, #00cec9); color: white; font-size: 16px; padding: 8px 16px; border-radius: 8px;');
 
+// === SERVICE FILTER ===
+const serviceFilterBtns = document.querySelectorAll('.category-filter .filter-btn');
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        serviceFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        serviceCards.forEach(card => {
+            if (filter === 'all') {
+                card.style.display = '';
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            } else {
+                const category = card.getAttribute('data-category');
+                if (category === filter) {
+                    card.style.display = '';
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+    });
+});
+
 // === PORTFOLIO FILTER TABS ===
 const portfolioFilterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
