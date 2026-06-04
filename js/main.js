@@ -125,6 +125,7 @@ serviceFilterBtns.forEach(btn => {
                     card.style.transform = 'scale(1)';
                 } else {
                     card.style.display = 'none';
+                    card.style.opacity = '0';
                 }
             }
         });
@@ -155,6 +156,7 @@ portfolioFilterBtns.forEach(btn => {
                     item.style.transform = 'scale(1)';
                 } else {
                     item.style.display = 'none';
+                    item.style.opacity = '0';
                 }
             }
         });
