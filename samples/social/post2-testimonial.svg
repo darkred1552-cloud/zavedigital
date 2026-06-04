@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="sbg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#sbg2)"/>
+  <!-- Stars -->
+  <text x="540" y="180" text-anchor="middle" font-size="48" fill="#fbbf24">★★★★★</text>
+  <!-- Quote -->
+  <text x="140" y="300" font-size="80" fill="#475569">"</text>
+  <text x="540" y="320" text-anchor="middle" font-size="34" font-weight="400" font-family="sans-serif" fill="white" line-height="1.6">
+    <tspan x="540" dy="0">Zave Digital transformed our restaurant's</tspan>
+    <tspan x="540" dy="50">online presence. Our food orders increased</tspan>
+    <tspan x="540" dy="50">by 3x after they started managing our</tspan>
+    <tspan x="540" dy="50">social media. Highly recommended!</tspan>
+  </text>
+  <text x="940" y="560" font-size="80" fill="#475569">"</text>
+  <!-- Author -->
+  <circle cx="540" cy="680" r="50" fill="#a855f7" opacity="0.3"/>
+  <text x="540" y="695" text-anchor="middle" font-size="32" font-weight="700" font-family="sans-serif" fill="#a855f7">AR</text>
+  <text x="540" y="770" text-anchor="middle" font-size="26" font-weight="600" font-family="sans-serif" fill="white">Ahmed Raza</text>
+  <text x="540" y="805" text-anchor="middle" font-size="20" font-weight="400" font-family="sans-serif" fill="#94a3b8">Restaurant Owner, Mandi Bahauddin</text>
+  <!-- Brand -->
+  <rect x="0" y="980" width="1080" height="100" fill="#a855f7" opacity="0.15"/>
+  <text x="540" y="1045" text-anchor="middle" font-size="22" font-weight="600" font-family="sans-serif" fill="#a855f7">ZAVE DIGITAL — Real Results, Real Reviews</text>
+</svg>

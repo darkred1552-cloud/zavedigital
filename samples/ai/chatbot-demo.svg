@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700">
+  <defs>
+    <linearGradient id="chatbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="700" fill="url(#chatbg)" rx="20"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="500" height="70" rx="20" fill="#a855f7" opacity="0.2"/>
+  <rect x="0" y="35" width="500" height="35" fill="#a855f7" opacity="0.2"/>
+  <circle cx="40" cy="35" r="15" fill="#a855f7"/>
+  <text x="40" y="42" text-anchor="middle" font-size="16" font-weight="900" font-family="sans-serif" fill="white">Z</text>
+  <text x="70" y="42" font-size="16" font-weight="600" font-family="sans-serif" fill="white">ZaveBot AI</text>
+  <text x="460" y="42" text-anchor="end" font-size="12" font-family="sans-serif" fill="#22c55e">● Online</text>
+  <!-- Chat messages -->
+  <!-- User msg 1 -->
+  <rect x="120" y="90" width="280" height="45" rx="15" fill="#2e2e5e"/>
+  <text x="135" y="118" font-size="14" font-family="sans-serif" fill="white">Hi! Do you have pizza deals?</text>
+  <!-- Bot msg 1 -->
+  <rect x="50" y="150" width="320" height="70" rx="15" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="0.5"/>
+  <text x="65" y="178" font-size="14" font-family="sans-serif" fill="white">🍕 Welcome to The Pizza House!</text>
+  <text x="65" y="198" font-size="14" font-family="sans-serif" fill="white">Yes! Today's deal: Buy 1 Get 1 on</text>
+  <text x="65" y="218" font-size="14" font-family="sans-serif" fill="white">Medium Pizzas! Rs. 800 only</text>
+  <!-- User msg 2 -->
+  <rect x="100" y="240" width="300" height="45" rx="15" fill="#2e2e5e"/>
+  <text x="115" y="268" font-size="14" font-family="sans-serif" fill="white">What flavors are available?</text>
+  <!-- Bot msg 2 -->
+  <rect x="50" y="300" width="350" height="110" rx="15" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="0.5"/>
+  <text x="65" y="328" font-size="14" font-family="sans-serif" fill="white">We have 9 premium flavors:</text>
+  <text x="65" y="348" font-size="13" font-family="sans-serif" fill="#a855f7">🧀 Cheese Lover — Rs. 800</text>
+  <text x="65" y="368" font-size="13" font-family="sans-serif" fill="#a855f7">🍗 Chicken Tikka — Rs. 950</text>
+  <text x="65" y="388" font-size="13" font-family="sans-serif" fill="#a855f7">🔥 BBQ Blast — Rs. 1,000</text>
+  <text x="65" y="408" font-size="13" font-family="sans-serif" fill="#a855f7">👑 Supreme — Rs. 1,200</text>
+  <!-- User msg 3 -->
+  <rect x="150" y="430" width="200" height="45" rx="15" fill="#2e2e5e"/>
+  <text x="165" y="458" font-size="14" font-family="sans-serif" fill="white">Order Cheese Lover!</text>
+  <!-- Bot msg 3 -->
+  <rect x="50" y="490" width="360" height="90" rx="15" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="0.5"/>
+  <text x="65" y="518" font-size="14" font-family="sans-serif" fill="white">✅ Order confirmed! Cheese Lover</text>
+  <text x="65" y="538" font-size="14" font-family="sans-serif" fill="white">Delivery to? Share your address 📍</text>
+  <text x="65" y="558" font-size="13" font-family="sans-serif" fill="#22c55e">⏱ Est. delivery: 30-40 mins</text>
+  <!-- Typing indicator -->
+  <rect x="50" y="600" width="120" height="35" rx="15" fill="#a855f7" opacity="0.15"/>
+  <circle cx="75" cy="618" r="4" fill="#a855f7"/>
+  <circle cx="90" cy="618" r="4" fill="#a855f7"/>
+  <circle cx="105" cy="618" r="4" fill="#a855f7"/>
+  <!-- Input bar -->
+  <rect x="20" y="650" width="460" height="40" rx="20" fill="#1e1e3f" stroke="#a855f7" stroke-width="0.5"/>
+  <text x="40" y="675" font-size="13" font-family="sans-serif" fill="#64748b">Type a message...</text>
+  <circle cx="455" cy="670" r="15" fill="#a855f7"/>
+  <text x="455" y="676" text-anchor="middle" font-size="14" fill="white">➤</text>
+</svg>

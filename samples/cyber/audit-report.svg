@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0a0a1a"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="1080" height="120" fill="#ef4444" opacity="0.15"/>
+  <text x="60" y="55" font-size="18" font-weight="700" font-family="monospace" fill="#ef4444">⚠️ CONFIDENTIAL</text>
+  <text x="540" y="55" text-anchor="middle" font-size="28" font-weight="800" font-family="sans-serif" fill="white">Cybersecurity Audit Report</text>
+  <text x="1020" y="55" text-anchor="end" font-size="14" font-family="monospace" fill="#64748b">v2.1</text>
+  <!-- Client info -->
+  <rect x="60" y="140" width="960" height="100" rx="10" fill="#1e293b"/>
+  <text x="90" y="180" font-size="16" font-weight="600" font-family="sans-serif" fill="white">Client: The Pizza House — Mandi Bahauddin</text>
+  <text x="90" y="205" font-size="14" font-family="sans-serif" fill="#94a3b8">Date: June 2026 | Auditor: Zave Digital | Scope: Network + Web + Systems</text>
+  <!-- Severity bars -->
+  <text x="60" y="290" font-size="20" font-weight="700" font-family="sans-serif" fill="white">Vulnerability Summary</text>
+  <!-- Critical -->
+  <rect x="60" y="310" width="960" height="50" rx="8" fill="#ef4444" opacity="0.15"/>
+  <text x="90" y="342" font-size="16" font-weight="600" font-family="sans-serif" fill="#ef4444">🔴 Critical: 2</text>
+  <text x="900" y="342" text-anchor="end" font-size="16" font-weight="600" font-family="sans-serif" fill="#ef4444">2</text>
+  <!-- High -->
+  <rect x="60" y="375" width="700" height="50" rx="8" fill="#f97316" opacity="0.15"/>
+  <text x="90" y="407" font-size="16" font-weight="600" font-family="sans-serif" fill="#f97316">🟠 High: 5</text>
+  <text x="730" y="407" text-anchor="end" font-size="16" font-weight="600" font-family="sans-serif" fill="#f97316">5</text>
+  <!-- Medium -->
+  <rect x="60" y="440" width="500" height="50" rx="8" fill="#fbbf24" opacity="0.15"/>
+  <text x="90" y="472" font-size="16" font-weight="600" font-family="sans-serif" fill="#fbbf24">🟡 Medium: 8</text>
+  <text x="530" y="472" text-anchor="end" font-size="16" font-weight="600" font-family="sans-serif" fill="#fbbf24">8</text>
+  <!-- Low -->
+  <rect x="60" y="505" width="300" height="50" rx="8" fill="#22c55e" opacity="0.15"/>
+  <text x="90" y="537" font-size="16" font-weight="600" font-family="sans-serif" fill="#22c55e">🟢 Low: 12</text>
+  <text x="330" y="537" text-anchor="end" font-size="16" font-weight="600" font-family="sans-serif" fill="#22c55e">12</text>
+  <!-- Findings -->
+  <text x="60" y="610" font-size="20" font-weight="700" font-family="sans-serif" fill="white">Key Findings</text>
+  <rect x="60" y="630" width="960" height="60" rx="8" fill="#1e293b"/>
+  <text x="90" y="658" font-size="14" font-family="sans-serif" fill="white">1. Open SSH port (22) with weak password policy</text>
+  <text x="90" y="678" font-size="14" font-family="sans-serif" fill="#94a3b8">   Recommendation: Enable key-based auth, fail2ban</text>
+  <rect x="60" y="705" width="960" height="60" rx="8" fill="#1e293b"/>
+  <text x="90" y="733" font-size="14" font-family="sans-serif" fill="white">2. Outdated Apache server (2.4.49) — CVE-2021-41773</text>
+  <text x="90" y="753" font-size="14" font-family="sans-serif" fill="#94a3b8">   Recommendation: Update to latest version immediately</text>
+  <rect x="60" y="780" width="960" height="60" rx="8" fill="#1e293b"/>
+  <text x="90" y="808" font-size="14" font-family="sans-serif" fill="white">3. No firewall rules on public-facing services</text>
+  <text x="90" y="828" font-size="14" font-family="sans-serif" fill="#94a3b8">   Recommendation: Configure UFW/iptables, whitelist only</text>
+  <!-- Overall score -->
+  <rect x="340" y="880" width="400" height="80" rx="15" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="540" y="915" text-anchor="middle" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Security Score</text>
+  <text x="540" y="948" text-anchor="middle" font-size="36" font-weight="900" font-family="sans-serif" fill="#fbbf24">6.2 / 10</text>
+  <!-- Footer -->
+  <text x="540" y="1020" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#64748b">ZAVE DIGITAL — Cybersecurity Division</text>
+  <text x="540" y="1045" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#475569">This report is confidential and intended for the client only.</text>
+</svg>

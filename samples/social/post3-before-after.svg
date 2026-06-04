@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0a0a1a"/>
+  <!-- Before/After split -->
+  <rect x="0" y="0" width="540" height="700" fill="#1a1a2e"/>
+  <rect x="540" y="0" width="540" height="700" fill="#16213e"/>
+  <!-- BEFORE -->
+  <text x="270" y="100" text-anchor="middle" font-size="36" font-weight="800" font-family="sans-serif" fill="#ef4444">BEFORE</text>
+  <text x="270" y="200" text-anchor="middle" font-size="60" fill="#333">📵</text>
+  <text x="270" y="300" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#666">No Online Presence</text>
+  <text x="270" y="340" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#666">0 Followers</text>
+  <text x="270" y="380" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#666">0 Google Reviews</text>
+  <text x="270" y="420" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#666">No Website</text>
+  <!-- AFTER -->
+  <text x="810" y="100" text-anchor="middle" font-size="36" font-weight="800" font-family="sans-serif" fill="#22c55e">AFTER</text>
+  <text x="810" y="200" text-anchor="middle" font-size="60" fill="#22c55e">🚀</text>
+  <text x="810" y="300" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#22c55e">3,000+ Followers</text>
+  <text x="810" y="340" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#22c55e">4.8★ Google Rating</text>
+  <text x="810" y="380" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#22c55e">Professional Website</text>
+  <text x="810" y="420" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#22c55e">3x More Orders</text>
+  <!-- Divider -->
+  <line x1="540" y1="50" x2="540" y2="650" stroke="#a855f7" stroke-width="3" stroke-dasharray="10,5"/>
+  <!-- Arrow -->
+  <text x="540" y="500" text-anchor="middle" font-size="60" fill="#a855f7">→</text>
+  <!-- Bottom -->
+  <rect x="0" y="700" width="1080" height="380" fill="#a855f7" opacity="0.1"/>
+  <text x="540" y="800" text-anchor="middle" font-size="42" font-weight="800" font-family="sans-serif" fill="white">We Transformed</text>
+  <text x="540" y="860" text-anchor="middle" font-size="42" font-weight="800" font-family="sans-serif" fill="#06b6d4">The Pizza House Online!</text>
+  <text x="540" y="940" text-anchor="middle" font-size="26" font-family="sans-serif" fill="rgba(255,255,255,0.6)">Social Media • Google Ads • Website • SEO</text>
+  <text x="540" y="1000" text-anchor="middle" font-size="22" font-weight="600" font-family="sans-serif" fill="#a855f7">ZAVE DIGITAL</text>
+</svg>
