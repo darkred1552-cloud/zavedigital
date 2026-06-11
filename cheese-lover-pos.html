@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheese Lover POS</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: #eee; height: 100vh; overflow: hidden; }
+
+.header { background: linear-gradient(135deg, #f4a261, #e76f51); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.header h1 { font-size: 22px; font-weight: 700; color: #fff; }
+.header h1 span { color: #264653; }
+.header-right { display: flex; gap: 15px; align-items: center; }
+.header-right .time { font-size: 14px; color: #264653; font-weight: 600; }
+.header-right .date { font-size: 12px; color: #fff; opacity: 0.9; }
+
+.main { display: flex; height: calc(100vh - 52px); }
+
+.categories { width: 160px; background: #16213e; padding: 10px; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
+.cat-btn { padding: 12px 10px; border: none; border-radius: 8px; background: #0f3460; color: #eee; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; text-align: left; }
+.cat-btn:hover { background: #e76f51; }
+.cat-btn.active { background: #e76f51; box-shadow: 0 0 10px rgba(231,111,81,0.5); }
+
+.menu-area { flex: 1; padding: 15px; overflow-y: auto; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+.menu-item { background: #16213e; border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
+.menu-item:hover { border-color: #e76f51; transform: translateY(-2px); }
+.menu-item .name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.menu-item .price { font-size: 18px; color: #f4a261; font-weight: 700; }
+.menu-item .desc { font-size: 11px; color: #888; margin-top: 4px; }
+
+.cart-panel { width: 340px; background: #16213e; display: flex; flex-direction: column; border-left: 2px solid #0f3460; }
+.cart-header { padding: 15px; background: #0f3460; display: flex; justify-content: space-between; align-items: center; }
+.cart-header h2 { font-size: 16px; }
+.cart-items { flex: 1; overflow-y: auto; padding: 10px; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #1a1a2e; border-radius: 8px; margin-bottom: 8px; }
+.cart-item .item-name { font-size: 13px; font-weight: 600; flex: 1; }
+.cart-item .item-price { font-size: 13px; color: #f4a261; margin-right: 10px; }
+.qty-controls { display: flex; align-items: center; gap: 6px; }
+.qty-btn { width: 26px; height: 26px; border: none; border-radius: 50%; background: #e76f51; color: #fff; font-size: 16px; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.qty-btn.minus { background: #555; }
+.qty-num { font-size: 14px; font-weight: 700; min-width: 20px; text-align: center; }
+.remove-btn { background: none; border: none; color: #e76f51; cursor: pointer; font-size: 18px; margin-left: 5px; }
+
+.cart-footer { padding: 15px; background: #0f3460; }
+.cart-total { display: flex; justify-content: space-between; font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.cart-total .amount { color: #f4a261; }
+.cart-buttons { display: flex; gap: 8px; }
+.cart-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+.btn-print { background: #2a9d8f; color: #fff; }
+.btn-print:hover { background: #21867a; }
+.btn-clear { background: #555; color: #fff; }
+.btn-clear:hover { background: #444; }
+
+.receipt { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 100; justify-content: center; align-items: center; }
+.receipt-content { background: #fff; color: #000; width: 320px; padding: 20px; border-radius: 10px; font-family: 'Courier New', monospace; }
+.receipt-content h2 { text-align: center; font-size: 18px; margin-bottom: 5px; }
+.receipt-content .receipt-sub { text-align: center; font-size: 11px; color: #555; margin-bottom: 15px; }
+.receipt-items { border-top: 1px dashed #000; border-bottom: 1px dashed #000; padding: 10px 0; margin-bottom: 10px; }
+.receipt-item { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
+.receipt-total { font-size: 16px; font-weight: 700; text-align: right; margin-bottom: 10px; }
+.receipt-footer { text-align: center; font-size: 11px; color: #555; }
+.receipt-btns { display: flex; gap: 10px; margin-top: 15px; }
+.receipt-btns button { flex: 1; padding: 10px; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.btn-close-receipt { background: #555; color: #fff; }
+.btn-print-receipt { background: #2a9d8f; color: #fff; }
+
+.history-panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 100; }
+.history-content { background: #16213e; width: 500px; max-height: 80vh; margin: 50px auto; border-radius: 10px; padding: 20px; overflow-y: auto; }
+.history-content h2 { margin-bottom: 15px; }
+.history-order { background: #1a1a2e; border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+.history-order .order-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; color: #f4a261; }
+.history-order .order-items { font-size: 12px; color: #aaa; }
+.history-order .order-total { font-size: 14px; font-weight: 700; text-align: right; margin-top: 5px; }
+.btn-close-history { background: #e76f51; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; }
+
+.empty-cart { text-align: center; color: #555; padding: 40px 20px; font-size: 14px; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1a2e; }
+::-webkit-scrollbar-thumb { background: #e76f51; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧀 Cheese <span>Lover</span> POS</h1>
+  <div class="header-right">
+    <div>
+      <div class="time" id="clock">00:00:00</div>
+      <div class="date" id="date">Loading...</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="categories" id="categories">
+    <button class="cat-btn active" onclick="filterCat('all', this)">🍽️ All Items</button>
+    <button class="cat-btn" onclick="filterCat('pizza', this)">🍕 Pizza</button>
+    <button class="cat-btn" onclick="filterCat('pasta', this)">🍝 Pasta</button>
+    <button class="cat-btn" onclick="filterCat('sandwich', this)">🥪 Sandwiches</button>
+    <button class="cat-btn" onclick="filterCat('burger', this)">🍔 Burgers</button>
+    <button class="cat-btn" onclick="filterCat('appetizer', this)">🧀 Appetizers</button>
+    <button class="cat-btn" onclick="filterCat('drinks', this)">🥤 Drinks</button>
+    <button class="cat-btn" onclick="filterCat('dessert', this)">🍰 Desserts</button>
+    <button class="cat-btn" onclick="filterCat('deal', this)">🔥 Deals</button>
+    <div style="flex:1"></div>
+    <button class="cat-btn" onclick="showHistory()" style="background:#2a9d8f;">📋 Orders</button>
+  </div>
+
+  <div class="menu-area">
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+
+  <div class="cart-panel">
+    <div class="cart-header">
+      <h2>🛒 Current Order</h2>
+      <span id="itemCount" style="color:#f4a261; font-size:13px;">0 items</span>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart">Cart is empty<br>Add items from menu</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="amount">Rs. <span id="totalAmount">0</span></span>
+      </div>
+      <div class="cart-buttons">
+        <button class="cart-btn btn-clear" onclick="clearCart()">🗑️ Clear</button>
+        <button class="cart-btn btn-print" onclick="printReceipt()">🖨️ Print</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="receipt" id="receiptModal">
+  <div class="receipt-content" id="receiptContent">
+    <h2>🧀 Cheese Lover</h2>
+    <div class="receipt-sub" id="receiptInfo"></div>
+    <div class="receipt-items" id="receiptItems"></div>
+    <div class="receipt-total" id="receiptTotal"></div>
+    <div class="receipt-footer">
+      Thank you for dining with us!<br>
+      Come back again 🙏
+    </div>
+    <div class="receipt-btns">
+      <button class="btn-close-receipt" onclick="closeReceipt()">Close</button>
+      <button class="btn-print-receipt" onclick="window.print()">Print</button>
+    </div>
+  </div>
+</div>
+
+<div class="history-panel" id="historyPanel">
+  <div class="history-content">
+    <h2>📋 Order History</h2>
+    <div id="historyList"></div>
+    <button class="btn-close-history" onclick="closeHistory()">Close</button>
+  </div>
+</div>
+
+<script>
+const menuData = [
+  // PIZZA
+  { id:1, cat:'pizza', name:'Margherita Pizza', desc:'Classic cheese & tomato', price:450, sizes:['S','M','L'] },
+  { id:2, cat:'pizza', name:'Pepperoni Pizza', desc:'Loaded with pepperoni', price:650, sizes:['S','M','L'] },
+  { id:3, cat:'pizza', name:'Chicken Tikka Pizza', desc:'Desi tikka flavor', price:700, sizes:['S','M','L'] },
+  { id:4, cat:'pizza', name:'BBQ Chicken Pizza', desc:'Smoky BBQ chicken', price:750, sizes:['S','M','L'] },
+  { id:5, cat:'pizza', name:'Veggie Supreme', desc:'Fresh vegetables', price:600, sizes:['S','M','L'] },
+  { id:6, cat:'pizza', name:'Cheese Lover Pizza', desc:'Extra cheese overload', price:800, sizes:['M','L'] },
+  { id:7, cat:'pizza', name:'Meat Lover Pizza', desc:'All meat toppings', price:900, sizes:['M','L'] },
+  { id:8, cat:'pizza', name:'Hawaiian Pizza', desc:'Ham & pineapple', price:700, sizes:['S','M','L'] },
+  { id:9, cat:'pizza', name:'Creamy Cheese Pizza', desc:'White sauce & 3 cheese', price:850, sizes:['M','L'] },
+  { id:10, cat:'pizza', name:'Stuffed Crust Pizza', desc:'Cheese filled crust', price:950, sizes:['L'] },
+  // PASTA
+  { id:20, cat:'pasta', name:'Alfredo Pasta', desc:'Creamy white sauce', price:500 },
+  { id:21, cat:'pasta', name:'Bolognese Pasta', desc:'Rich meat sauce', price:550 },
+  { id:22, cat:'pasta', name:'Mac & Cheese', desc:'Classic comfort food', price:400 },
+  { id:23, cat:'pasta', name:'Cheese Lasagna', desc:'Layered with cheese', price:600 },
+  { id:24, cat:'pasta', name:'Penne Arrabbiata', desc:'Spicy tomato sauce', price:450 },
+  // SANDWICHES
+  { id:30, cat:'sandwich', name:'Grilled Cheese Sandwich', desc:'Melted cheese perfection', price:250 },
+  { id:31, cat:'sandwich', name:'Club Sandwich', desc:'Triple decker classic', price:300 },
+  { id:32, cat:'sandwich', name:'Chicken Cheese Sandwich', desc:'Grilled chicken & cheese', price:350 },
+  { id:33, cat:'sandwich', name:'Panini', desc:'Pressed & toasted', price:320 },
+  { id:34, cat:'sandwich', name:'Philly Cheese Steak', desc:'Cheesesteak classic', price:450 },
+  // BURGERS
+  { id:40, cat:'burger', name:'Classic Cheese Burger', desc:'Beef patty & cheese', price:350 },
+  { id:41, cat:'burger', name:'Double Cheese Burger', desc:'Double patty, double cheese', price:500 },
+  { id:42, cat:'burger', name:'Zinger Cheese Burger', desc:'Spicy zinger & cheese', price:380 },
+  { id:43, cat:'burger', name:'BBQ Cheese Burger', desc:'BBQ sauce & cheese', price:420 },
+  // APPETIZERS
+  { id:50, cat:'appetizer', name:'Mozzarella Sticks', desc:'6 pieces, crispy', price:300 },
+  { id:51, cat:'appetizer', name:'Cheese Nachos', desc:'Loaded with cheese sauce', price:350 },
+  { id:52, cat:'appetizer', name:'Garlic Bread', desc:'With cheese', price:200 },
+  { id:53, cat:'appetizer', name:'Cheese Balls', desc:'8 pieces', price:280 },
+  { id:54, cat:'appetizer', name:'Loaded Fries', desc:'Cheese sauce & toppings', price:250 },
+  { id:55, cat:'appetizer', name:'Onion Rings', desc:'Crispy golden', price:200 },
+  // DRINKS
+  { id:60, cat:'drinks', name:'Pepsi (Regular)', desc:'', price:80 },
+  { id:61, cat:'drinks', name:'7Up (Regular)', desc:'', price:80 },
+  { id:62, cat:'drinks', name:'Water (Small)', desc:'', price:50 },
+  { id:63, cat:'drinks', name:'Water (Large)', desc:'', price:80 },
+  { id:64, cat:'drinks', name:'Lassi (Sweet)', desc:'', price:120 },
+  { id:65, cat:'drinks', name:'Lassi (Salted)', desc:'', price:120 },
+  { id:66, cat:'drinks', name:'Fresh Juice', desc:'Seasonal', price:150 },
+  { id:67, cat:'drinks', name:'Milkshake', desc:'Chocolate/Vanilla/Strawberry', price:200 },
+  { id:68, cat:'drinks', name:'Hot Chocolate', desc:'Rich & creamy', price:180 },
+  // DESSERTS
+  { id:70, cat:'dessert', name:'Brownie', desc:'Chocolate brownie', price:150 },
+  { id:71, cat:'dessert', name:'Ice Cream', desc:'2 scoops', price:120 },
+  { id:72, cat:'dessert', name:'Cheesecake', desc:'New York style', price:250 },
+  { id:73, cat:'dessert', name:'Gulab Jamun', desc:'4 pieces', price:100 },
+  { id:74, cat:'dessert', name:'Chocolate Lava Cake', desc:'Warm & gooey', price:280 },
+  // DEALS
+  { id:80, cat:'deal', name:'Deal 1: 1 Large Pizza + 2 Drinks', desc:'Any large pizza', price:899 },
+  { id:81, cat:'deal', name:'Deal 2: 2 Medium Pizzas', desc:'Any medium pizzas', price:999 },
+  { id:82, cat:'deal', name:'Deal 3: Family Pack', desc:'2 Large + 4 Drinks + Fries', price:1499 },
+  { id:83, cat:'deal', name:'Deal 4: Cheese Lover Combo', desc:'Pasta + Garlic Bread + Drink', price:599 },
+  { id:84, cat:'deal', name:'Deal 5: Burger Combo', desc:'Burger + Fries + Drink', price:399 },
+  { id:85, cat:'deal', name:'Deal 6: Date Night', desc:'2 Pasta + 2 Drinks + Dessert', price:999 },
+];
+
+let cart = [];
+let orders = JSON.parse(localStorage.getItem('cl_orders') || '[]');
+let currentCat = 'all';
+
+function renderMenu(cat) {
+  currentCat = cat;
+  const grid = document.getElementById('menuGrid');
+  const items = cat === 'all' ? menuData : menuData.filter(i => i.cat === cat);
+  grid.innerHTML = items.map(item => `
+    <div class="menu-item" onclick="addToCart(${item.id})">
+      <div class="name">${item.name}</div>
+      <div class="price">Rs. ${item.price}</div>
+      ${item.desc ? `<div class="desc">${item.desc}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMenu(cat);
+}
+
+function addToCart(id) {
+  const item = menuData.find(i => i.id === id);
+  const existing = cart.find(c => c.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...item, qty: 1 });
+  }
+  renderCart();
+}
+
+function updateQty(id, delta) {
+  const item = cart.find(c => c.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart = cart.filter(c => c.id !== id);
+  renderCart();
+}
+
+function removeItem(id) {
+  cart = cart.filter(c => c.id !== id);
+  renderCart();
+}
+
+function renderCart() {
+  const container = document.getElementById('cartItems');
+  const count = cart.reduce((s, c) => s + c.qty, 0);
+  const total = cart.reduce((s, c) => s + c.price * c.qty, 0);
+
+  document.getElementById('itemCount').textContent = `${count} item${count !== 1 ? 's' : ''}`;
+  document.getElementById('totalAmount').textContent = total.toLocaleString();
+
+  if (cart.length === 0) {
+    container.innerHTML = '<div class="empty-cart">Cart is empty<br>Add items from menu</div>';
+    return;
+  }
+
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="item-name">${item.name}</div>
+      <div class="qty-controls">
+        <button class="qty-btn minus" onclick="updateQty(${item.id}, -1)">−</button>
+        <span class="qty-num">${item.qty}</span>
+        <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+      </div>
+      <div class="item-price">Rs. ${(item.price * item.qty).toLocaleString()}</div>
+      <button class="remove-btn" onclick="removeItem(${item.id})">×</button>
+    </div>
+  `).join('');
+}
+
+function clearCart() {
+  if (cart.length === 0) return;
+  if (confirm('Clear all items from cart?')) {
+    cart = [];
+    renderCart();
+  }
+}
+
+function printReceipt() {
+  if (cart.length === 0) { alert('Cart is empty!'); return; }
+  const total = cart.reduce((s, c) => s + c.price * c.qty, 0);
+  const now = new Date();
+  const orderId = 'CL-' + Date.now().toString().slice(-6);
+
+  document.getElementById('receiptInfo').innerHTML = `
+    Order: <b>${orderId}</b><br>
+    ${now.toLocaleDateString()} ${now.toLocaleTimeString()}<br>
+    🧀 Cheese Lover Restaurant
+  `;
+
+  document.getElementById('receiptItems').innerHTML = cart.map(item => `
+    <div class="receipt-item">
+      <span>${item.name} ×${item.qty}</span>
+      <span>Rs. ${(item.price * item.qty).toLocaleString()}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('receiptTotal').innerHTML = `TOTAL: Rs. ${total.toLocaleString()}`;
+  document.getElementById('receiptModal').style.display = 'flex';
+
+  orders.unshift({ id: orderId, items: [...cart], total, time: now.toISOString() });
+  if (orders.length > 50) orders = orders.slice(0, 50);
+  localStorage.setItem('cl_orders', JSON.stringify(orders));
+}
+
+function closeReceipt() {
+  document.getElementById('receiptModal').style.display = 'none';
+  cart = [];
+  renderCart();
+}
+
+function showHistory() {
+  const list = document.getElementById('historyList');
+  if (orders.length === 0) {
+    list.innerHTML = '<div style="text-align:center; color:#555; padding:30px;">No orders yet</div>';
+  } else {
+    list.innerHTML = orders.map(o => `
+      <div class="history-order">
+        <div class="order-header">
+          <span><b>${o.id}</b></span>
+          <span>${new Date(o.time).toLocaleString()}</span>
+        </div>
+        <div class="order-items">${o.items.map(i => `${i.name} ×${i.qty}`).join(', ')}</div>
+        <div class="order-total">Rs. ${o.total.toLocaleString()}</div>
+      </div>
+    `).join('');
+  }
+  document.getElementById('historyPanel').style.display = 'block';
+}
+
+function closeHistory() {
+  document.getElementById('historyPanel').style.display = 'none';
+}
+
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent = now.toLocaleTimeString('en-GB');
+  document.getElementById('date').textContent = now.toLocaleDateString('en-GB', { weekday:'long', year:'numeric', month:'short', day:'numeric' });
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+renderMenu('all');
+</script>
+</body>
+</html>
