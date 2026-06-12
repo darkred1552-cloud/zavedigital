@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Watches — Premium Timepieces</title>
+<meta name="description" content="Malik Watches — Premium luxury & sport watches. Order now on WhatsApp.">
+<style>
+:root {
+  --gold: #C9A84C; --gold-light: #E8D48B; --gold-dark: #A07C1C;
+  --black: #0A0A0A; --dark: #111; --gray: #1A1A1A;
+  --text: #F0F0F0; --text2: #999; --white: #fff;
+  --whatsapp: #25D366; --radius: 14px;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background:var(--black); color:var(--text); }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(10,10,10,0.95); backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,168,76,0.15);
+  padding:14px 24px; display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo { font-size:1.5rem; font-weight:900; letter-spacing:3px; color:var(--gold); text-decoration:none; }
+.nav-logo span { color:var(--white); font-weight:300; }
+.nav-links { display:flex; gap:24px; align-items:center; }
+.nav-links a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+.nav-links a:hover { color:var(--gold); }
+.nav-wa {
+  background:var(--whatsapp); color:#fff; padding:8px 18px; border-radius:25px;
+  text-decoration:none; font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:6px;
+  transition:all 0.3s; box-shadow:0 2px 12px rgba(37,211,102,0.3);
+}
+.nav-wa:hover { transform:scale(1.05); box-shadow:0 4px 20px rgba(37,211,102,0.5); }
+.menu-btn { display:none; background:none; border:none; color:var(--gold); font-size:1.5rem; cursor:pointer; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:120px 24px 60px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.08) 0%, transparent 70%),
+              linear-gradient(180deg,var(--black) 0%,var(--dark) 100%);
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; width:600px; height:600px;
+  background:radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  top:10%; left:50%; transform:translateX(-50%); border-radius:50%;
+}
+.hero-content { position:relative; z-index:1; }
+.hero-badge {
+  display:inline-block; padding:6px 20px; border:1px solid var(--gold);
+  color:var(--gold); font-size:0.8rem; letter-spacing:3px; text-transform:uppercase;
+  border-radius:20px; margin-bottom:24px;
+}
+.hero h1 {
+  font-size:clamp(2.5rem, 6vw, 4.5rem); font-weight:900; line-height:1.1;
+  margin-bottom:16px; letter-spacing:-1px;
+}
+.hero h1 span { color:var(--gold); }
+.hero p { font-size:1.1rem; color:var(--text2); max-width:500px; margin:0 auto 32px; line-height:1.6; }
+.hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn {
+  padding:14px 32px; border:none; border-radius:30px; cursor:pointer;
+  font-size:1rem; font-weight:700; text-decoration:none; display:inline-flex;
+  align-items:center; gap:8px; transition:all 0.3s;
+}
+.btn-wa { background:var(--whatsapp); color:#fff; box-shadow:0 4px 20px rgba(37,211,102,0.3); }
+.btn-wa:hover { transform:translateY(-2px); box-shadow:0 6px 30px rgba(37,211,102,0.5); }
+.btn-gold { background:var(--gold); color:var(--black); }
+.btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); }
+.hero-stats { display:flex; gap:40px; justify-content:center; margin-top:48px; flex-wrap:wrap; }
+.hero-stat { text-align:center; }
+.hero-stat .num { font-size:1.8rem; font-weight:900; color:var(--gold); }
+.hero-stat .lbl { font-size:0.8rem; color:var(--text2); text-transform:uppercase; letter-spacing:2px; }
+
+/* ===== CATEGORIES ===== */
+.categories { padding:60px 24px; max-width:1200px; margin:0 auto; }
+.section-title { text-align:center; margin-bottom:40px; }
+.section-title h2 { font-size:2rem; font-weight:800; margin-bottom:8px; }
+.section-title h2 span { color:var(--gold); }
+.section-title p { color:var(--text2); font-size:0.95rem; }
+.cat-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:16px; }
+.cat-card {
+  background:var(--gray); border-radius:var(--radius); padding:32px 20px;
+  text-align:center; cursor:pointer; transition:all  0.3s; border:2px solid transparent;
+}
+.cat-card:hover, .cat-card.active { border-color:var(--gold); background:rgba(201,168,76,0.05); }
+.cat-card .cat-emoji { font-size:2.5rem; margin-bottom:12px; }
+.cat-card .cat-name { font-weight:700; font-size:1rem; }
+.cat-card .cat-count { color:var(--text2); font-size:0.8rem; margin-top:4px; }
+
+/* ===== PRODUCTS ===== */
+.products { padding:20px 24px 60px; max-width:1200px; margin:0 auto; }
+.products-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:24px; }
+.product-card {
+  background:var(--gray); border-radius:var(--radius); overflow:hidden;
+  transition:all 0.3s; border:1px solid rgba(255,255,255,0.05); position:relative;
+}
+.product-card:hover { transform:translateY(-6px); box-shadow:0 12px 40px rgba(201,168,76,0.12); border-color:rgba(201,168,76,0.3); }
+.product-image {
+  width:100%; height:280px; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg, #1A1A1A 0%, #222 100%); position:relative; overflow:hidden;
+}
+.product-image svg { width:160px; height:200px; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5)); }
+.badge {
+  position:absolute; top:12px; left:12px; padding:4px 12px; border-radius:20px;
+  font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;
+}
+.badge-new { background:var(--gold); color:var(--black); }
+.badge-sale { background:#FF4444; color:#fff; }
+.badge-hot { background:var(--whatsapp); color:#fff; }
+.product-info { padding:20px; }
+.product-cat { color:var(--gold); font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; font-weight:600; }
+.product-name { font-size:1.1rem; font-weight:700; margin:6px 0; }
+.product-desc { color:var(--text2); font-size:0.85rem; line-height:1.5; margin-bottom:12px; }
+.product-footer { display:flex; justify-content:space-between; align-items:center; }
+.product-price { font-size:1.3rem; font-weight:900; color:var(--gold); }
+.product-price .old { color:var(--text2); font-size:0.9rem; text-decoration:line-through; margin-left:6px; font-weight:400; }
+.btn-order {
+  background:var(--whatsapp); color:#fff; padding:10px 20px; border-radius:25px;
+  text-decoration:none; font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:6px;
+  transition:all 0.3s; border:none; cursor:pointer;
+}
+.btn-order:hover { background:#1da851; transform:scale(1.05); }
+
+/* ===== HOW IT WORKS ===== */
+.how-it-works { padding:80px 24px; background:var(--dark); }
+.steps { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; max-width:1000px; margin:0 auto; }
+.step { text-align:center; padding:32px 20px; }
+.step-num {
+  width:50px; height:50px; border-radius:50%; background:var(--gold); color:var(--black);
+  font-weight:900; font-size:1.2rem; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 16px;
+}
+.step h3 { font-size:1.1rem; font-weight:700; margin-bottom:8px; }
+.step p { color:var(--text2); font-size:0.9rem; }
+
+/* ===== TRUST ===== */
+.trust { padding:60px 24px; text-align:center; }
+.trust-badges { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+.trust-badge {
+  background:var(--gray); padding:20px 32px; border-radius:var(--radius);
+  display:flex; align-items:center; gap:12px; border:1px solid rgba(255,255,255,0.05);
+}
+.trust-badge .icon { font-size:1.5rem; }
+.trust-badge .text { font-size:0.9rem; font-weight:600; }
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top:1px solid rgba(255,255,255,0.05); padding:40px 24px;
+  text-align:center; color:var(--text2); font-size:0.85rem;
+}
+.footer .footer-logo { font-size:1.5rem; font-weight:900; color:var(--gold); letter-spacing:3px; margin-bottom:16px; }
+.footer .footer-logo span { color:var(--white); font-weight:300; }
+.footer-links { display:flex; gap:20px; justify-content:center; margin-bottom:16px; flex-wrap:wrap; }
+.footer-links a { color:var(--text2); text-decoration:none; transition:color 0.3s; }
+.footer-links a:hover { color:var(--gold); }
+
+/* ===== WHATSAPP FAB ===== */
+.wa-fab {
+  position:fixed; bottom:24px; right:24px; z-index:100;
+  width:60px; height:60px; border-radius:50%; background:var(--whatsapp);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4);
+  cursor:pointer; transition:all 0.3s; border:none; font-size:1.8rem; color:#fff; text-decoration:none;
+}
+.wa-fab:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(37,211,102,0.6); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px) {
+  .nav-links { display:none; }
+  .menu-btn { display:block; }
+  .hero h1 { font-size:2.2rem; }
+  .hero-stats { gap:24px; }
+  .hero-stat .num { font-size:1.4rem; }
+  .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--black); }
+::-webkit-scrollbar-thumb { background:var(--gold-dark); border-radius:3px; }
+
+/* ===== ANIMATIONS ===== */
+.fade-in { opacity:0; transform:translateY(30px); transition:all 0.6s; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#" class="nav-logo">MALIK <span>WATCHES</span></a>
+  <div class="nav-links">
+    <a href="#collection">Collection</a>
+    <a href="#how-it-works">How to Order</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/923001234567" class="nav-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+  <button class="menu-btn" onclick="alert('WhatsApp: 0300-1234567')">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">⌚ Premium Timepieces</div>
+    <h1>Time is <span>Luxury</span>.<br>You Deserve It.</h1>
+    <p>Exclusive collection of premium watches. Order easily through WhatsApp with fast delivery across Pakistan.</p>
+    <div class="hero-btns">
+      <a href="#collection" class="btn btn-gold">🕐 View Collection</a>
+      <a href="https://wa.me/923001234567?text=Hi!%20I%27m%20interested%20in%20your%20watches" class="btn btn-wa" target="_blank">💬 Order on WhatsApp</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">500+</div><div class="lbl">Happy Customers</div></div>
+      <div class="hero-stat"><div class="num">50+</div><div class="lbl">Premium Models</div></div>
+      <div class="hero-stat"><div class="num">COD</div><div class="lbl">All Pakistan</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="collection">
+  <div class="section-title">
+    <h2>Our <span>Collection</span></h2>
+    <p>Choose your style — from classic elegance to bold statements</p>
+  </div>
+  <div class="cat-grid" id="cat-grid"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-grid" id="products-grid"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+  <div class="section-title">
+    <h2>How to <span>Order</span></h2>
+    <p>Simple 4-step process</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>🕐 Browse</h3>
+      <p>Explore our collection and pick your favorite watch</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>💬 Click Order</h3>
+      <p>Tap the green Order button — opens WhatsApp automatically</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>📦 Confirm</h3>
+      <p>Share your address & preferred color on WhatsApp</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>🚚 Delivered</h3>
+      <p>Get it delivered in 2-5 days. Pay on delivery!</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" id="contact">
+  <div class="section-title">
+    <h2>Why <span>Malik Watches?</span></h2>
+    <p>Trusted by hundreds of customers across Pakistan</p>
+  </div>
+  <div class="trust-badges">
+    <div class="trust-badge"><span class="icon">🏷️</span><span class="text">Best Price Guarantee</span></div>
+    <div class="trust-badge"><span class="icon">📦</span><span class="text">All Pakistan Delivery</span></div>
+    <div class="trust-badge"><span class="icon">💵</span><span class="text">Cash on Delivery</span></div>
+    <div class="trust-badge"><span class="icon">🛡️</span><span class="text">Genuine Products</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">MALIK <span>WATCHES</span></div>
+  <div class="footer-links">
+    <a href="#collection">Collection</a>
+    <a href="#how-it-works">How to Order</a>
+    <a href="https://wa.me/923001234567" target="_blank">WhatsApp</a>
+  </div>
+  <p>© 2026 Malik Watches. All rights reserved.</p>
+  <p>📱 WhatsApp: +92 300 1234567 | 📍 Pakistan</p>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/923001234567?text=Hi!%20I%27d%20like%20to%20order%20a%20watch" class="wa-fab" target="_blank">💬</a>
+
+<script>
+// ===== PRODUCT DATA =====
+const WHATSAPP = '+923001234567';
+
+const products = [
+  {
+    id:1, name:"Royal Gold Classic", cat:"Luxury",
+    desc:"Elegant gold-plated classic watch with leather strap. Perfect for formal occasions.",
+    price:4999, oldPrice:6999, badge:"hot",
+    colors:["#C9A84C","#C0C0C0","#1A3A5C"],
+    emoji:"👑", svgType:"classic"
+  },
+  {
+    id:2, name:"Malik Chronograph Pro", cat:"Sport",
+    desc:"Professional chronograph with stopwatch function. Water resistant. Built for champions.",
+    price:6499, oldPrice:8999, badge:"new",
+    colors:["#1A1A1A","#C9A84C","#2E5B8A"],
+    emoji:"🏆", svgType:"sport"
+  },
+  {
+    id:3, name:"Executive Steel", cat:"Luxury",
+    desc:"Stainless steel band with sapphire glass. Rose gold accent. Boardroom ready.",
+    price:7999, oldPrice:9999, badge:"sale",
+    colors:["#C0C0C0","#C9A84C","#8B6914"],
+    emoji:"💼", svgType:"luxury"
+  },
+  {
+    id:4, name:"Night Runner", cat:"Sport",
+    desc:"Matte black sport watch with luminous dial. Shock resistant. Adventure awaits.",
+    price:3999, oldPrice:5499, badge:"hot",
+    colors:["#0A0A0A","#1A3A5C","#3A3A3A"],
+    emoji:"🏃", svgType:"sport"
+  },
+  {
+    id:5, name:"Heritage Automatic", cat:"Classic",
+    desc:"Automatic movement with exhibition back. Genuine leather. Timeless Pakistani craft.",
+    price:9999, oldPrice:12999, badge:"new",
+    colors:["#8B6914","#1A1A1A","#4A2A0A"],
+    emoji:"🕰️", svgType:"classic"
+  },
+  {
+    id:6, name:"Titanium Edge", cat:"Sport",
+    desc:"Ultra-light titanium case. Anti-scratch crystal. Engineered for the modern Malik.",
+    price:8499, oldPrice:10999, badge:"sale",
+    colors:["#A0A0A0","#C9A84C","#1A1A1A"],
+    emoji:"⚡", svgType:"luxury"
+  }
+];
+
+const categories = ["All", ...new Set(products.map(p=>p.cat))];
+
+// ===== WATCH SVG GENERATOR =====
+function watchSVG(p) {
+  const c1 = p.colors[0] || '#C9A84C';
+  const c2 = p.colors[1] || '#C0C0C0';
+  const isClassic = p.svgType === 'classic';
+  const isLuxury = p.svgType === 'luxury';
+
+  if (isClassic || isLuxury) {
+    return `<svg viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Strap top -->
+      <rect x="62" y="0" width="36" height="55" rx="4" fill="#333" stroke="#444" stroke-width="1"/>
+      <rect x="68" y="8" width="24" height="40" rx="2" fill="#2A2A2A" stroke="#555" stroke-width="0.5"/>
+      <!-- Strap bottom -->
+      <rect x="62" y="145" width="36" height="55" rx="4" fill="#333" stroke="#444" stroke-width="1"/>
+      <rect x="68" y="152" width="24" height="40" rx="2" fill="#2A2A2A" stroke="#555" stroke-width="0.5"/>
+      <!-- Case -->
+      <circle cx="80" cy="100" r="38" fill="${c1}" stroke="${c2}" stroke-width="2"/>
+      <circle cx="80" cy="100" r="34" fill="#1A1A1A" stroke="${c2}" stroke-width="0.5"/>
+      <!-- Dial markings -->
+      ${[0,30,60,90,120,150,180,210,240,270,300,330].map(a=>{
+        const rad = (a-90)*Math.PI/180;
+        const inner = 24, outer = 30;
+        return `<line x1="${80+inner*Math.cos(rad)}" y1="${100+inner*Math.sin(rad)}" x2="${80+outer*Math.cos(rad)}" y2="${100+outer*Math.sin(rad)}" stroke="${c1}" stroke-width="1.5" opacity="0.8"/>`;
+      }).join('')}
+      <!-- Hands -->
+      <line x1="80" y1="100" x2="80" y2="76" stroke="${c2}" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="80" y1="100" x2="96" y2="92" stroke="${c1}" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="80" cy="100" r="3" fill="${c1}" stroke="${c2}" stroke-width="0.5"/>
+      <!-- Crown -->
+      <rect x="118" y="93" width="6" height="14" rx="2" fill="${c2}" stroke="${c1}" stroke-width="0.5"/>
+      <!-- Date window -->
+      <rect x="92" y="70" width="10" height="8" rx="1" fill="#222" stroke="#555" stroke-width="0.5"/>
+      <text x="97" y="77" text-anchor="middle" fill="${c1}" font-size="7" font-family="monospace">15</text>
+      <!-- Brand -->
+      <text x="80" y="118" text-anchor="middle" fill="${c1}" font-size="6" font-weight="bold" font-family="sans-serif" opacity="0.7">MALIK</text>
+    </svg>`;
+  }
+
+  // Sport style
+  return `<svg viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Strap top -->
+    <rect x="58" y="0" width="44" height="55" rx="3" fill="#1A1A1A" stroke="#333" stroke-width="1.5"/>
+    <line x1="68" y1="10" x2="68" y2="45" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <line x1="80" y1="10" x2="80" y2="45" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <line x1="92" y1="10" x2="92" y2="45" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <!-- Strap bottom -->
+    <rect x="58" y="145" width="44" height="55" rx="3" fill="#1A1A1A" stroke="#333" stroke-width="1.5"/>
+    <line x1="68" y1="155" x2="68" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <line x1="80" y1="155" x2="80" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <line x1="92" y1="155" x2="92" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <!-- Case outer -->
+    <circle cx="80" cy="100" r="40" fill="${c1}" stroke="${c2}" stroke-width="1"/>
+    <circle cx="80" cy="100" r="37" fill="#111" stroke="#333" stroke-width="1"/>
+    <!-- Bezel -->
+    <circle cx="80" cy="100" r="33" fill="none" stroke="${c1}" stroke-width="1.5" opacity="0.6"/>
+    <!-- Dial -->
+    <circle cx="80" cy="100" r="32" fill="#0D0D0D"/>
+    <!-- Hour markers -->
+    ${[0,30,60,90,120,150,180,210,240,270,300,330].map(a=>{
+      const rad = (a-90)*Math.PI/180;
+      const inner = 24, outer = 29;
+      return `<line x1="${80+inner*Math.cos(rad)}" y1="${100+inner*Math.sin(rad)}" x2="${80+outer*Math.cos(rad)}" y2="${100+outer*Math.sin(rad)}" stroke="${a%90===0?c1:'rgba(255,255,255,0.3)'}" stroke-width="${a%90===0?2:1}" stroke-linecap="round"/>`;
+    }).join('')}
+    <!-- Luminous dots -->
+    ${[0,90,180,270].map(a=>{
+      const rad = (a-90)*Math.PI/180;
+      return `<circle cx="${80+26*Math.cos(rad)}" cy="${100+26*Math.sin(rad)}" r="2" fill="${c1}" opacity="0.8"/>`;
+    }).join('')}
+    <!-- Hands -->
+    <line x1="80" y1="100" x2="80" y2="78" stroke="${c2}" stroke-width="3" stroke-linecap="round"/>
+    <line x1="80" y1="100" x2="94" y2="90" stroke="${c1}" stroke-width="2" stroke-linecap="round"/>
+    <line x1="80" y1="100" x2="70" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round"/>
+    <circle cx="80" cy="100" r="4" fill="${c1}" stroke="${c2}" stroke-width="1"/>
+    <!-- Sub-dial top -->
+    <circle cx="80" cy="80" r="8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+    <line x1="80" y1="80" x2="80" y2="74" stroke="${c1}" stroke-width="1" stroke-linecap="round"/>
+    <!-- Sub-dial bottom -->
+    <circle cx="80" cy="120" r="8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+    <line x1="80" y1="120" x2="86" y2="120" stroke="${c1}" stroke-width="1" stroke-linecap="round"/>
+    <!-- Crown -->
+    <rect x="119" y="91" width="5" height="18" rx="2" fill="${c2}" stroke="${c1}" stroke-width="0.5"/>
+    <rect x="123" y="95" width="3" height="10" rx="1" fill="${c1}" opacity="0.6"/>
+    <!-- Bezel markers -->
+    ${Array.from({length:12},(_,i)=>{
+      const a = i*30;
+      const rad = (a-90)*Math.PI/180;
+      return `<circle cx="${80+38*Math.cos(rad)}" cy="${100+38*Math.sin(rad)}" r="1" fill="${c1}" opacity="0.5"/>`;
+    }).join('')}
+  </svg>`;
+}
+
+// ===== RENDER CATEGORIES =====
+let activeCat = 'All';
+function renderCategories() {
+  document.getElementById('cat-grid').innerHTML = categories.map(c => {
+    const count = c==='All' ? products.length : products.filter(p=>p.cat===c).length;
+    const emojis = {All:'⌚', Luxury:'👑', Sport:'🏆', Classic:'🕰️'};
+    return `<div class="cat-card ${c===activeCat?'active':''}" onclick="filterByCat('${c}')" data-cat="${c}">
+      <div class="cat-emoji">${emojis[c]||'⌚'}</div>
+      <div class="cat-name">${c}</div>
+      <div class="cat-count">${count} watches</div>
+    </div>`;
+  }).join('');
+}
+
+// ===== RENDER PRODUCTS =====
+function renderProducts() {
+  const filtered = activeCat==='All' ? products : products.filter(p=>p.cat===activeCat);
+  document.getElementById('products-grid').innerHTML = filtered.map(p => {
+    const msg = encodeURIComponent(`Hi Malik Watches! I want to order:\n\n⌚ ${p.name}\n💰 Rs ${p.price.toLocaleString()}\n\nPlease share color options and delivery details.\n\nMy name: \nMy city: \nMy address:`);
+    const waLink = `https://wa.me/${WHATSAPP}?text=${msg}`;
+    let badgeHtml = '';
+    if(p.badge==='new') badgeHtml = '<span class="badge badge-new">New</span>';
+    else if(p.badge==='sale') badgeHtml = '<span class="badge badge-sale">Sale</span>';
+    else if(p.badge==='hot') badgeHtml = '<span class="badge badge-hot">🔥 Hot</span>';
+
+    return `<div class="product-card fade-in">
+      <div class="product-image">
+        ${watchSVG(p)}
+        ${badgeHtml}
+      </div>
+      <div class="product-info">
+        <div class="product-cat">${p.cat}</div>
+        <div class="product-name">${p.emoji} ${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div class="product-price">
+            Rs ${p.price.toLocaleString()}
+            ${p.oldPrice?`<span class="old">Rs ${p.oldPrice.toLocaleString()}</span>`:''}
+          </div>
+          <a href="${waLink}" class="btn-order" target="_blank">
+            💬 Order Now
+          </a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Scroll animation
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  }, 100);
+}
+
+function filterByCat(cat) {
+  activeCat = cat;
+  document.querySelectorAll('.cat-card').forEach(c=>c.classList.toggle('active', c.dataset.cat===cat));
+  renderProducts();
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+
+// ===== INTERSECTION OBSERVER =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
+
+// ===== INIT =====
+renderCategories();
+renderProducts();
+</script>
+</body>
+</html>
