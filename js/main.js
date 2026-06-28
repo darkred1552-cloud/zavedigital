@@ -219,3 +219,16 @@ try {
 } catch (e) {
     // Silent fail
 }
+
+// === BLOG CARD EXPAND ===
+try {
+    document.querySelectorAll('.blog-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Don't expand if clicking a button/link
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+            card.classList.toggle('expanded');
+        });
+    });
+} catch (e) {
+    // Silent fail
+}
