@@ -156,6 +156,30 @@ try {
     // Silent fail — filter won't work but page still functional
 }
 
+// === SERVICE CARD CLICK → WHATSAPP DIRECT INQUIRY ===
+try {
+    serviceCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.setAttribute('title', 'Click karke WhatsApp par direct inquiry karo');
+        
+        card.addEventListener('click', (e) => {
+            // Don't trigger if clicking actual buttons/links
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+            
+            const serviceName = card.querySelector('h3')?.textContent?.trim() || 'Unknown Service';
+            const category = card.getAttribute('data-category') || '';
+            const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+            
+            const message = encodeURIComponent(`Hello Zave Digital! I'm interested in:\n\nService: ${serviceName}\nCategory: ${categoryLabel}\n\nPlease share details & pricing.`);
+            window.open(`https://wa.me/923194051964?text=${message}`, '_blank');
+        });
+    });
+} catch (e) {
+    // Silent fail
+}
+
 // === PORTFOLIO FILTER TABS ===
 try {
     const portfolioFilterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
