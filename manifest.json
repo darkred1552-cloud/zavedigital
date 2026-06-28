@@ -1,0 +1,25 @@
+{
+  "name": "Zave Digital",
+  "short_name": "ZaveDigital",
+  "description": "Digital Marketing & IT Services by Zave Digital",
+  "start_url": "https://darkred1552-cloud.github.io/zavedigital/",
+  "scope": "https://darkred1552-cloud.github.io/zavedigital/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6c5ce7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://darkred1552-cloud.github.io/zavedigital/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://darkred1552-cloud.github.io/zavedigital/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
