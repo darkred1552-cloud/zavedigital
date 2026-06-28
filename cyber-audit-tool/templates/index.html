@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zave Digital — Cybersecurity Audit Tool</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a1a;--surface:#111827;--card:#1a1a2e;--border:#1e293b;
+  --primary:#6366f1;--primary-light:#818cf8;--accent:#06b6d4;
+  --text:#e2e8f0;--muted:#94a3b8;--danger:#ef4444;--warning:#f59e0b;--success:#22c55e;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Header */
+.header{text-align:center;padding:40px 0 30px}
+.header .logo-shield{width:80px;height:90px;margin:0 auto 16px;position:relative}
+.header h1{font-size:32px;background:linear-gradient(135deg,#818cf8,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.header .subtitle{color:var(--muted);font-size:14px}
+.header .badge{display:inline-block;background:#1e1b4b;color:var(--primary-light);padding:4px 16px;border-radius:20px;font-size:12px;margin-top:12px;border:1px solid #4338ca}
+
+/* Scan Form */
+.scan-form{background:var(--surface);border-radius:16px;padding:32px;border:1px solid var(--border);margin-bottom:24px}
+.scan-form h2{font-size:20px;margin-bottom:20px;color:var(--text)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+.form-group input,.form-group select{
+  width:100%;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:10px;
+  color:var(--text);font-size:15px;transition:border-color 0.2s
+}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(99,102,241,0.15)}
+.form-group input::placeholder{color:#4b5563}
+
+.scan-type{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.type-option{
+  padding:16px;background:var(--bg);border:2px solid var(--border);border-radius:12px;cursor:pointer;
+  text-align:center;transition:all 0.2s
+}
+.type-option:hover{border-color:var(--primary)}
+.type-option.active{border-color:var(--primary);background:#1e1b4b}
+.type-option i{font-size:24px;display:block;margin-bottom:8px;color:var(--primary-light)}
+.type-option .type-name{font-size:13px;font-weight:600;display:block}
+.type-option .type-desc{font-size:11px;color:var(--muted);display:block;margin-top:4px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;
+  border:none;cursor:pointer;transition:all 0.2s
+}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;width:100%}
+.btn-primary:hover{background:linear-gradient(135deg,#818cf8,#6366f1);transform:translateY(-1px)}
+.btn-primary:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.btn-success{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+
+/* Progress */
+.progress-section{display:none;background:var(--surface);border-radius:16px;padding:32px;border:1px solid var(--border);margin-bottom:24px;text-align:center}
+.progress-section.active{display:block}
+.progress-bar-wrap{background:var(--bg);border-radius:10px;height:8px;overflow:hidden;margin:20px 0}
+.progress-bar{height:100%;background:linear-gradient(90deg,#6366f1,#06b6d4);border-radius:10px;transition:width 0.5s;width:0%}
+.progress-text{color:var(--muted);font-size:14px}
+.progress-steps{display:flex;justify-content:space-between;margin-top:20px;flex-wrap:wrap;gap:8px}
+.step{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.step.active{color:var(--primary-light)}
+.step.done{color:var(--success)}
+.step i{font-size:14px}
+
+/* Results */
+.results-section{display:none;background:var(--surface);border-radius:16px;padding:32px;border:1px solid var(--border);margin-bottom:24px}
+.results-section.active{display:block}
+.results-header{text-align:center;margin-bottom:24px}
+.risk-badge{display:inline-block;padding:8px 24px;border-radius:20px;font-size:18px;font-weight:700;margin:12px 0}
+.risk-CRITICAL{background:#7f1d1d;color:#fca5a5}
+.risk-HIGH{background:#7c2d12;color:#fdba74}
+.risk-MEDIUM{background:#78350f;color:#fcd34d}
+.risk-LOW{background:#14532d;color:#86efac}
+.risk-MINIMAL{background:#052e16;color:#4ade80}
+.results-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.stat-box{background:var(--bg);padding:16px;border-radius:10px;text-align:center}
+.stat-box .num{font-size:28px;font-weight:800;color:var(--primary-light)}
+.stat-box .label{font-size:11px;color:var(--muted);text-transform:uppercase}
+.results-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.results-actions .btn{flex:1}
+
+/* History */
+.history-section{margin-top:32px}
+.history-section h2{font-size:18px;margin-bottom:16px;color:var(--muted)}
+.history-table{width:100%;border-collapse:collapse}
+.history-table th{text-align:left;padding:12px;color:var(--muted);font-size:11px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.history-table td{padding:12px;border-bottom:1px solid var(--bg);font-size:13px}
+.history-table tr:hover td{background:var(--surface)}
+.sev-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.sev-CRITICAL{background:#ef4444}.sev-HIGH{background:#f97316}.sev-MEDIUM{background:#eab308}.sev-LOW{background:#22c55e}
+
+/* Footer */
+.footer{text-align:center;padding:30px 0;color:#4b5563;font-size:12px;border-top:1px solid var(--border);margin-top:40px}
+
+/* Responsive */
+@media(max-width:600px){
+  .scan-type{grid-template-columns:1fr}
+  .results-stats{grid-template-columns:1fr}
+  .header h1{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo-shield">
+            <svg width="80" height="90" viewBox="0 0 80 92" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#06b6d4"/>
+                    </linearGradient>
+                </defs>
+                <path d="M40,2 L72,14 L72,52 Q72,78 40,90 Q8,78 8,52 L8,14 Z" fill="url(#shieldGrad)" stroke="#6366f1" stroke-width="2"/>
+                <text x="40" y="60" text-anchor="middle" font-size="40" font-weight="900" font-family="'Segoe UI',sans-serif" fill="white">Z</text>
+            </svg>
+        </div>
+        <h1>Cybersecurity Audit Tool</h1>
+        <div class="subtitle">Professional Vulnerability Assessment & Security Hardening</div>
+        <div class="badge"><i class="fas fa-shield-alt"></i> Zave Digital — Malakwal, Punjab</div>
+    </div>
+
+    <!-- Scan Form -->
+    <div class="scan-form" id="scanForm">
+        <h2><i class="fas fa-crosshairs"></i> Start Security Scan</h2>
+        
+        <div class="form-group">
+            <label>Target (IP, Domain, or URL)</label>
+            <input type="text" id="targetInput" placeholder="e.g., 192.168.1.1, example.com, https://site.com">
+        </div>
+
+        <label style="font-size:13px;color:var(--muted);margin-bottom:8px;display:block;text-transform:uppercase;letter-spacing:0.5px">Scan Type</label>
+        <div class="scan-type">
+            <div class="type-option active" data-type="quick" onclick="selectType(this)">
+                <i class="fas fa-bolt"></i>
+                <span class="type-name">Quick Scan</span>
+                <span class="type-desc">Ports + Firewall</span>
+            </div>
+            <div class="type-option" data-type="web" onclick="selectType(this)">
+                <i class="fas fa-globe"></i>
+                <span class="type-name">Web Scan</span>
+                <span class="type-desc">Full web audit</span>
+            </div>
+            <div class="type-option" data-type="full" onclick="selectType(this)">
+                <i class="fas fa-microscope"></i>
+                <span class="type-name">Full Audit</span>
+                <span class="type-desc">Everything</span>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" id="startBtn" onclick="startScan()">
+            <i class="fas fa-radar"></i> Start Scan
+        </button>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-section" id="progressSection">
+        <h2><i class="fas fa-spinner fa-spin"></i> Scanning in Progress</h2>
+        <p class="progress-text" id="progressText">Initializing scan...</p>
+        <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-steps" id="progressSteps">
+            <div class="step" id="step1"><i class="fas fa-circle"></i> Port Scan</div>
+            <div class="step" id="step2"><i class="fas fa-circle"></i> Vuln Detection</div>
+            <div class="step" id="step3"><i class="fas fa-circle"></i> Web Audit</div>
+            <div class="step" id="step4"><i class="fas fa-circle"></i> SSL Check</div>
+            <div class="step" id="step5"><i class="fas fa-circle"></i> Report</div>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+        <div class="results-header">
+            <h2><i class="fas fa-clipboard-check"></i> Scan Complete</h2>
+            <div class="risk-badge" id="riskBadge">Risk: MEDIUM</div>
+            <p style="color:var(--muted);font-size:13px" id="resultsTarget">Target: example.com</p>
+        </div>
+        <div class="results-stats">
+            <div class="stat-box">
+                <div class="num" id="findingsCount">0</div>
+                <div class="label">Findings</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="riskScore">0</div>
+                <div class="label">Risk Score</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="scanDuration">0s</div>
+                <div class="label">Duration</div>
+            </div>
+        </div>
+        <div class="results-actions">
+            <a class="btn btn-success" id="viewReportBtn" href="#" target="_blank">
+                <i class="fas fa-file-alt"></i> View Report
+            </a>
+            <a class="btn btn-outline" id="downloadPdfBtn" href="#">
+                <i class="fas fa-file-pdf"></i> Download PDF
+            </a>
+        </div>
+        <div style="margin-top:16px;text-align:center">
+            <button class="btn btn-primary" onclick="newScan()" style="background:var(--surface);border:1px solid var(--border)">
+                <i class="fas fa-redo"></i> New Scan
+            </button>
+        </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-section" id="historySection">
+        <h2><i class="fas fa-history"></i> Recent Scans</h2>
+        <table class="history-table" id="historyTable">
+            <thead>
+                <tr><th>Target</th><th>Date</th><th>Risk</th><th>Findings</th><th>Report</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>🛡️ <strong>Zave Digital</strong> — Cybersecurity Audit & Hardening</p>
+        <p>Professional security scanning for businesses in Pakistan</p>
+        <p>© 2026 Zave Digital | Malakwal, Punjab</p>
+    </div>
+</div>
+
+<script>
+let selectedType = 'quick';
+
+function selectType(el) {
+    document.querySelectorAll('.type-option').forEach(e => e.classList.remove('active'));
+    el.classList.add('active');
+    selectedType = el.dataset.type;
+}
+
+function animateProgress() {
+    const bar = document.getElementById('progressBar');
+    const steps = ['step1','step2','step3','step4','step5'];
+    const texts = ['Port scanning...', 'Vulnerability detection...', 'Web audit...', 'SSL/TLS check...', 'Generating report...'];
+    let progress = 0;
+    let stepIdx = 0;
+    
+    const interval = setInterval(() => {
+        progress += Math.random() * 8 + 2;
+        if (progress > 90) progress = 90;
+        bar.style.width = progress + '%';
+        
+        const newStep = Math.floor((progress / 100) * steps.length);
+        if (newStep > stepIdx && newStep < steps.length) {
+            for (let i = 0; i < newStep; i++) {
+                const el = document.getElementById(steps[i]);
+                if (el) { el.className = 'step done'; el.querySelector('i').className = 'fas fa-check-circle'; }
+            }
+            if (newStep < steps.length) {
+                const el = document.getElementById(steps[newStep]);
+                if (el) { el.className = 'step active'; el.querySelector('i').className = 'fas fa-spinner fa-spin'; }
+            }
+            document.getElementById('progressText').textContent = texts[newStep] || 'Finalizing...';
+            stepIdx = newStep;
+        }
+    }, 1500);
+    
+    return interval;
+}
+
+async function startScan() {
+    const target = document.getElementById('targetInput').value.trim();
+    if (!target) { alert('Please enter a target IP, domain, or URL'); return; }
+    
+    document.getElementById('scanForm').style.display = 'none';
+    document.getElementById('progressSection').classList.add('active');
+    document.getElementById('resultsSection').classList.remove('active');
+    
+    const progressInterval = animateProgress();
+    
+    try {
+        const formData = new FormData();
+        formData.append('target', target);
+        formData.append('scan_type', selectedType);
+        
+        const resp = await fetch('/scan', { method: 'POST', body: formData });
+        const data = await resp.json();
+        
+        clearInterval(progressInterval);
+        document.getElementById('progressBar').style.width = '100%';
+        
+        // Mark all steps done
+        ['step1','step2','step3','step4','step5'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) { el.className = 'step done'; el.querySelector('i').className = 'fas fa-check-circle'; }
+        });
+        
+        if (data.success) {
+            setTimeout(() => {
+                showResults(data);
+            }, 500);
+        } else {
+            alert('Scan failed: ' + (data.error || 'Unknown error'));
+            document.getElementById('scanForm').style.display = 'block';
+            document.getElementById('progressSection').classList.remove('active');
+        }
+    } catch(e) {
+        clearInterval(progressInterval);
+        alert('Error: ' + e.message);
+        document.getElementById('scanForm').style.display = 'block';
+        document.getElementById('progressSection').classList.remove('active');
+    }
+}
+
+function showResults(data) {
+    document.getElementById('progressSection').classList.remove('active');
+    document.getElementById('resultsSection').classList.add('active');
+    
+    const badge = document.getElementById('riskBadge');
+    badge.textContent = 'Risk: ' + data.risk_level;
+    badge.className = 'risk-badge risk-' + data.risk_level;
+    
+    document.getElementById('resultsTarget').textContent = 'Target: ' + data.target;
+    document.getElementById('findingsCount').textContent = data.findings_count;
+    document.getElementById('riskScore').textContent = data.risk_score + '/10';
+    document.getElementById('scanDuration').textContent = data.duration;
+    
+    document.getElementById('viewReportBtn').href = data.html_url;
+    document.getElementById('downloadPdfBtn').href = data.pdf_url || '#';
+    
+    loadHistory();
+}
+
+function newScan() {
+    document.getElementById('resultsSection').classList.remove('active');
+    document.getElementById('scanForm').style.display = 'block';
+    document.getElementById('targetInput').value = '';
+    document.getElementById('progressBar').style.width = '0%';
+    ['step1','step2','step3','step4','step5'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.className = 'step'; el.querySelector('i').className = 'fas fa-circle'; }
+    });
+}
+
+async function loadHistory() {
+    try {
+        const resp = await fetch('/history');
+        const html = await resp.text();
+        // Extract table body from response
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newBody = doc.querySelector('#historyTable tbody');
+        const oldBody = document.querySelector('#historyTable tbody');
+        if (newBody && oldBody) {
+            oldBody.innerHTML = newBody.innerHTML;
+        }
+    } catch(e) {}
+}
+
+// Load history on page load
+loadHistory();
+</script>
+</body>
+</html>

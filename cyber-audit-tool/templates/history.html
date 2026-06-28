@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan History — Zave Digital</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0a1a;color:#e2e8f0;min-height:100vh;line-height:1.6}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.header{padding:30px 0;border-bottom:1px solid #1e293b;margin-bottom:24px}
+.header h1{font-size:24px;color:#818cf8}
+.header p{color:#94a3b8;font-size:14px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:12px;color:#6b7280;font-size:11px;text-transform:uppercase;border-bottom:1px solid #1e293b}
+td{padding:14px 12px;border-bottom:1px solid #111827;font-size:14px}
+tr:hover td{background:#111827}
+a{color:#818cf8;text-decoration:none}
+a:hover{text-decoration:underline}
+.sev-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.sev-CRITICAL{background:#ef4444}.sev-HIGH{background:#f97316}.sev-MEDIUM{background:#eab308}.sev-LOW{background:#22c55e}.sev-MINIMAL{background:#4ade80}
+.back{display:inline-block;margin-bottom:20px;color:#94a3b8;font-size:14px;text-decoration:none}
+.back:hover{color:#818cf8}
+.empty{text-align:center;padding:60px;color:#4b5563}
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back"><i class="fas fa-arrow-left"></i> Back to Scanner</a>
+    <div class="header">
+        <h1><i class="fas fa-history"></i> Scan History</h1>
+        <p>Previous cybersecurity audit scans</p>
+    </div>
+    <table id="historyTable">
+        <thead>
+            <tr><th>Target</th><th>Date</th><th>Risk</th><th>Findings</th><th>Report</th></tr>
+        </thead>
+        <tbody>
+        {% if scans %}
+            {% for scan in scans %}
+            <tr>
+                <td><strong>{{ scan.target }}</strong></td>
+                <td>{{ scan.scan_time }}</td>
+                <td><span class="sev-dot sev-{{ scan.risk_level }}"></span>{{ scan.risk_level }} ({{ scan.risk_score }})</td>
+                <td>{{ scan.findings_count }}</td>
+                <td><a href="/report/{{ scan.report_id }}"><i class="fas fa-file-alt"></i> View</a></td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="5" class="empty">No scans yet. <a href="/">Start your first scan!</a></td></tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
