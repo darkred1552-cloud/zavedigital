@@ -55,16 +55,27 @@
                 <span class="logo-text-wrap"><span class="logo-zave">Zave</span><span class="logo-digital">Digital</span></span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
-            <a href="https://wa.me/923194051964" class="nav-cta" target="_blank">
+            <a href="https://wa.me/923194051964" class="nav-cta" target="_blank" data-i18n="nav.getQuote">
                 <i class="fab fa-whatsapp"></i> Get Quote
             </a>
+            <div class="lang-selector" id="langSelector">
+                <button class="lang-btn" id="langBtn" aria-label="Select Language">
+                    <i class="fas fa-globe"></i> EN
+                </button>
+                <ul class="lang-dropdown" id="langDropdown">
+                    <li data-lang="en"><span class="lang-flag">🇬🇧</span> English</li>
+                    <li data-lang="roman-urdu"><span class="lang-flag">🇵🇰</span> Roman Urdu</li>
+                    <li data-lang="urdu"><span class="lang-flag">🇵🇰</span> اردو</li>
+                    <li data-lang="punjabi"><span class="lang-flag">🇵🇰</span> ਪੰਜਾਬੀ</li>
+                </ul>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>

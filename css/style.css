@@ -1580,3 +1580,86 @@ select:focus-visible {
     margin-top: 6px;
     line-height: 1.4;
 }
+
+/* === LANGUAGE SELECTOR === */
+.lang-selector {
+    position: relative;
+    z-index: 1001;
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover, .lang-btn:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 6px 0;
+    min-width: 170px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s ease;
+}
+
+.lang-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown li {
+    padding: 10px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #1a1a2e;
+    transition: background 0.15s ease;
+}
+
+.lang-dropdown li:hover {
+    background: rgba(108, 92, 231, 0.08);
+}
+
+.lang-flag {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+        gap: 4px;
+    }
+    .lang-dropdown {
+        right: -30px;
+        min-width: 150px;
+    }
+}

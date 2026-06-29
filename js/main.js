@@ -337,3 +337,86 @@ try {
 } catch (e) {
     // Silent fail — form will fall back to default behavior
 }
+
+// === LANGUAGE SYSTEM ===
+try {
+    const translations = {
+        'en': {
+            'nav.home': 'Home',
+            'nav.services': 'Services',
+            'nav.testimonials': 'Testimonials',
+            'nav.portfolio': 'Portfolio',
+            'nav.about': 'About',
+            'nav.contact': 'Contact',
+            'nav.getQuote': 'Get Quote',
+        },
+        'roman-urdu': {
+            'nav.home': 'Ghar',
+            'nav.services': 'Himayat',
+            'nav.testimonials': 'Rae',
+            'nav.portfolio': 'Khidmat',
+            'nav.about': 'Hamari Baat',
+            'nav.contact': 'Rabet',
+            'nav.getQuote': 'Sawaal',
+        },
+        'urdu': {
+            'nav.home': 'گھر',
+            'nav.services': 'خدمات',
+            'nav.testimonials': 'رائے',
+            'nav.portfolio': 'پورٹ فولیو',
+            'nav.about': 'ہمارے بارے',
+            'nav.contact': 'رابطہ',
+            'nav.getQuote': 'استفسار',
+        },
+        'punjabi': {
+            'nav.home': 'ਘਰ',
+            'nav.services': 'ਸੇਵਾਵਾਂ',
+            'nav.testimonials': 'ਰਾਏ',
+            'nav.portfolio': 'ਪੋਰਟਫੋਲਿਓ',
+            'nav.about': 'ਸਾਡੇ ਬਾਰੇ',
+            'nav.contact': 'ਸੰਪਰਕ',
+            'nav.getQuote': 'ਪੁੱਛਣਾ',
+        }
+    };
+
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+
+    if (langBtn && langDropdown) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.parentElement.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => {
+            langDropdown.parentElement.classList.remove('open');
+        });
+
+        document.querySelectorAll('#langDropdown li').forEach(item => {
+            item.addEventListener('click', () => {
+                const lang = item.getAttribute('data-lang');
+                const langData = translations[lang];
+                if (!langData) return;
+
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (langData[key]) {
+                        el.textContent = langData[key];
+                    }
+                });
+
+                const labels = {
+                    'en': 'EN',
+                    'roman-urdu': 'RU',
+                    'urdu': 'UR',
+                    'punjabi': 'PA'
+                };
+                langBtn.innerHTML = `<i class="fas fa-globe"></i> ${labels[lang] || 'EN'}`;
+                langDropdown.parentElement.classList.remove('open');
+            });
+        });
+    }
+} catch (e) {
+    // Silent fail — language switcher won't work but page functional
+}
