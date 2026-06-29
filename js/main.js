@@ -256,3 +256,84 @@ try {
 } catch (e) {
     // Silent fail
 }
+
+// === CONTACT FORM SECURITY + SUBMISSION ===
+try {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        // CSRF token generation & validation
+        const csrfInput = document.getElementById('csrfToken');
+        if (csrfInput && !csrfInput.value) {
+            let token = sessionStorage.getItem('zave_csrf_token');
+            if (!token) {
+                token = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                    .map(b => b.toString(16).padStart(2, '0'))
+                    .join('');
+                sessionStorage.setItem('zave_csrf_token', token);
+            }
+            csrfInput.value = token;
+        }
+
+        // Intercept form submit — send via WhatsApp to prevent GET leakage
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // CSRF check
+            const submittedToken = csrfInput ? csrfInput.value : '';
+            const storedToken = sessionStorage.getItem('zave_csrf_token');
+            if (!submittedToken || submittedToken !== storedToken) {
+                alert('Security validation failed. Please refresh the page.');
+                return false;
+            }
+
+            // Collect form data
+            const name = document.getElementById('name') ? document.getElementById('name').value.trim() : '';
+            const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
+            const phone = document.getElementById('phone') ? document.getElementById('phone').value.trim() : '';
+            const service = document.getElementById('service') ? document.getElementById('service').value : '';
+            const message = document.getElementById('message') ? document.getElementById('message').value.trim() : '';
+
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields (Name, Email, Message).');
+                return false;
+            }
+
+            // Build WhatsApp message
+            const waNumber = '923194051964';
+            let waMsg = `New Inquiry from Zave Digital Website\n\n`;
+            waMsg += `Name: ${name}\n`;
+            waMsg += `Email: ${email}\n`;
+            if (phone) waMsg += `Phone: ${phone}\n`;
+            if (service) waMsg += `Service: ${service}\n`;
+            waMsg += `Message: ${message}\n`;
+            waMsg += `\n[CSRF: ${submittedToken.slice(0, 8)}...]`;
+
+            const encoded = encodeURIComponent(waMsg);
+            window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
+
+            // Success feedback
+            const btn = form.querySelector('button[type="submit"]');
+            if (btn) {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                btn.style.background = '#00b894';
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                    btn.style.background = '';
+                    form.reset();
+                    if (csrfInput) {
+                        const newToken = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                            .map(b => b.toString(16).padStart(2, '0'))
+                            .join('');
+                        sessionStorage.setItem('zave_csrf_token', newToken);
+                        csrfInput.value = newToken;
+                    }
+                }, 2500);
+            }
+
+            return false;
+        });
+    }
+} catch (e) {
+    // Silent fail — form will fall back to default behavior
+}
