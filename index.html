@@ -90,9 +90,12 @@
     <!-- AI CHAT WINDOW -->
     <div class="ai-chat" id="aiChat">
         <div class="ai-chat-header">
-            <div class="ai-chat-title">
-                <i class="fas fa-robot"></i>
-                <span>Zave AI Assistant</span>
+            <div class="ai-chat-header-left">
+                <div class="ai-avatar">Z</div>
+                <div>
+                    <div class="ai-chat-title">Zave Digital Support</div>
+                    <div class="ai-status">Online • Usually replies instantly</div>
+                </div>
             </div>
             <button class="ai-close" id="aiClose" aria-label="Close chat">
                 <i class="fas fa-times"></i>
@@ -101,22 +104,37 @@
 
         <div class="ai-chat-messages" id="aiMessages">
             <div class="ai-msg ai-msg-bot">
-                <p>Assalamualaikum! Main Zave AI hoon. Aap kuch bhi pooch sakte ho — service, price, website, mobile repair sab. Type karein ya <strong>mic</strong> par click karke baat karein.</p>
+                <div class="ai-msg-bubble">
+                    Assalamualaikum! 👋 Main Zave Digital ka AI assistant hoon.
+                    <br><br>
+                    Aap kuch bhi pooch sakte ho — service, price, booking, website, mobile repair sab.
+                    <br><br>
+                    <strong>Bolo ya type karein, main samajh jaata hoon.</strong>
+                </div>
+                <div class="ai-msg-time">Just now</div>
             </div>
         </div>
 
         <div class="ai-chat-quick">
-            <button class="ai-quick-btn" data-msg="Website banana chahta hoon">Website</button>
-            <button class="ai-quick-btn" data-msg="Mobile repair chahiye">Mobile Repair</button>
-            <button class="ai-quick-btn" data-msg="Social media management">Social Media</button>
-            <button class="ai-quick-btn" data-msg="Google My Business setup">GMB Setup</button>
+            <button class="ai-quick-btn" data-msg="Website banana chahta hoon">
+                <i class="fas fa-globe"></i> Website
+            </button>
+            <button class="ai-quick-btn" data-msg="Mobile repair chahiye">
+                <i class="fas fa-mobile-alt"></i> Mobile Repair
+            </button>
+            <button class="ai-quick-btn" data-msg="Social media management">
+                <i class="fas fa-hashtag"></i> Social Media
+            </button>
+            <button class="ai-quick-btn" data-msg="Kitna kaam aayega?">
+                <i class="fas fa-tag"></i> Pricing
+            </button>
         </div>
 
         <div class="ai-chat-input">
-            <button class="ai-mic" id="aiMic" aria-label="Voice input">
+            <button class="ai-mic" id="aiMic" aria-label="Voice input" title="Bol ke type karein">
                 <i class="fas fa-microphone"></i>
             </button>
-            <input type="text" id="aiInput" placeholder="Message likhein ya bolen..." autocomplete="off">
+            <input type="text" id="aiInput" placeholder="Type karein ya bolen..." autocomplete="off">
             <button class="ai-send" id="aiSend" aria-label="Send message">
                 <i class="fas fa-paper-plane"></i>
             </button>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zave Digital - Install App</title>
+  <meta name="theme-color" content="#6c5ce7">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0a19 0%, #1a1a3e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: white;
+      box-shadow: 0 10px 40px rgba(108, 92, 231, 0.4);
+    }
+    h1 {
+      color: white;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .tagline {
+      color: #a29bfe;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    .qr-section {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+    }
+    .qr-section img {
+      width: 200px;
+      height: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    .qr-label {
+      color: #333;
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    .instructions {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #6c5ce7;
+    }
+    #status {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Z</div>
+    <h1>Zave Digital</h1>
+    <p class="tagline">Digital Marketing & IT Services</p>
+    
+    <div class="qr-section">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://darkred1552-cloud.github.io/zavedigital/&bg_color=ffffff&color=000000" alt="Website QR">
+      <p class="qr-label">Scan to Open Website</p>
+    </div>
+    
+    <p class="instructions">
+      <strong>Step 1:</strong> Scan QR code<br>
+      <strong>Step 2:</strong> Open in Chrome/Safari<br>
+      <strong>Step 3:</strong> Tap Share → "Add to Home Screen"<br>
+      <strong>Step 4:</strong> App icon ban jaye home pe
+    </p>
+    
+    <a href="https://darkred1552-cloud.github.io/zavedigital/" class="btn" target="_blank">Open Website</a>
+    <button onclick="installPWA()" class="btn btn-secondary" id="installBtn" style="display:none;">Install App</button>
+    
+    <div id="status"></div>
+  </div>
+
+  <script>
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installBtn').style.display = 'inline-block';
+      document.getElementById('status').innerHTML = '<span style="color:#00ff88;">✓ App install ready!</span>';
+    });
+    
+    function installPWA() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choice) => {
+          if (choice.outcome === 'accepted') {
+            document.getElementById('status').innerHTML = '<span style="color:#00ff88;">✓ App installed!</span>';
+          }
+          deferredPrompt = null;
+        });
+      }
+    }
+    
+    // Check if already installed
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      document.getElementById('status').innerHTML = '<span style="color:#00ff88;">✓ Running as installed app</span>';
+    }
+  </script>
+</body>
+</html>
