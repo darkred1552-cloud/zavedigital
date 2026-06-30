@@ -82,6 +82,47 @@
         </div>
     </nav>
 
+    <!-- AI ASSISTANT BUTTON -->
+    <button class="ai-launcher" id="aiLauncher" aria-label="AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- AI CHAT WINDOW -->
+    <div class="ai-chat" id="aiChat">
+        <div class="ai-chat-header">
+            <div class="ai-chat-title">
+                <i class="fas fa-robot"></i>
+                <span>Zave AI Assistant</span>
+            </div>
+            <button class="ai-close" id="aiClose" aria-label="Close chat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="ai-chat-messages" id="aiMessages">
+            <div class="ai-msg ai-msg-bot">
+                <p>Assalamualaikum! Main Zave AI hoon. Aap kuch bhi pooch sakte ho — service, price, website, mobile repair sab. Type karein ya <strong>mic</strong> par click karke baat karein.</p>
+            </div>
+        </div>
+
+        <div class="ai-chat-quick">
+            <button class="ai-quick-btn" data-msg="Website banana chahta hoon">Website</button>
+            <button class="ai-quick-btn" data-msg="Mobile repair chahiye">Mobile Repair</button>
+            <button class="ai-quick-btn" data-msg="Social media management">Social Media</button>
+            <button class="ai-quick-btn" data-msg="Google My Business setup">GMB Setup</button>
+        </div>
+
+        <div class="ai-chat-input">
+            <button class="ai-mic" id="aiMic" aria-label="Voice input">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <input type="text" id="aiInput" placeholder="Message likhein ya bolen..." autocomplete="off">
+            <button class="ai-send" id="aiSend" aria-label="Send message">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-bg">

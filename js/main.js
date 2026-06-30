@@ -420,3 +420,124 @@ try {
 } catch (e) {
     // Silent fail — language switcher won't work but page functional
 }
+
+// === AI ASSISTANT ===
+try {
+    const aiKnowledge = {
+        'website': 'Zave Digital professional responsive websites banata hai. Starting price Rs. 5,000. Aap WhatsApp par +92 319 4051964 par detail le sakte ho.',
+        'mobile repair': 'Mobile repair services: FRP unlock Rs. 1,500, Pattern unlock Rs. 1,000, Flashing Rs. 2,000, Bootloop fix Rs. 1,500, WiFi/Network fix Rs. 1,000.',
+        'social media': 'Social media management Facebook aur Instagram ke liye. Monthly packages available. Detail ke liye contact karein.',
+        'google my business': 'Google My Business setup sirf Rs. 3,000 mein. Local search ranking improve hota hai.',
+        'seo': 'SEO services websites ko Google par rank lane ke liye. Packages ke liye contact karein.',
+        'pos': 'POS system aur Payment Gateway integration (JazzCash, EasyPaisa, Card) available hai.',
+        'restaurant': 'Restaurant digital ordering system menu + orders WhatsApp par. Starting Rs. 8,000.',
+        'school': 'School/Clinic management apps banate hain. Starting Rs. 15,000.',
+        'default': 'Main aapki service, price, aur booking mein madad kar sakta hoon. Aap apna sawal type karein ya mic par click karke bol dein. Zaroorat ho to direct WhatsApp: +92 319 4051964'
+    };
+
+    const getAIResponse = (msg) => {
+        const lower = msg.toLowerCase();
+        if (lower.includes('website') || lower.includes('web') || lower.includes('site') || lower.includes('sait'))
+            return aiKnowledge['website'];
+        if (lower.includes('mobile') || lower.includes('phone') || lower.includes('frp') || lower.includes('unlock') || lower.includes('flash'))
+            return aiKnowledge['mobile repair'];
+        if (lower.includes('social') || lower.includes('facebook') || lower.includes('instagram'))
+            return aiKnowledge['social media'];
+        if (lower.includes('google') || lower.includes('gmb') || lower.includes('map') || lower.includes('business listing'))
+            return aiKnowledge['google my business'];
+        if (lower.includes('seo') || lower.includes('rank') || lower.includes('search'))
+            return aiKnowledge['seo'];
+        if (lower.includes('pos') || lower.includes('payment') || lower.includes('jazzcash') || lower.includes('easypaisa'))
+            return aiKnowledge['pos'];
+        if (lower.includes('restaurant') || lower.includes('hotel') || lower.includes('cafe') || lower.includes('menu'))
+            return aiKnowledge['restaurant'];
+        if (lower.includes('school') || lower.includes('clinic') || lower.includes('hospital') || lower.includes('academy'))
+            return aiKnowledge['school'];
+        if (lower.includes('price') || lower.includes('paisa') || lower.includes('cost') || lower.includes('kitna') || lower.includes('fees'))
+            return 'Prices service ke mutabiq different hain. Aap kis service ka price chahte ho? Type karein: Website, Mobile Repair, SEO, Social Media, GMB, POS, Restaurant, School/Clinic.';
+        if (lower.includes('assalam') || lower.includes('salam') || lower.includes('hello') || lower.includes('hi') || lower.includes('hlo'))
+            return 'Assalamualaikum! Aapka swagat hai. Main Zave AI hoon — aap kuch bhi pooch sakte ho service ya price ke baray mein.';
+        return aiKnowledge['default'];
+    };
+
+    const aiLauncher = document.getElementById('aiLauncher');
+    const aiChat = document.getElementById('aiChat');
+    const aiClose = document.getElementById('aiClose');
+    const aiInput = document.getElementById('aiInput');
+    const aiSend = document.getElementById('aiSend');
+    const aiMic = document.getElementById('aiMic');
+    const aiMessages = document.getElementById('aiMessages');
+
+    const appendMessage = (text, sender) => {
+        const div = document.createElement('div');
+        div.className = `ai-msg ai-msg-${sender}`;
+        div.innerHTML = text;
+        aiMessages.appendChild(div);
+        aiMessages.scrollTop = aiMessages.scrollHeight;
+    };
+
+    if (aiLauncher && aiChat) {
+        aiLauncher.addEventListener('click', () => {
+            const open = !aiChat.classList.contains('open');
+            if (open) {
+                aiChat.classList.add('open');
+                aiChat.style.display = 'flex';
+            } else {
+                aiChat.classList.remove('open');
+                aiChat.style.display = 'none';
+            }
+        });
+    }
+
+    if (aiClose) {
+        aiClose.addEventListener('click', () => {
+            aiChat.classList.remove('open');
+            aiChat.style.display = 'none';
+        });
+    }
+
+    const handleSend = (text) => {
+        const msg = (text || '').trim();
+        if (!msg) return;
+        appendMessage(msg, 'user');
+        const reply = getAIResponse(msg);
+        setTimeout(() => appendMessage(reply, 'bot'), 400 + Math.random() * 600);
+        if (aiInput) aiInput.value = '';
+    };
+
+    if (aiSend && aiInput) {
+        aiSend.addEventListener('click', () => handleSend(aiInput.value));
+        aiInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleSend(aiInput.value);
+        });
+    }
+
+    document.querySelectorAll('.ai-quick-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleSend(btn.getAttribute('data-msg')));
+    });
+
+    if (aiMic) {
+        aiMic.addEventListener('click', () => {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                alert('Voice input is not supported in this browser. Please type your message.');
+                return;
+            }
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-PK';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+            aiMic.style.background = '#00b894';
+            recognition.start();
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                handleSend(transcript);
+            };
+            recognition.onspeechend = () => recognition.stop();
+            recognition.onerror = () => { aiMic.style.background = ''; };
+            recognition.onend = () => { aiMic.style.background = ''; };
+        });
+    }
+} catch (e) {
+    // Silent fail — AI assistant won't load but page functional
+}
