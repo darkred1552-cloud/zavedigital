@@ -426,6 +426,7 @@ try {
    ============================================ */
 (function() {
     'use strict';
+    console.log('AI Assistant JS loaded');
 
     const launcher = document.getElementById('aiLauncher');
     const chatWindow = document.getElementById('aiChatWindow');
@@ -435,11 +436,17 @@ try {
     const messagesContainer = document.getElementById('aiMessages');
     const quickBtns = document.querySelectorAll('.ai-quick-btn');
 
-    if (!launcher || !chatWindow) return;
+    console.log('AI elements:', {launcher: !!launcher, chat: !!chatWindow, close: !!closeBtn, send: !!sendBtn, input: !!input, messages: !!messagesContainer, btns: quickBtns.length});
+
+    if (!launcher || !chatWindow) {
+        console.error('AI Assistant: critical elements missing');
+        return;
+    }
 
     let isOpen = false;
 
     function toggleChat() {
+        console.log('toggleChat called, isOpen:', isOpen);
         isOpen = !isOpen;
         chatWindow.classList.toggle('active', isOpen);
         if (isOpen) {
