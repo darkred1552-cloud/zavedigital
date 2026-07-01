@@ -1239,6 +1239,132 @@
         </div>
     </div>
 
+    <script>
+    (function() {
+        'use strict';
+        const launcher = document.getElementById('aiLauncher');
+        const chatWindow = document.getElementById('aiChatWindow');
+        const closeBtn = document.getElementById('aiClose');
+        const sendBtn = document.getElementById('aiSend');
+        const input = document.getElementById('aiInput');
+        const messagesContainer = document.getElementById('aiMessages');
+        const quickBtns = document.querySelectorAll('.ai-quick-btn');
+
+        if (!launcher || !chatWindow) return;
+
+        let isOpen = false;
+
+        function toggleChat() {
+            isOpen = !isOpen;
+            chatWindow.classList.toggle('active', isOpen);
+            if (isOpen) {
+                setTimeout(() => input.focus(), 350);
+            }
+        }
+
+        function addMessage(text, isUser) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'ai-msg ' + (isUser ? 'ai-user' : 'ai-bot');
+            const avatarIcon = isUser ? 'user' : 'robot';
+            msgDiv.innerHTML = '<div class="ai-msg-avatar"><i class="fas fa-' + avatarIcon + '"></i></div><div class="ai-msg-content">' + text + '</div>';
+            messagesContainer.appendChild(msgDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function getSmartReply(msg) {
+            const lower = msg.toLowerCase();
+            const urduKeywords = {
+                'website': 'website',
+                'ویب سائٹ': 'website',
+                'social media': 'social',
+                'سمارٹ فون': 'mobile',
+                'mobile repair': 'mobile',
+                'موبائل': 'mobile',
+                'frp': 'mobile',
+                ' unlocked': 'mobile',
+                'gmb': 'gmb',
+                'google my business': 'gmb',
+                'گوگل بزنس': 'gmb',
+                'pos': 'pos',
+                'peyment': 'pos',
+                'QR code': 'pos',
+                'price': 'price',
+                'قیمت': 'price',
+                'kitna': 'price',
+                'contract': 'contact',
+                'whatsapp': 'whatsapp',
+                'واٹس ایپ': 'whatsapp',
+                'call': 'contact',
+                'number': 'contact',
+                'help': 'help',
+                'madad': 'help',
+                'seo': 'seo',
+                'rank': 'seo',
+                'ads': 'ads',
+                'ایڈز': 'ads'
+            };
+
+            let category = 'general';
+            for (const [key, val] of Object.entries(urduKeywords)) {
+                if (lower.includes(key)) {
+                    category = val;
+                    break;
+                }
+            }
+
+            const replies = {
+                'website': '<p><strong>Website Development</strong></p><p>5-page responsive website: Modern Design + SSL + FREE Domain + Hosting + WhatsApp Integration + SEO Setup</p><p><strong>50% OFF</strong> — Rs. 15,000 (was Rs. 30,000)</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20a%20website.%20Please%20share%20details." class="ai-whatsapp-btn" target="_blank">WhatsApp Order</a>',
+                'mobile': '<p><strong>Mobile Repair Services</strong></p><p>Software-only: Detect+Password Rs. 1,000, FRP Rs. 1,500, Bootloop Rs. 1,500, Data Recovery Rs. 2,500</p><p><strong>Combo Pack:</strong> Rs. 3,500 (was Rs. 6,000)</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20mobile%20repair%20service." class="ai-whatsapp-btn" target="_blank">Book Mobile Repair</a>',
+                'social': '<p><strong>Social Media Management</strong></p><p>Facebook, Instagram, TikTok | 12 posts/month | 4 reels/month | weekly report</p><p><strong>Price:</strong> Rs. 7,500/month</p><a href="https://wa.me/923194051964?text=Hi!%20I%20need%20Social%20Media%20Management." class="ai-whatsapp-btn" target="_blank">Get Started</a>',
+                'gmb': '<p><strong>Google My Business Pro</strong></p><p>Setup + Verification + Ranking + Reviews + Maps Optimization</p><p><strong>Price:</strong> Rs. 4,500</p><a href="https://wa.me/923194051964?text=Hello!%20I%20want%20Google%20My%20Business%20Setup." class="ai-whatsapp-btn" target="_blank">Order GMB</a>',
+                'pos': '<p><strong>POS + Payment System</strong></p><p>JazzCash/EasyPaisa + QR Menu + Inventory + Sales Dashboard</p><p><strong>Price:</strong> Rs. 12,000</p><a href="https://wa.me/923194051964?text=Hi!%20I%20need%20POS%20System." class="ai-whatsapp-btn" target="_blank">Get POS Demo</a>',
+                'price': '<p><strong>Best Deals</strong></p><p>Website Rs. 15,000 | Mobile Repair Rs. 3,500 | Social Media Rs. 7,500/mo | GMB Rs. 4,500 | POS Rs. 12,000</p><a href="https://wa.me/923194051964?text=Hello!%20I%20want%20pricing." class="ai-whatsapp-btn" target="_blank">Get Quote</a>',
+                'whatsapp': '<p><strong>Direct WhatsApp</strong></p><p>+92 319 4051964</p><a href="https://wa.me/923194051964?text=Hello%20Zave%20Digital!" class="ai-whatsapp-btn" target="_blank">Open WhatsApp</a>',
+                'seo': '<p><strong>SEO & Google Ranking</strong></p><p>Audit, Keywords, On-page/Off-page SEO, Monthly Report</p><a href="https://wa.me/923194051964?text=Hi!%20I%20need%20SEO." class="ai-whatsapp-btn" target="_blank">Get SEO Plan</a>',
+                'ads': '<p><strong>Facebook & Instagram Ads</strong></p><p>Ad Copy, Targeting, Budget Optimization, Daily Report</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20Facebook%20Ads." class="ai-whatsapp-btn" target="_blank">Boost Sales</a>',
+                'help': '<p><strong>Hi! Main Zave AI hoon</strong></p><p>Main ye kar sakta hoon: Service suggest karna, Price batana, Website/SEO help, WhatsApp par connect karna</p>'
+            };
+
+            if (replies[category]) return replies[category];
+
+            return '<p><strong>Thanks for your message!</strong></p><p>Zave Digital services: Website, Mobile Repair, Social Media, GMB, POS</p><a href="https://wa.me/923194051964?text=Hello%20Zave%20Digital!" class="ai-whatsapp-btn" target="_blank">WhatsApp Us</a>';
+        }
+
+        function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+            addMessage(text, true);
+            input.value = '';
+            setTimeout(() => {
+                const reply = getSmartReply(text);
+                addMessage(reply, false);
+            }, 500 + Math.random() * 500);
+        }
+
+        launcher.addEventListener('click', toggleChat);
+        closeBtn.addEventListener('click', toggleChat);
+        sendBtn.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        quickBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                input.value = btn.getAttribute('data-msg');
+                sendMessage();
+            });
+        });
+
+        setTimeout(() => {
+            if (!isOpen && !sessionStorage.getItem('aiChatOpened')) {
+                chatWindow.classList.add('active');
+                isOpen = true;
+                sessionStorage.setItem('aiChatOpened', 'true');
+            }
+        }, 8000);
+    })();
+    </script>
+
     <script src="js/main.js"></script>
     </body>
 </html>
