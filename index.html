@@ -1192,7 +1192,53 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="js/main.js"></script>
+    <!-- AI ASSISTANT -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-launcher" id="aiLauncher" aria-label="Open AI Assistant">
+            <i class="fas fa-robot"></i>
+            <span class="ai-pulse"></span>
+        </button>
+        <div class="ai-chat-window" id="aiChatWindow">
+            <div class="ai-chat-header">
+                <div class="ai-header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>Zave AI Assistant</h3>
+                        <span class="ai-status"><span class="status-dot"></span> Online — Urdu & English</span>
                     </div>
-</body>
+                </div>
+                <button class="ai-close" id="aiClose" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-chat-messages" id="aiMessages">
+                <div class="ai-msg ai-bot">
+                    <div class="ai-msg-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="ai-msg-content">
+                        <p>👋 <strong>Welcome to Zave Digital!</strong></p>
+                        <p>Main aapki madad kar sakta hoon:</p>
+                        <p>• Service suggest karna<br>• Price batana<br>• Website/SEO/Social Media help<br>• Direct WhatsApp par connect karna</p>
+                        <p><em>Type your question in Urdu or English!</em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-quick-actions">
+                <button class="ai-quick-btn" data-msg="I need a website">🌐 Website</button>
+                <button class="ai-quick-btn" data-msg="Mobile repair service">📱 Mobile Repair</button>
+                <button class="ai-quick-btn" data-msg="Social media management">📢 Social Media</button>
+                <button class="ai-quick-btn" data-msg="Google My Business setup">📍 GMB Setup</button>
+                <button class="ai-quick-btn" data-msg="What are your prices?">💰 Prices</button>
+                <button class="ai-quick-btn" data-msg="Contact on WhatsApp">📞 WhatsApp</button>
+            </div>
+            <div class="ai-chat-input-area">
+                <input type="text" id="aiInput" placeholder="Type your message..." autocomplete="off">
+                <button id="aiSend" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    </body>
 </html>
