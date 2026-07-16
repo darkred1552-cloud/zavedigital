@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100">
+  <defs>
+    <linearGradient id="mb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1100" fill="url(#mb)"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="180" fill="#7c2d12"/>
+  <text x="400" y="80" text-anchor="middle" font-size="48" font-weight="900" font-family="serif" fill="#fbbf24">The Pizza House</text>
+  <text x="400" y="120" text-anchor="middle" font-size="20" font-family="serif" fill="#f59e0b" letter-spacing="8">MENU</text>
+  <text x="400" y="155" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#d4a574">DC Chowk, Sargodha Road, Mandi Bahauddin</text>
+  <!-- Divider -->
+  <line x1="60" y1="200" x2="740" y2="200" stroke="#fbbf24" stroke-width="1" opacity="0.3"/>
+  <!-- PIZZA section -->
+  <text x="400" y="240" text-anchor="middle" font-size="28" font-weight="700" font-family="serif" fill="#fbbf24">🍕 PIZZA</text>
+  <line x1="60" y1="255" x2="740" y2="255" stroke="#333" stroke-width="0.5"/>
+  <!-- Items -->
+  <text x="80" y="290" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Cheese Lover</text>
+  <text x="720" y="290" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 800</text>
+  <text x="80" y="315" font-size="14" font-family="sans-serif" fill="#888">Extra cheese, mozzarella, cheddar blend</text>
+  <text x="80" y="355" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Chicken Tikka</text>
+  <text x="720" y="355" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 950</text>
+  <text x="80" y="380" font-size="14" font-family="sans-serif" fill="#888">Smoky tikka, onions, green peppers</text>
+  <text x="80" y="420" font-size="20" font-weight="600" font-family="sans-serif" fill="white">BBQ Blast</text>
+  <text x="720" y="420" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 1,000</text>
+  <text x="80" y="445" font-size="14" font-family="sans-serif" fill="#888">BBQ chicken, smoked cheese, jalapeños</text>
+  <text x="80" y="485" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Supreme</text>
+  <text x="720" y="485" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 1,200</text>
+  <text x="80" y="510" font-size="14" font-family="sans-serif" fill="#888">All toppings, 9 premium flavors</text>
+  <!-- BURGERS section -->
+  <text x="400" y="570" text-anchor="middle" font-size="28" font-weight="700" font-family="serif" fill="#fbbf24">🍔 BURGERS</text>
+  <line x1="60" y1="585" x2="740" y2="585" stroke="#333" stroke-width="0.5"/>
+  <text x="80" y="620" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Zinger Burger</text>
+  <text x="720" y="620" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 350</text>
+  <text x="80" y="660" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Grilled Chicken Burger</text>
+  <text x="720" y="660" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 450</text>
+  <text x="80" y="700" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Double Cheese Burger</text>
+  <text x="720" y="700" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 550</text>
+  <!-- DRINKS section -->
+  <text x="400" y="760" text-anchor="middle" font-size="28" font-weight="700" font-family="serif" fill="#fbbf24">🥤 DRINKS</text>
+  <line x1="60" y1="775" x2="740" y2="775" stroke="#333" stroke-width="0.5"/>
+  <text x="80" y="810" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Fresh Juice</text>
+  <text x="720" y="810" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 150</text>
+  <text x="80" y="850" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Lassi</text>
+  <text x="720" y="850" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 120</text>
+  <text x="80" y="890" font-size="20" font-weight="600" font-family="sans-serif" fill="white">Cold Drinks</text>
+  <text x="720" y="890" text-anchor="end" font-size="20" font-weight="600" font-family="sans-serif" fill="#fbbf24">Rs. 80</text>
+  <!-- Footer -->
+  <rect x="0" y="950" width="800" height="150" fill="#7c2d12" opacity="0.3"/>
+  <text x="400" y="1000" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#d4a574">📱 +92 319 4051964</text>
+  <text x="400" y="1035" text-anchor="middle" font-size="16" font-family="sans-serif" fill="#888">Dine-in • Takeaway • Delivery Available</text>
+  <text x="400" y="1070" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#fbbf24">ZAVE DIGITAL — Menu Design</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="salebg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#salebg)"/>
+  <!-- Burst background -->
+  <polygon points="540,540 500,400 540,420 580,400" fill="#fbbf24" opacity="0.1"/>
+  <polygon points="540,540 680,500 660,540 680,580" fill="#fbbf24" opacity="0.1"/>
+  <polygon points="540,540 580,680 540,660 500,680" fill="#fbbf24" opacity="0.1"/>
+  <polygon points="540,540 400,580 420,540 400,500" fill="#fbbf24" opacity="0.1"/>
+  <!-- Big SALE -->
+  <text x="540" y="250" text-anchor="middle" font-size="100" font-weight="900" font-family="sans-serif" fill="#fbbf24" opacity="0.2">SALE</text>
+  <!-- Discount circle -->
+  <circle cx="540" cy="480" r="180" fill="#fbbf24"/>
+  <circle cx="540" cy="480" r="160" fill="#dc2626"/>
+  <text x="540" y="440" text-anchor="middle" font-size="80" font-weight="900" font-family="sans-serif" fill="#fbbf24">50%</text>
+  <text x="540" y="510" text-anchor="middle" font-size="40" font-weight="900" font-family="sans-serif" fill="white">OFF</text>
+  <!-- Brand -->
+  <text x="540" y="720" text-anchor="middle" font-size="48" font-weight="800" font-family="sans-serif" fill="white">The Pizza House</text>
+  <text x="540" y="780" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#fbbf24">All Premium Pizzas &amp; Burgers</text>
+  <!-- Details -->
+  <text x="540" y="860" text-anchor="middle" font-size="20" font-family="sans-serif" fill="rgba(255,255,255,0.7)">📱 Order Now: +92 319 4051964</text>
+  <text x="540" y="900" text-anchor="middle" font-size="18" font-family="sans-serif" fill="rgba(255,255,255,0.5)">Dine-in • Takeaway • Delivery</text>
+  <!-- Bottom -->
+  <rect x="0" y="980" width="1080" height="100" fill="rgba(0,0,0,0.3)"/>
+  <text x="540" y="1040" text-anchor="middle" font-size="18" font-weight="600" font-family="sans-serif" fill="#fbbf24">ZAVE DIGITAL — Promotional Design</text>
+</svg>

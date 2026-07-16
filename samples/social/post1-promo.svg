@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="sbg1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#sbg1)"/>
+  <!-- Decorative circles -->
+  <circle cx="900" cy="180" r="200" fill="#a855f7" opacity="0.15"/>
+  <circle cx="180" cy="900" r="150" fill="#06b6d4" opacity="0.1"/>
+  <!-- Shield icon -->
+  <path d="M540,200 L680,250 L680,420 Q680,550 540,600 Q400,550 400,420 L400,250 Z" fill="#a855f7" opacity="0.3"/>
+  <text x="540" y="470" text-anchor="middle" font-size="120" font-weight="900" font-family="sans-serif" fill="white" opacity="0.5">Z</text>
+  <!-- Main text -->
+  <text x="540" y="720" text-anchor="middle" font-size="52" font-weight="800" font-family="sans-serif" fill="white">Your Business Deserves</text>
+  <text x="540" y="790" text-anchor="middle" font-size="52" font-weight="800" font-family="sans-serif" fill="#06b6d4">To Be Found Online</text>
+  <!-- Tagline -->
+  <text x="540" y="880" text-anchor="middle" font-size="28" font-weight="400" font-family="sans-serif" fill="rgba(255,255,255,0.7)">Social Media • Ads • Websites • SEO</text>
+  <!-- Bottom bar -->
+  <rect x="0" y="980" width="1080" height="100" fill="rgba(0,0,0,0.3)"/>
+  <text x="540" y="1045" text-anchor="middle" font-size="24" font-weight="600" font-family="sans-serif" fill="#a855f7">📱 WhatsApp: +92 319 4051964</text>
+</svg>

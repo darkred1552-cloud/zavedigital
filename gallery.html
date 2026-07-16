@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Samples — Zave Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .gallery-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(168,85,247,0.1) 0%, transparent 100%);
+        }
+        .gallery-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .gallery-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .gallery-nav a {
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .gallery-nav a:hover, .gallery-nav a.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .gallery-section { padding: 40px 0; border-top: 1px solid var(--border); }
+        .gallery-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .gallery-section .section-desc { color: var(--text-secondary); margin-bottom: 30px; }
+        .sample-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        .sample-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .sample-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(168,85,247,0.15);
+        }
+        .sample-preview {
+            background: var(--bg-secondary);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .sample-preview img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .sample-preview.wide img { height: 220px; }
+        .sample-info { padding: 20px; }
+        .sample-info h3 { font-size: 1.1rem; margin-bottom: 6px; }
+        .sample-info p { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; }
+        .sample-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .sample-tag {
+            padding: 4px 12px;
+            border-radius: 50px;
+            background: rgba(168,85,247,0.15);
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .sample-tag.green { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .sample-tag.gold { background: rgba(251,191,36,0.15); color: #fbbf24; }
+        .sample-tag.red { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .sample-tag.cyan { background: rgba(6,182,212,0.15); color: #06b6d4; }
+        .gallery-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+        .gallery-back:hover { color: var(--text-primary); }
+        @media (max-width: 768px) {
+            .sample-grid { grid-template-columns: 1fr; }
+            .gallery-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html#home" class="logo">
+                <span class="logo-shield">
+                    <svg width="36" height="36" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="navShield" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M20,2 L36,8 L36,28 Q36,40 20,44 Q4,40 4,28 L4,8 Z"
+                              fill="url(#navShield)" stroke="#a855f7" stroke-width="1.5"/>
+                        <text x="20" y="30" text-anchor="middle" font-size="22" font-weight="900"
+                              font-family="'Space Grotesk','Segoe UI',sans-serif" fill="white">Z</text>
+                    </svg>
+                </span>
+                <span class="logo-text-wrap"><span class="logo-zave">Zave</span><span class="logo-digital">Digital</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/923194051964" class="nav-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i> Get Quote
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- GALLERY HERO -->
+    <section class="gallery-hero">
+        <div class="container">
+            <a href="index.html#portfolio" class="gallery-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <h1>Our Portfolio & <span class="gradient-text">Samples</span></h1>
+            <p>Real work, real designs. Browse our samples across all services.</p>
+            <div class="gallery-nav">
+                <a href="#logos">Logos</a>
+                <a href="#social">Social Media</a>
+                <a href="#menus">Menus</a>
+                <a href="#posters">Posters</a>
+                <a href="#cards">Business Cards</a>
+                <a href="#cyber">Cybersecurity</a>
+                <a href="#ai">AI Chatbot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="gallery-section" id="logos">
+        <div class="container">
+            <h2>🎨 Logo Designs</h2>
+            <p class="section-desc">Shield, circuit, minimal, monogram & flame concepts — clean, scalable & brand-ready.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview wide"><img src="samples/logos/logo1-shield.svg" alt="Shield Z Logo" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Shield Z Logo</h3>
+                        <p>Shield monogram with gradient purple-cyan — professional & trustworthy brand identity</p>
+                        <div class="sample-tags"><span class="sample-tag">Logo</span><span class="sample-tag cyan">Branding</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview wide"><img src="samples/logos/logo2-circuit.svg" alt="Tech Circuit Logo" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Tech Circuit Logo</h3>
+                        <p>Circuit board pattern with Z monogram — perfect for tech & IT businesses</p>
+                        <div class="sample-tags"><span class="sample-tag">Logo</span><span class="sample-tag cyan">Tech</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview wide"><img src="samples/logos/logo3-minimal.svg" alt="Minimal Logo" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Minimal Wordmark</h3>
+                        <p>Clean typography-only logo with Z monogram — modern & versatile</p>
+                        <div class="sample-tags"><span class="sample-tag">Logo</span><span class="sample-tag gold">Minimal</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview wide"><img src="samples/logos/logo4-flame.svg" alt="Flame Logo" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Flame Logo</h3>
+                        <p>Fire gradient with bold monogram — energetic & eye-catching for brands</p>
+                        <div class="sample-tags"><span class="sample-tag">Logo</span><span class="sample-tag red">Bold</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview wide"><img src="samples/logos/logo5-monogram.svg" alt="Monogram Logo" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Diamond Monogram ZD</h3>
+                        <p>Geometric diamond shape with ZD initials — elegant corporate identity</p>
+                        <div class="sample-tags"><span class="sample-tag">Logo</span><span class="sample-tag">Monogram</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="gallery-section" id="social">
+        <div class="container">
+            <h2>📱 Social Media Posts</h2>
+            <p class="section-desc">Instagram & Facebook post designs — carousel, promo, testimonials & more.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/social/post1-promo.svg" alt="Promo Post" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Promotional Post</h3>
+                        <p>Brand awareness post with shield icon — "Your Business Deserves To Be Found Online"</p>
+                        <div class="sample-tags"><span class="sample-tag">Promo</span><span class="sample-tag cyan">Instagram</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/social/post2-testimonial.svg" alt="Testimonial Post" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Testimonial Post</h3>
+                        <p>Customer review showcase with star rating — builds trust & social proof</p>
+                        <div class="sample-tags"><span class="sample-tag">Testimonial</span><span class="sample-tag gold">Reviews</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/social/post3-before-after.svg" alt="Before/After Post" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Before / After</h3>
+                        <p>Transformation showcase — "We Transformed The Pizza House Online!" with stats</p>
+                        <div class="sample-tags"><span class="sample-tag">Results</span><span class="sample-tag green">Case Study</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/social/post4-tips.svg" alt="Tips Carousel" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Tips Carousel</h3>
+                        <p>5 actionable tips post — "5 Tips to Grow Your Restaurant Online" with CTA</p>
+                        <div class="sample-tags"><span class="sample-tag">Tips</span><span class="sample-tag cyan">Carousel</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/social/post5-services.svg" alt="Services Showcase" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Services Showcase</h3>
+                        <p>Grid layout showcasing all 6 services — social, design, web, marketing, video, security</p>
+                        <div class="sample-tags"><span class="sample-tag">Services</span><span class="sample-tag">Grid</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENUS -->
+    <section class="gallery-section" id="menus">
+        <div class="container">
+            <h2>🍽️ Menu Designs</h2>
+            <p class="section-desc">Restaurant menus & service price lists — print-ready, elegant layouts.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/menus/menu1-restaurant.svg" alt="Restaurant Menu" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Restaurant Menu</h3>
+                        <p>Full menu design for The Pizza House — Pizza, Burgers, Drinks with prices & footer</p>
+                        <div class="sample-tags"><span class="sample-tag">Menu</span><span class="sample-tag gold">Restaurant</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/menus/menu2-services.svg" alt="Services Price Menu" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Services Price Menu</h3>
+                        <p>Digital marketing services price list — all 8 services with descriptions & CTA</p>
+                        <div class="sample-tags"><span class="sample-tag">Pricing</span><span class="sample-tag cyan">Services</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSTERS -->
+    <section class="gallery-section" id="posters">
+        <div class="container">
+            <h2>🖼️ Posters & Banners</h2>
+            <p class="section-desc">Event posters, sale banners & promotional designs — eye-catching & bold.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/posters/poster1-eid.svg" alt="Eid Mubarak Poster" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Eid Mubarak Poster</h3>
+                        <p>Festival poster with crescent moon, stars & special offer — 20% OFF family deals</p>
+                        <div class="sample-tags"><span class="sample-tag">Festival</span><span class="sample-tag gold">Eid</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/posters/poster2-sale.svg" alt="Sale Poster" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>50% OFF Sale Poster</h3>
+                        <p>Bold sale poster with burst design — discount circle, brand name & CTA</p>
+                        <div class="sample-tags"><span class="sample-tag">Sale</span><span class="sample-tag red">Promo</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESS CARDS -->
+    <section class="gallery-section" id="cards">
+        <div class="container">
+            <h2>💳 Business Cards</h2>
+            <p class="section-desc">Front & back card designs — professional, contact-ready with service tags.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/cards/card1-front.svg" alt="Business Card Front" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Business Card — Front</h3>
+                        <p>Shield logo, name, contact info, service tags — clean dark theme design</p>
+                        <div class="sample-tags"><span class="sample-tag">Card</span><span class="sample-tag cyan">Front</span></div>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/cards/card2-back.svg" alt="Business Card Back" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Business Card — Back</h3>
+                        <p>Circular pattern with Z monogram, QR code placeholder & brand name</p>
+                        <div class="sample-tags"><span class="sample-tag">Card</span><span class="sample-tag">Back</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CYBERSECURITY -->
+    <section class="gallery-section" id="cyber">
+        <div class="container">
+            <h2>🔒 Cybersecurity Reports</h2>
+            <p class="section-desc">Audit reports, vulnerability assessments & security scorecards — professional documentation.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/cyber/audit-report.svg" alt="Cybersecurity Audit Report" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Cybersecurity Audit Report</h3>
+                        <p>Full audit report — severity bars, key findings, security score 6.2/10 & recommendations</p>
+                        <div class="sample-tags"><span class="sample-tag">Audit</span><span class="sample-tag red">Security</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI CHATBOT -->
+    <section class="gallery-section" id="ai">
+        <div class="container">
+            <h2>🤖 AI Chatbot Demo</h2>
+            <p class="section-desc">WhatsApp-style AI chatbot — automated ordering, FAQs & customer support.</p>
+            <div class="sample-grid">
+                <div class="sample-card">
+                    <div class="sample-preview"><img src="samples/ai/chatbot-demo.svg" alt="AI Chatbot Demo" loading="lazy"></div>
+                    <div class="sample-info">
+                        <h3>Restaurant AI Chatbot</h3>
+                        <p>WhatsApp-style conversation — pizza ordering, flavor menu, order confirmation & delivery ETA</p>
+                        <div class="sample-tags"><span class="sample-tag">AI</span><span class="sample-tag green">Chatbot</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Zave Digital. All rights reserved. | Malakwal, Mandi Bahauddin, Pakistan</p>
+                <p><a href="https://wa.me/923194051964" target="_blank"><i class="fab fa-whatsapp"></i> +92 319 4051964</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

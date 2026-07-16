@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 360">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+  </defs>
+  <rect width="630" height="360" fill="url(#cbg)"/>
+  <!-- Shield logo -->
+  <path d="M50,60 L95,75 L95,120 Q95,150 60,162 Q25,150 25,120 L25,75 Z" fill="#a855f7"/>
+  <text x="60" y="125" text-anchor="middle" font-size="30" font-weight="900" font-family="sans-serif" fill="white">Z</text>
+  <!-- Name -->
+  <text x="120" y="95" font-size="28" font-weight="700" font-family="sans-serif" fill="white">Zave Digital</text>
+  <text x="120" y="120" font-size="16" font-weight="400" font-family="sans-serif" fill="#a855f7">Digital Marketing &amp; IT Services</text>
+  <!-- Contact -->
+  <text x="120" y="165" font-size="14" font-family="sans-serif" fill="#94a3b8">📱 +92 319 4051964</text>
+  <text x="120" y="188" font-size="14" font-family="sans-serif" fill="#94a3b8">✉️ sarmadzavian11@gmail.com</text>
+  <text x="120" y="211" font-size="14" font-family="sans-serif" fill="#94a3b8">🌐 zavedigital.rf.gd</text>
+  <!-- Decorative line -->
+  <line x1="30" y1="240" x2="600" y2="240" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
+  <!-- Services tags -->
+  <rect x="30" y="255" width="100" height="28" rx="14" fill="#a855f7" opacity="0.2"/>
+  <text x="80" y="274" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#a855f7">Social Media</text>
+  <rect x="140" y="255" width="80" height="28" rx="14" fill="#06b6d4" opacity="0.2"/>
+  <text x="180" y="274" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#06b6d4">Design</text>
+  <rect x="230" y="255" width="80" height="28" rx="14" fill="#f97316" opacity="0.2"/>
+  <text x="270" y="274" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#f97316">Websites</text>
+  <rect x="320" y="255" width="80" height="28" rx="14" fill="#22c55e" opacity="0.2"/>
+  <text x="360" y="274" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#22c55e">SEO</text>
+  <rect x="410" y="255" width="90" height="28" rx="14" fill="#ef4444" opacity="0.2"/>
+  <text x="455" y="274" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#ef4444">Cybersecurity</text>
+  <rect x="510" y="255" width="90" height="28" rx="14" fill="#8b5cf6" opacity="0.2"/>
+  <text x="555" y="274" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#8b5cf6">AI/ML</text>
+  <!-- Bottom -->
+  <text x="315" y="320" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#64748b">Malakwal • Mandi Bahauddin • Punjab, Pakistan</text>
+</svg>

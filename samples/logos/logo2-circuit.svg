@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a1a"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="circuit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg2)"/>
+  <!-- Circuit lines -->
+  <line x1="80" y1="200" x2="160" y2="200" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="160" y1="200" x2="160" y2="120" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="160" y1="120" x2="240" y2="120" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="240" y1="120" x2="240" y2="200" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="240" y1="200" x2="320" y2="200" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="160" y1="200" x2="160" y2="280" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="160" y1="280" x2="240" y2="280" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <line x1="240" y1="280" x2="240" y2="200" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <!-- Nodes -->
+  <circle cx="160" cy="200" r="6" fill="#06b6d4"/>
+  <circle cx="240" cy="200" r="6" fill="#06b6d4"/>
+  <circle cx="160" cy="120" r="4" fill="#0ea5e9" opacity="0.6"/>
+  <circle cx="240" cy="120" r="4" fill="#0ea5e9" opacity="0.6"/>
+  <circle cx="160" cy="280" r="4" fill="#0ea5e9" opacity="0.6"/>
+  <circle cx="240" cy="280" r="4" fill="#0ea5e9" opacity="0.6"/>
+  <circle cx="80" cy="200" r="4" fill="#0ea5e9" opacity="0.4"/>
+  <circle cx="320" cy="200" r="4" fill="#0ea5e9" opacity="0.4"/>
+  <!-- Center hexagon -->
+  <polygon points="200,165 225,180 225,210 200,225 175,210 175,180" fill="none" stroke="url(#circuit)" stroke-width="2.5"/>
+  <text x="200" y="208" text-anchor="middle" font-size="24" font-weight="900" font-family="monospace" fill="#06b6d4">ZD</text>
+  <!-- Text -->
+  <text x="200" y="320" text-anchor="middle" font-size="24" font-weight="700" font-family="'Space Grotesk',sans-serif" fill="#06b6d4">ZAVE DIGITAL</text>
+  <text x="200" y="348" text-anchor="middle" font-size="14" font-weight="400" font-family="'Inter',sans-serif" fill="#0ea5e9" letter-spacing="4">TECH</text>
+</svg>

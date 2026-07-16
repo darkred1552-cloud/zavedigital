@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="sbg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#sbg4)"/>
+  <!-- Title -->
+  <text x="540" y="120" text-anchor="middle" font-size="44" font-weight="800" font-family="sans-serif" fill="white">💡 5 Tips to Grow Your</text>
+  <text x="540" y="180" text-anchor="middle" font-size="44" font-weight="800" font-family="sans-serif" fill="white">Restaurant Online</text>
+  <!-- Tips -->
+  <rect x="100" y="250" width="880" height="100" rx="15" fill="rgba(255,255,255,0.15)"/>
+  <text x="140" y="310" font-size="28" font-family="sans-serif" fill="white">1️⃣ Post daily food photos &amp; reels</text>
+  <rect x="100" y="370" width="880" height="100" rx="15" fill="rgba(255,255,255,0.15)"/>
+  <text x="140" y="430" font-size="28" font-family="sans-serif" fill="white">2️⃣ Set up Google My Business profile</text>
+  <rect x="100" y="490" width="880" height="100" rx="15" fill="rgba(255,255,255,0.15)"/>
+  <text x="140" y="550" font-size="28" font-family="sans-serif" fill="white">3️⃣ Run targeted Facebook/Instagram ads</text>
+  <rect x="100" y="610" width="880" height="100" rx="15" fill="rgba(255,255,255,0.15)"/>
+  <text x="140" y="670" font-size="28" font-family="sans-serif" fill="white">4️⃣ Use WhatsApp Business for orders</text>
+  <rect x="100" y="730" width="880" height="100" rx="15" fill="rgba(255,255,255,0.15)"/>
+  <text x="140" y="790" font-size="28" font-family="sans-serif" fill="white">5️⃣ Ask happy customers for reviews</text>
+  <!-- CTA -->
+  <rect x="290" y="880" width="500" height="70" rx="35" fill="white"/>
+  <text x="540" y="925" text-anchor="middle" font-size="26" font-weight="700" font-family="sans-serif" fill="#0e7490">📱 Get Free Consultation!</text>
+  <!-- Brand -->
+  <text x="540" y="1020" text-anchor="middle" font-size="22" font-weight="600" font-family="sans-serif" fill="rgba(255,255,255,0.7)">ZAVE DIGITAL — zavedigital.rf.gd</text>
+</svg>

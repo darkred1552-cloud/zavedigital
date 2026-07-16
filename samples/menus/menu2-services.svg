@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100">
+  <rect width="800" height="1100" fill="#0f0f23"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="160" fill="#a855f7" opacity="0.15"/>
+  <text x="400" y="70" text-anchor="middle" font-size="42" font-weight="900" font-family="sans-serif" fill="#a855f7">ZAVE DIGITAL</text>
+  <text x="400" y="110" text-anchor="middle" font-size="24" font-weight="600" font-family="sans-serif" fill="#06b6d4">Services Price Menu</text>
+  <line x1="60" y1="140" x2="740" y2="140" stroke="#a855f7" stroke-width="2" opacity="0.3"/>
+  <!-- Services list -->
+  <text x="80" y="195" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Social Media Management</text>
+  <text x="720" y="195" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 8,000/mo</text>
+  <text x="80" y="220" font-size="13" font-family="sans-serif" fill="#64748b">Daily posts, stories, reels, engagement</text>
+  <line x1="80" y1="235" x2="720" y2="235" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="270" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Digital Marketing &amp; Ads</text>
+  <text x="720" y="270" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 10,000/mo</text>
+  <text x="80" y="295" font-size="13" font-family="sans-serif" fill="#64748b">FB, Instagram, Google Ads + ROI tracking</text>
+  <line x1="80" y1="310" x2="720" y2="310" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="345" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Website Development</text>
+  <text x="720" y="345" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 12,000</text>
+  <text x="80" y="370" font-size="13" font-family="sans-serif" fill="#64748b">Responsive, SEO optimized, WhatsApp integration</text>
+  <line x1="80" y1="385" x2="720" y2="385" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="420" font-size="18" font-weight="600" font-family="sans-serif" fill="white">SEO &amp; Google Ranking</text>
+  <text x="720" y="420" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 7,000/mo</text>
+  <text x="80" y="445" font-size="13" font-family="sans-serif" fill="#64748b">Google My Business, local SEO, keyword research</text>
+  <line x1="80" y1="460" x2="720" y2="460" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="495" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Video Production</text>
+  <text x="720" y="495" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 5,000/video</text>
+  <text x="80" y="520" font-size="13" font-family="sans-serif" fill="#64748b">Food videography, promo videos, reels</text>
+  <line x1="80" y1="535" x2="720" y2="535" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="570" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Graphic Design &amp; Branding</text>
+  <text x="720" y="570" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 2,000</text>
+  <text x="80" y="595" font-size="13" font-family="sans-serif" fill="#64748b">Logo, menu cards, posters, brand identity</text>
+  <line x1="80" y1="610" x2="720" y2="610" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="645" font-size="18" font-weight="600" font-family="sans-serif" fill="white">Cybersecurity Audit</text>
+  <text x="720" y="645" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 5,000</text>
+  <text x="80" y="670" font-size="13" font-family="sans-serif" fill="#64748b">Vulnerability scan, firewall, malware removal</text>
+  <line x1="80" y1="685" x2="720" y2="685" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="80" y="720" font-size="18" font-weight="600" font-family="sans-serif" fill="white">AI Chatbot Development</text>
+  <text x="720" y="720" text-anchor="end" font-size="18" font-weight="700" font-family="sans-serif" fill="#a855f7">Rs. 8,000</text>
+  <text x="80" y="745" font-size="13" font-family="sans-serif" fill="#64748b">WhatsApp chatbot, website bot, multi-language</text>
+  <!-- CTA -->
+  <rect x="150" y="820" width="500" height="70" rx="35" fill="#a855f7"/>
+  <text x="400" y="865" text-anchor="middle" font-size="24" font-weight="700" font-family="sans-serif" fill="white">📱 Get Free Quote — WhatsApp Now!</text>
+  <text x="400" y="940" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#64748b">+92 319 4051964</text>
+  <text x="400" y="975" text-anchor="middle" font-size="16" font-family="sans-serif" fill="#475569">Malakwal, Mandi Bahauddin, Punjab, Pakistan</text>
+  <text x="400" y="1020" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#06b6d4">zavedigital.rf.gd</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 360">
+  <rect width="630" height="360" fill="#0f0f23"/>
+  <!-- Back design - pattern -->
+  <circle cx="315" cy="180" r="120" fill="none" stroke="#a855f7" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="315" cy="180" r="100" fill="none" stroke="#06b6d4" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="315" cy="180" r="80" fill="none" stroke="#a855f7" stroke-width="0.5" opacity="0.1"/>
+  <!-- Center logo -->
+  <path d="M285,130 L345,145 L345,195 Q345,225 315,237 Q285,225 285,195 L285,145 Z" fill="#a855f7" opacity="0.3"/>
+  <text x="315" y="205" text-anchor="middle" font-size="36" font-weight="900" font-family="sans-serif" fill="#a855f7" opacity="0.5">Z</text>
+  <!-- Brand -->
+  <text x="315" y="280" text-anchor="middle" font-size="24" font-weight="700" font-family="sans-serif" fill="#a855f7" opacity="0.4">ZAVE DIGITAL</text>
+  <text x="315" y="305" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#64748b" letter-spacing="4">DIGITAL MARKETING</text>
+  <!-- QR placeholder -->
+  <rect x="520" y="250" width="70" height="70" rx="5" fill="none" stroke="#a855f7" stroke-width="1" opacity="0.4"/>
+  <text x="555" y="290" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#a855f7" opacity="0.5">QR</text>
+  <text x="555" y="320" text-anchor="middle" font-size="8" font-family="sans-serif" fill="#64748b">Scan for</text>
+  <text x="555" y="332" text-anchor="middle" font-size="8" font-family="sans-serif" fill="#64748b">WhatsApp</text>
+</svg>

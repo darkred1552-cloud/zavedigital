@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg3)"/>
+  <!-- Minimal circle -->
+  <circle cx="200" cy="190" r="70" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <circle cx="200" cy="190" r="55" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+  <!-- Minimal Z -->
+  <polyline points="175,165 225,165 175,215 225,215" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text -->
+  <text x="200" y="310" text-anchor="middle" font-size="22" font-weight="300" font-family="'Inter',sans-serif" fill="white" letter-spacing="8">ZAVE</text>
+  <text x="200" y="338" text-anchor="middle" font-size="12" font-weight="300" font-family="'Inter',sans-serif" fill="#666" letter-spacing="6">D I G I T A L</text>
+</svg>

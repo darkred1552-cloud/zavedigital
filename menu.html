@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheese Lover — Digital Menu</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #111;
+            color: #e8e8e8;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .menu-header {
+            background: linear-gradient(135deg, #1a0a0a, #2d1810, #1a0a0a);
+            text-align: center;
+            padding: 40px 20px 30px;
+        }
+
+        .menu-header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #D4A843;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .menu-header .tagline {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        .menu-header .address {
+            font-size: 0.78rem;
+            color: #D4A843;
+            margin-top: 6px;
+            opacity: 0.7;
+        }
+
+        /* CATEGORY NAV */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            padding: 15px 10px;
+            flex-wrap: wrap;
+            background: #1a1a1a;
+            border-bottom: 1px solid rgba(212,168,67,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .cat-btn {
+            padding: 7px 16px;
+            border: 1px solid rgba(212,168,67,0.25);
+            background: transparent;
+            color: #999;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: #D4A843;
+            color: #111;
+            border-color: #D4A843;
+        }
+
+        /* MENU SECTIONS */
+        .menu-section {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #D4A843;
+            text-align: center;
+            margin-bottom: 6px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-divider {
+            width: 50px;
+            height: 2px;
+            background: #D4A843;
+            margin: 0 auto 20px;
+            opacity: 0.4;
+        }
+
+        /* MENU ITEMS */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            gap: 12px;
+        }
+
+        .item-info { flex: 1; }
+
+        .item-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #FFF8E7;
+            margin-bottom: 3px;
+        }
+
+        .item-desc {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #D4A843;
+            white-space: nowrap;
+        }
+
+        .special-badge {
+            display: inline-block;
+            background: #C0392B;
+            color: #fff;
+            font-size: 0.55rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        /* QR SECTION */
+        .qr-section {
+            text-align: center;
+            padding: 35px 20px;
+            background: #1a1a1a;
+            border-top: 1px solid rgba(212,168,67,0.1);
+        }
+
+        .qr-section h3 {
+            font-size: 1.2rem;
+            color: #D4A843;
+            margin-bottom: 6px;
+        }
+
+        .qr-section p {
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 18px;
+        }
+
+        .qr-code {
+            display: inline-block;
+            padding: 12px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .qr-code img {
+            width: 160px;
+            height: 160px;
+            display: block;
+        }
+
+        /* FOOTER */
+        .menu-footer {
+            text-align: center;
+            padding: 25px 20px;
+            background: #111;
+            border-top: 1px solid rgba(212,168,67,0.1);
+        }
+
+        .call-btn {
+            display: inline-block;
+            background: #D4A843;
+            color: #111;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-family: Arial, sans-serif;
+        }
+
+        .delivery-note {
+            font-size: 0.78rem;
+            color: #D4A843;
+            opacity: 0.7;
+        }
+
+        .powered {
+            font-size: 0.68rem;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        .powered a { color: #D4A843; text-decoration: none; }
+
+        @media (max-width: 480px) {
+            .menu-header h1 { font-size: 2rem; }
+            .cat-btn { padding: 5px 12px; font-size: 0.72rem; }
+            .item-name { font-size: 0.95rem; }
+            .item-price { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="menu-header">
+        <h1>🧀 Cheese Lover</h1>
+        <p class="tagline">Pizza • Burgers • Drinks • Desserts</p>
+        <p class="address">DC Chowk, Sargodha Road, Mandi Bahauddin</p>
+    </header>
+
+    <nav class="category-nav">
+        <button class="cat-btn active" onclick="showSection('all', this)">All</button>
+        <button class="cat-btn" onclick="showSection('pizza', this)">Pizza</button>
+        <button class="cat-btn" onclick="showSection('burgers', this)">Burgers</button>
+        <button class="cat-btn" onclick="showSection('drinks', this)">Drinks</button>
+        <button class="cat-btn" onclick="showSection('desserts', this)">Desserts</button>
+    </nav>
+
+    <!-- PIZZA -->
+    <div class="menu-section" id="pizza">
+        <h2 class="section-title">Pizza</h2>
+        <div class="section-divider"></div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Margherita</div>
+                <div class="item-desc">Classic cheese &amp; tomato — the original</div>
+            </div>
+            <div class="item-price">Rs. 450</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Pepperoni <span class="special-badge">Popular</span></div>
+                <div class="item-desc">Loaded with pepperoni &amp; extra cheese</div>
+            </div>
+            <div class="item-price">Rs. 650</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">BBQ Chicken</div>
+                <div class="item-desc">Smoky BBQ sauce + tender chicken</div>
+            </div>
+            <div class="item-price">Rs. 750</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Supreme <span class="special-badge">Chef's Pick</span></div>
+                <div class="item-desc">Loaded with everything — the works!</div>
+            </div>
+            <div class="item-price">Rs. 900</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Hawaiian</div>
+                <div class="item-desc">Ham + pineapple — sweet &amp; savory</div>
+            </div>
+            <div class="item-price">Rs. 700</div>
+        </div>
+    </div>
+
+    <!-- BURGERS -->
+    <div class="menu-section" id="burgers">
+        <h2 class="section-title">Burgers</h2>
+        <div class="section-divider"></div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Classic Beef Burger</div>
+                <div class="item-desc">Juicy beef patty with fresh veggies</div>
+            </div>
+            <div class="item-price">Rs. 350</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Crispy Chicken Burger</div>
+                <div class="item-desc">Crispy fried chicken — crunchy &amp; delicious</div>
+            </div>
+            <div class="item-price">Rs. 400</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Double Cheese Burger <span class="special-badge">Best Seller</span></div>
+                <div class="item-desc">Double patty, double cheese — maximum flavor</div>
+            </div>
+            <div class="item-price">Rs. 550</div>
+        </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-section" id="drinks">
+        <h2 class="section-title">Drinks</h2>
+        <div class="section-divider"></div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Fresh Lime</div>
+                <div class="item-desc">Refreshing lime soda — tangy &amp; cool</div>
+            </div>
+            <div class="item-price">Rs. 100</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Mango Lassi</div>
+                <div class="item-desc">Creamy mango yogurt — Pakistani classic</div>
+            </div>
+            <div class="item-price">Rs. 150</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Cold Coffee</div>
+                <div class="item-desc">Chilled coffee blend — smooth &amp; rich</div>
+            </div>
+            <div class="item-price">Rs. 200</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Soft Drinks</div>
+                <div class="item-desc">Coke, Sprite, Fanta — ice cold</div>
+            </div>
+            <div class="item-price">Rs. 80</div>
+        </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-section" id="desserts">
+        <h2 class="section-title">Desserts</h2>
+        <div class="section-divider"></div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Chocolate Brownie</div>
+                <div class="item-desc">Warm &amp; gooey — chocolate heaven</div>
+            </div>
+            <div class="item-price">Rs. 250</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Ice Cream Sundae</div>
+                <div class="item-desc">3 scoops + toppings — pure indulgence</div>
+            </div>
+            <div class="item-price">Rs. 300</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Cheesecake</div>
+                <div class="item-desc">Creamy New York style — smooth &amp; rich</div>
+            </div>
+            <div class="item-price">Rs. 300</div>
+        </div>
+    </div>
+
+    <!-- QR CODE -->
+    <section class="qr-section">
+        <h3>Scan to View Menu</h3>
+        <p>Show this QR code to customers — they can scan &amp; browse the full menu on their phone</p>
+        <div class="qr-code">
+            <img id="qrimg" src="" alt="QR Code" width="160" height="160" />
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="menu-footer">
+        <a href="tel:+923194051964" class="call-btn">Call to Order: 0319 4051964</a>
+        <p class="delivery-note">Free Delivery in Mandi Bahauddin</p>
+        <p class="powered">Menu designed by <a href="http://zavedigital.rf.gd">Zave Digital</a></p>
+    </footer>
+
+    <script>
+        function showSection(category, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            var sections = ['pizza', 'burgers', 'drinks', 'desserts'];
+            for (var i = 0; i < sections.length; i++) {
+                var el = document.getElementById(sections[i]);
+                if (category === 'all' || sections[i] === category) {
+                    el.style.display = 'block';
+                } else {
+                    el.style.display = 'none';
+                }
+            }
+            if (category !== 'all') {
+                document.getElementById(category).scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Generate QR code
+        var qrImg = document.getElementById('qrimg');
+        var menuUrl = window.location.href;
+        qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(menuUrl) + '&color=D4A843&bgcolor=1A1A1A';
+    </script>
+
+</body>
+</html>
