@@ -2,14 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline';">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zave Digital — Professional Digital Marketing, Social Media Management & Hotel Management Services in Malakwal, Punjab, Pakistan">
-    <title>Zave Digital — Digital Marketing & Hotel Management Services</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zave Digital">
+    <meta name="theme-color" content="#6c5ce7">
+    <meta name="format-detection" content="telephone=yes">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="description" content="Zave Digital — Professional Digital Marketing, Social Media Management, Web Development, E-Commerce, POS Systems, Mobile Repair & IT Services in Malakwal, Punjab, Pakistan">
+    <meta name="keywords" content="digital marketing, social media management, web development, e-commerce store, POS system, payment gateway, jazzcash, easypaisa, mobile app development, cybersecurity, penetration testing, business analytics, whatsapp chatbot, SEO, restaurant marketing, hotel management, Malakwal, Pakistan, FRP unlock, mobile repair, IMEI repair, bootloop fix, dead phone fix, android unbrick, data recovery, wifi fix, bluetooth repair, network unlock, custom ROM, TWRP, android root, phone unlock, iCloud unlock, iPhone FRP, virus removal, phone optimization, play store fix, phone backup, rebrand, software repair, flashing">
+    <meta name="author" content="Zave Digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://darkred1552-cloud.github.io/zavedigital/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zave Digital — Digital Marketing & IT Services">
+    <meta property="og:description" content="Professional Digital Marketing, Web Development, E-Commerce, POS Systems & IT Services in Pakistan">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darkred1552-cloud.github.io/zavedigital/">
+    <meta property="og:locale" content="en_PK">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zave Digital — Digital Marketing & IT Services">
+    <meta name="twitter:description" content="Professional Digital Marketing, Web Development, E-Commerce, POS Systems & IT Services in Pakistan">
+    <title>Zave Digital — Digital Marketing & IT Services | Malakwal, Pakistan</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src https://www.google.com https://www.google-analytics.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Zave AI Config: OpenRouter fallback key -->
+    <script>try{window.ZAVE_OPENROUTER_KEY = '';}catch(e){}</script>
+    <!-- Simple counter fallback: visits stored in localStorage for demo purposes -->
+    <script>try{var n=parseInt(localStorage.getItem('zd_visits')||'0');n++;localStorage.setItem('zd_visits',n);}catch(e){}</script>
+    <!-- Google Analytics — replace G-XXXXXXXXXX with your GA4 measurement ID from https://analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
 <body>
 
@@ -18,7 +50,7 @@
         <div class="nav-container">
             <a href="#home" class="logo">
                 <span class="logo-shield">
-                    <svg width="36" height="36" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="36" height="36" viewBox="0 0 40 46" xmlns="https://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="navShield" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stop-color="#a855f7"/>
@@ -34,16 +66,28 @@
                 <span class="logo-text-wrap"><span class="logo-zave">Zave</span><span class="logo-digital">Digital</span></span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="dashboard">Dashboard</a></li>
+                <li><a href="order.html" data-i18n="nav.order">Order</a></li>
+                <li><a href="patients/" data-i18n="nav.patients">Zave for Patients</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="demos">Demo</a></li>
+                <li><a href="uk-sim-setup">UK SIM</a></li>
             </ul>
-            <a href="https://wa.me/923194051964" class="nav-cta" target="_blank">
-                <i class="fab fa-whatsapp"></i> Get Quote
-            </a>
+            <div class="lang-selector" id="langSelector">
+                <button class="lang-btn" id="langBtn" aria-label="Select Language">
+                    <i class="fas fa-globe"></i> EN
+                </button>
+                <ul class="lang-dropdown" id="langDropdown">
+                    <li data-lang="en"><span class="lang-flag">🇬🇧</span> English</li>
+                    <li data-lang="roman-urdu"><span class="lang-flag">🇵🇰</span> Roman Urdu</li>
+                    <li data-lang="urdu"><span class="lang-flag">🇵🇰</span> اردو</li>
+                    <li data-lang="punjabi"><span class="lang-flag">🇵🇰</span> ਪੰਜਾਬੀ</li>
+                </ul>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -58,73 +102,27 @@
             <div class="gradient-orb orb-3"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-logo">
-                <svg width="120" height="140" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="heroShield" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#a855f7"/>
-                            <stop offset="50%" stop-color="#7c3aed"/>
-                            <stop offset="100%" stop-color="#06b6d4"/>
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                        </filter>
-                    </defs>
-                    <path d="M60,5 L110,18 L110,78 Q110,120 60,135 Q10,120 10,78 L10,18 Z" 
-                          fill="url(#heroShield)" fill-opacity="0.9" stroke="#a855f7" stroke-width="2.5" filter="url(#glow)"/>
-                    <path d="M60,15 L100,26 L100,75 Q100,110 60,123 Q20,110 20,75 L20,26 Z" 
-                          fill="none" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
-                    <text x="60" y="88" text-anchor="middle" font-size="60" font-weight="900" 
-                          font-family="'Space Grotesk','Impact',sans-serif" fill="white">Z</text>
-                </svg>
-            </div>
-            <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Digital Marketing & IT Services — Malakwal, Punjab
-            </div>
-            <h1 class="hero-title">
-                Your Business Deserves<br>
-                <span class="gradient-text">To Be Found Online</span>
-            </h1>
-            <p class="hero-subtitle">
-                From <strong>The Pizza House</strong> to your brand — we know what it takes to attract customers. 
-                Professional Social Media, Ads & Website services that <strong>actually bring results</strong>.
-            </p>
+            <h1 data-i18n="hero.title">Digital Services That Grow Your Business</h1>
+            <p data-i18n="hero.subtitle">Professional websites, social media, mobile repair, Google My Business, POS systems, and more — all in Malakwal.</p>
             <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> Our Services
-                </a>
-                <a href="https://wa.me/923194051964?text=Hi%20Zave!%20I'm%20interested%20in%20your%20services." class="btn btn-outline" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Us
-                </a>
+                <a href="#services" class="btn btn-primary" data-i18n="hero.cta">Get Started</a>
+                <a href="https://wa.me/923194051964" class="btn btn-outline" data-i18n="hero.whatsapp">WhatsApp Us</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">Restaurants</span>
-                    <span class="stat-label">Specialty</span>
+
+            <!-- Service highlight cards (in empty space below hero buttons) -->
+            <div class="hero-badges">
+                <div class="floating-card card-1">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile Detect + Password Unlock</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">IT</span>
-                    <span class="stat-label">Cybersecurity & Servers</span>
+                <div class="floating-card card-2">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>FRP Unlock / Bootloop Fix</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">Video</span>
-                    <span class="stat-label">Production & Editing</span>
+                <div class="floating-card card-3">
+                    <i class="fas fa-wifi"></i>
+                    <span>WiFi / Network / IMEI Repair</span>
                 </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="floating-card card-1">
-                <i class="fas fa-utensils"></i>
-                <span>Restaurant Specialist</span>
-            </div>
-            <div class="floating-card card-2">
-                <i class="fas fa-shield-alt"></i>
-                <span>Cybersecurity & IT</span>
-            </div>
-            <div class="floating-card card-3">
-                <i class="fas fa-video"></i>
-                <span>Video Production</span>
             </div>
         </div>
     </section>
@@ -133,21 +131,271 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-cog"></i> What We Do</span>
-                <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
-                <p class="section-desc">End-to-end digital solutions tailored for restaurants, hotels, and local businesses.</p>
+                <span class="section-tag" data-i18n="services.tag"><i class="fas fa-cog"></i> What We Do</span>
+                <h2 class="section-title" data-i18n="services.title">Our <span class="gradient-text">Services</span></h2>
+                <p class="section-desc" data-i18n="services.subtitle">End-to-end digital solutions tailored for restaurants, hotels, and local businesses.</p>
             </div>
-            <div class="category-filter" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 0 10px;">
-                <button class="filter-btn active" data-filter="all" style="flex: 1 1 auto; min-width: 120px;"><i class="fas fa-th-large"></i> All</button>
-                <button class="filter-btn" data-filter="social" style="flex: 1 1 auto; min-width: 120px;"><i class="fas fa-hashtag"></i> Social</button>
-                <button class="filter-btn" data-filter="design" style="flex: 1 1 auto; min-width: 120px;"><i class="fas fa-pen-nib"></i> Design</button>
-                <button class="filter-btn" data-filter="web" style="flex: 1 1 auto; min-width: 120px;"><i class="fas fa-globe"></i> Web</button>
-                <button class="filter-btn" data-filter="it" style="flex: 1 1 auto; min-width: 120px;"><i class="fas fa-shield-alt"></i> IT</button>
-                <button class="filter-btn" data-filter="video" style="flex: 1 1 auto; min-width: 120px;"><i class="fas fa-video"></i> Video</button>
+            <div class="category-filter">
+                <button class="filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> All Services</button>
+                <button class="filter-btn" data-filter="social"><i class="fas fa-hashtag"></i> Social Media</button>
+                <button class="filter-btn" data-filter="design"><i class="fas fa-pen-nib"></i> Design & Branding</button>
+                <button class="filter-btn" data-filter="web"><i class="fas fa-globe"></i> Web & SEO</button>
+                <button class="filter-btn" data-filter="it"><i class="fas fa-shield-alt"></i> IT & Cybersecurity</button>
+                <button class="filter-btn" data-filter="video"><i class="fas fa-video"></i> Video & Content</button>
+                <button class="filter-btn" data-filter="premium"><i class="fas fa-gem"></i> Premium 2026</button>
+                <button class="filter-btn" data-filter="local"><i class="fas fa-map-marker-alt"></i> Local SEO</button>
+                <button class="filter-btn" data-filter="restaurant"><i class="fas fa-utensils"></i> Restaurant</button>
+                <button class="filter-btn" data-filter="education"><i class="fas fa-graduation-cap"></i> Education</button>
+                <button class="filter-btn" data-filter="health"><i class="fas fa-heartbeat"></i> Health</button>
+                <button class="filter-btn" data-filter="events"><i class="fas fa-calendar-alt"></i> Events</button>
+                <button class="filter-btn" data-filter="agriculture"><i class="fas fa-seedling"></i> Agriculture</button>
+                <button class="filter-btn" data-filter="payments"><i class="fas fa-credit-card"></i> Payments</button>
+                <button class="filter-btn" data-filter="ads"><i class="fas fa-bullhorn"></i> Local Ads</button>
+                <button class="filter-btn" data-filter="mobile"><i class="fas fa-mobile-alt"></i> Mobile Repair</button>
             </div>
             <div class="services-grid">
+<div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-lock"></i></div>
+                    <h3>FRP Unlock / Google Account Remove</h3>
+                    <p>FRP lock hat jaye — Samsung, Huawei, Oppo, Vivo, Infinix ke phones se Google account remove professionally. Data loss nahi, secure method.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> FRP Bypass (All Brands)</li>
+                        <li><i class="fas fa-check"></i> Google Account Remove</li>
+                        <li><i class="fas fa-check"></i> Safe & Secure Method</li>
+                        <li><i class="fas fa-check"></i> No Data Loss (Most Models)</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
 
-                <div class="service-card featured data-category="social"">
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Mobile Detect + Password Remove</h3>
+                    <p>Phone detect ho rha hai but password lock hai? Pattern, PIN, password professionally remove karte hain — data safe, no factory reset.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Mobile Detect Fix</li>
+                        <li><i class="fas fa-check"></i> Password / Pattern Remove</li>
+                        <li><i class="fas fa-check"></i> Data Fully Preserved</li>
+                        <li><i class="fas fa-check"></i> Instant Service</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>Phone Flashing & Firmware</h3>
+                    <p>Phone slow ho jaye, update chahiye, ya firmware corrupt ho jaye — official flash karke naya life dein. All brands supported.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Official Firmware Flash</li>
+                        <li><i class="fas fa-check"></i> Dead Boot Fix</li>
+                        <li><i class="fas fa-check"></i> Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> All Models (Samsung, Oppo, Vivo, etc.)</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-redo"></i></div>
+                    <h3>Bootloop Fix & Software Repair</h3>
+                    <p>Phone restart hota rehta hai, Android ka sab kuch fix karte hain — bootloop, software crash, system errors sab theek karte hain professionally.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Bootloop Fix</li>
+                        <li><i class="fas fa-check"></i> System Error Repair</li>
+                        <li><i class="fas fa-check"></i> App Update Issues</li>
+                        <li><i class="fas fa-check"></i> Complete Diagnosis Report</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>IMEI Repair & Restoration</h3>
+                    <p>IMEI null ho jaye ya invalid lage — original IMEI restore karte hain. Network kaam na kare to ye service zaroori hai. Legal & authentic method.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> IMEI Restore</li>
+                        <li><i class="fas fa-check"></i> Null IMEI Fix</li>
+                        <li><i class="fas fa-check"></i> Network Registration Fix</li>
+                        <li><i class="fas fa-check"></i> MEID / ESN Support</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 3,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Android Unbrick / Dead Phone Fix</h3>
+                    <p>Phone dead ho jaye, boot na ho, black screen — dead boot fix karte hain. Software brick solve hota hai, board repair nahi chahiye.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Dead Boot Recovery</li>
+                        <li><i class="fas fa-check"></i> Black Screen Fix</li>
+                        <li><i class="fas fa-check"></i> Fastboot/EDL Mode Repair</li>
+                        <li><i class="fas fa-check"></i> No Hardware Replacement</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 2,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>WiFi / Bluetooth / Network Fix</h3>
+                    <p>WiFi connect nahi ho raha, Bluetooth off ho jaye, signal kam aaye — network module reset + driver fix karte hain. No hardware needed.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> WiFi Driver Fix</li>
+                        <li><i class="fas fa-check"></i> Bluetooth Restore</li>
+                        <li><i class="fas fa-check"></i> Network Signal Fix</li>
+                        <li><i class="fas fa-check"></i> MAC Address Repair</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Recovery & Backup</h3>
+                    <p>Photos, videos, contacts, WhatsApp messages sab recover karte hain — phone brick ya format ho jaye. Software recovery, no hardware needed.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Photos/Video Recovery</li>
+                        <li><i class="fas fa-check"></i> WhatsApp Chat Backup</li>
+                        <li><i class="fas fa-check"></i> Contacts/SMS Restore</li>
+                        <li><i class="fas fa-check"></i> Dead Phone Data Extract</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 2,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fab fa-apple"></i></div>
+                    <h3>iPhone FRP / iCloud Unlock</h3>
+                    <p>iPhone iCloud lock ho jaye ya Apple ID blocked ho — soft unlock karte hain. Hardware nahi chahiye, software-based method. All iOS versions supported.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> iCloud Lock Bypass</li>
+                        <li><i class="fas fa-check"></i> Apple ID Removal</li>
+                        <li><i class="fas fa-check"></i> iOS Activation Fix</li>
+                        <li><i class="fas fa-check"></i> No Hardware Replacement</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 3,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fab fa-android"></i></div>
+                    <h3>Android Rooting & Customization</h3>
+                    <p>Phone root karke full control le — custom ROM, Magisk, TWRP recovery, bloatware remove, speed boost. Advanced users ke liye perfect.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Magisk Root (Safe)</li>
+                        <li><i class="fas fa-check"></i> Custom ROM Install</li>
+                        <li><i class="fas fa-check"></i> Bloatware Remove</li>
+                        <li><i class="fas fa-check"></i> Performance Boost</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <h3>Google Play Store Fix</h3>
+                    <p>Play Store crash ho jaye ya apps install na ho — Google Services Fix, GApps reinstall, account sync fix. Apps downloadProblem solved permanently.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Play Store Crash Fix</li>
+                        <li><i class="fas fa-check"></i> Google Services Restore</li>
+                        <li><i class="fas fa-check"></i> Account Sync Fix</li>
+                        <li><i class="fas fa-check"></i> GApps Reinstall</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Phone Speed Optimization</h3>
+                    <p>Phone slow ho jaye, hang kare, storage full ho jaye — cache clean, junk remove, startup apps disable, RAM boost. Phone naya fast ban jaye.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Cache + Junk Clean</li>
+                        <li><i class="fas fa-check"></i> Startup Apps Disable</li>
+                        <li><i class="fas fa-check"></i> RAM Optimization</li>
+                        <li><i class="fas fa-check"></i> Storage Full Fix</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-sim-card"></i></div>
+                    <h3>SIM / Network Unlock</h3>
+                    <p>Phone specific network (Jazz, Zong, Ufone) se locked ho — SIM lock remove karke kisi bhi network ka use kar sakte ho. Carrier unlock software-based.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Network SIM Unlock</li>
+                        <li><i class="fas fa-check"></i> All Carriers Supported</li>
+                        <li><i class="fas fa-check"></i> Code-Based (No Hardware)</li>
+                        <li><i class="fas fa-check"></i> Permanent Unlock</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-tag"></i></div>
+                    <h3>Phone Info Change / Rebrand</h3>
+                    <p>Phone ka model name, brand, build number change karo — Infinix ko Samsung banado ya vice versa. Software rebrand for fun/sales purposes.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Model Name Change</li>
+                        <li><i class="fas fa-check"></i> Brand Rebrand</li>
+                        <li><i class="fas fa-check"></i> Build Number Edit</li>
+                        <li><i class="fas fa-check"></i> Device Info Customize</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 2,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Full Phone Backup & Restore</h3>
+                    <p>Phone change karne se pehle ya reset se pehle full backup — apps, data, settings, WhatsApp, photos sab ek click mein. Naya phone pe restore bhi.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Full System Backup</li>
+                        <li><i class="fas fa-check"></i> WhatsApp Backup</li>
+                        <li><i class="fas fa-check"></i> App Data + Settings</li>
+                        <li><i class="fas fa-check"></i> One-Click Restore</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-sync"></i></div>
+                    <h3>Android System Update Fix</h3>
+                    <p>Update failure, bootloop after update, system error — update problem fix karke latest Android version pe le jate hain. Safe & official method.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Update Failure Fix</li>
+                        <li><i class="fas fa-check"></i> Post-Update Bootloop</li>
+                        <li><i class="fas fa-check"></i> OTA Reinstall</li>
+                        <li><i class="fas fa-check"></i> Downgrade if Needed</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+                <div class="service-card" data-category="mobile">
+                    <div class="service-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Custom Recovery & ROM Install</h3>
+                    <p>TWRP recovery install + custom ROM (LineageOS, Pixel Experience) — phone ki performance badhao, features add karo. Custom Android experience.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> TWRP Recovery Install</li>
+                        <li><i class="fas fa-check"></i> Custom ROM Flash</li>
+                        <li><i class="fas fa-check"></i> GApps + Root Optional</li>
+                        <li><i class="fas fa-check"></i> Post-Install Support</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 3,000</strong></div>
+                    <span class="service-tag">Mobile</span>
+                </div>
+
+        </div>
+
+
+                <div class="service-card featured" data-category="social">
                     <div class="service-icon"><i class="fas fa-hashtag"></i></div>
                     <h3>Social Media Management</h3>
                     <p>Complete social media handling for restaurants & hotels — content creation, posting, engagement, and growth strategy across Facebook, Instagram & TikTok.</p>
@@ -162,7 +410,7 @@
                     <span class="service-tag">Most Popular</span>
                 </div>
 
-                <div class="service-card data-category="social"">
+                <div class="service-card" data-category="social">
                     <div class="service-icon"><i class="fas fa-hotel"></i></div>
                     <h3>Hotel Management</h3>
                     <p>Professional hotel operations support — front desk systems, guest management, online booking setup, and staff coordination for maximum efficiency.</p>
@@ -175,7 +423,7 @@
                     <div class="service-price">Starting from <strong>Rs. 15,000/mo</strong></div>
                 </div>
 
-                <div class="service-card data-category="social"">
+                <div class="service-card" data-category="social">
                     <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
                     <h3>Digital Marketing & Ads</h3>
                     <p>Targeted ad campaigns on Facebook, Instagram & Google — reach the right customers in your area and get real ROI for your business.</p>
@@ -188,7 +436,7 @@
                     <div class="service-price">Starting from <strong>Rs. 10,000/mo</strong></div>
                 </div>
 
-                <div class="service-card data-category="web"">
+                <div class="service-card" data-category="web">
                     <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Website Development</h3>
                     <p>Professional, mobile-friendly websites that convert visitors into customers — from simple landing pages to full business websites.</p>
@@ -201,7 +449,7 @@
                     <div class="service-price">Starting from <strong>Rs. 12,000</strong></div>
                 </div>
 
-                <div class="service-card data-category="web"">
+                <div class="service-card" data-category="web">
                     <div class="service-icon"><i class="fas fa-search"></i></div>
                     <h3>SEO & Google Ranking</h3>
                     <p>Get found on Google when people search for restaurants, hotels, or services in your city. Local SEO that drives real foot traffic.</p>
@@ -214,7 +462,7 @@
                     <div class="service-price">Starting from <strong>Rs. 7,000/mo</strong></div>
                 </div>
 
-                <div class="service-card data-category="video"">
+                <div class="service-card" data-category="video">
                     <div class="service-icon"><i class="fas fa-video"></i></div>
                     <h3>Video Production</h3>
                     <p>Professional food videography, restaurant walkthroughs, promotional videos, and social media content that makes your business stand out.</p>
@@ -227,7 +475,7 @@
                     <div class="service-price">Starting from <strong>Rs. 5,000/video</strong></div>
                 </div>
 
-                <div class="service-card data-category="social"">
+                <div class="service-card" data-category="social">
                     <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
                     <h3>Graphic Design & Branding</h3>
                     <p>Eye-catching logos, menu cards, posters, banners, and complete brand identity packages that make your business look professional.</p>
@@ -240,22 +488,7 @@
                     <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
                 </div>
 
-                <div class="service-card featured" data-category="it">
-                    <div class="service-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Technical Solutions</h3>
-                    <p>Comprehensive technical support for your business and mobile devices — from software repairs to server management.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Mobile Software Repair</li>
-                        <li><i class="fas fa-check"></i> Linux Server Mgmt</li>
-                        <li><i class="fas fa-check"></i> Network & CCTV</li>
-                        <li><i class="fas fa-check"></i> Database Setup</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 1,000</strong></div>
-                    <a href="https://wa.me/923194051964?text=Hi%20Zave!%20I%27m%20interested%20in%20Technical%20Solutions." class="service-btn" style="display:inline-block; margin-top:15px; padding:12px 20px; background:linear-gradient(135deg, #06b6d4, #0891b2); color:white; border-radius:10px; text-decoration:none; font-weight:600; text-align:center; box-shadow:0 4px 10px rgba(6,182,212,0.3);">Book Now</a>
-                    <span class="service-tag">Featured</span>
-                </div>
-
-                <div class="service-card data-category="web"">
+                <div class="service-card" data-category="web">
                     <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>WhatsApp Business Setup</h3>
                     <p>Professional WhatsApp Business profile setup with catalog, auto-replies, and chatbot to manage customer queries 24/7.</p>
@@ -268,7 +501,7 @@
                     <div class="service-price">Starting from <strong>Rs. 3,000</strong></div>
                 </div>
 
-                <div class="service-card data-category="design"">
+                <div class="service-card" data-category="design">
                     <div class="service-icon"><i class="fas fa-camera"></i></div>
                     <h3>Product Photography</h3>
                     <p>High-quality food and product photography for menus, social media, and online listings — your food deserves to look delicious!</p>
@@ -281,7 +514,7 @@
                     <div class="service-price">Starting from <strong>Rs. 1,500/session</strong></div>
                 </div>
 
-                <div class="service-card data-category="video"">
+                <div class="service-card" data-category="video">
                     <div class="service-icon"><i class="fab fa-tiktok"></i></div>
                     <h3>TikTok & Reels Marketing</h3>
                     <p>Short-form video marketing that goes viral! Create engaging TikTok and Instagram Reels that bring real customers to your door.</p>
@@ -294,7 +527,7 @@
                     <div class="service-price">Starting from <strong>Rs. 6,000/mo</strong></div>
                 </div>
 
-                <div class="service-card data-category="design"">
+                <div class="service-card" data-category="design">
                     <div class="service-icon"><i class="fas fa-envelope"></i></div>
                     <h3>Email & Bulk SMS Marketing</h3>
                     <p>Reach your customers directly with promotional offers, event announcements, and special deals via email and bulk SMS campaigns.</p>
@@ -307,7 +540,7 @@
                     <div class="service-price">Starting from <strong>Rs. 2,500</strong></div>
                 </div>
 
-                <div class="service-card data-category="design"">
+                <div class="service-card" data-category="design">
                     <div class="service-icon"><i class="fas fa-qrcode"></i></div>
                     <h3>QR Code Menu & Digital Menu</h3>
                     <p>Modern QR code menu system for restaurants and cafes — customers scan and view your menu on their phone. No printing costs!</p>
@@ -318,428 +551,334 @@
                         <li><i class="fas fa-check"></i> 1 Round of Revisions</li>
                     </ul>
                     <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
-                    <span class="service-terms">Delivery: 1–2 days • Extra revisions: Rs. 500 each</span>
                 </div>
 
-                <div class="service-card data-category="web"">
-                    <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <h3>Google Business & Maps SEO</h3>
-                    <p>Get your restaurant/hotel on the top of Google Maps! Profile optimization, review management, and local listing setup.</p>
+                <div class="service-card" data-category="web">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>E-Commerce Store Development</h3>
+                    <p>Complete online store with product catalog, cart, checkout, and payment integration — sell your products 24/7 from anywhere in Pakistan.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Google Profile Setup</li>
-                        <li><i class="fas fa-check"></i> Review Management</li>
-                        <li><i class="fas fa-check"></i> Photos & Posts</li>
-                        <li><i class="fas fa-check"></i> Local SEO Best Practices</li>
+                        <li><i class="fas fa-check"></i> Unlimited Products Upload</li>
+                        <li><i class="fas fa-check"></i> Cart + Wishlist + Checkout</li>
+                        <li><i class="fas fa-check"></i> JazzCash / EasyPaisa Integration</li>
+                        <li><i class="fas fa-check"></i> Mobile Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Admin Panel + Order Management</li>
                     </ul>
-                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
+                    <div class="service-price">Starting from <strong>Rs. 25,000</strong></div>
+                    <span class="service-tag premium-tag">Premium</span>
                 </div>
 
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-file-invoice"></i></div>
-                    <h3>Invoice & Bill Design</h3>
-                    <p>Professional invoice, receipt, and bill book design for your shop or restaurant — looks premium, builds trust with customers.</p>
+                <div class="service-card premium" data-category="premium">
+                    <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>Payment Gateway Integration</h3>
+                    <p>JazzCash, EasyPaisa, and bank payment integration for your existing website or store — secure, fast, and reliable transactions.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom Invoice Template</li>
-                        <li><i class="fas fa-check"></i> Bill Book Design</li>
-                        <li><i class="fas fa-check"></i> Logo + Contact Details</li>
-                        <li><i class="fas fa-check"></i> Print-Ready PDF</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 500</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-share-alt"></i></div>
-                    <h3>Social Media Post (Single)</h3>
-                    <p>Need just one post for today's special offer? Single social media post design — fast, affordable, and eye-catching!</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 1 Custom Post Design</li>
-                        <li><i class="fas fa-check"></i> Caption + Hashtags</li>
-                        <li><i class="fas fa-check"></i> Facebook/Instagram Ready</li>
-                        <li><i class="fas fa-check"></i> Same Day Delivery</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 200</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-edit"></i></div>
-                    <h3>Photo Editing (Per Photo)</h3>
-                    <p>Already have photos but they look dull? Professional editing, color correction, and background cleanup — per photo basis.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Color Correction</li>
-                        <li><i class="fas fa-check"></i> Background Cleanup</li>
-                        <li><i class="fas fa-check"></i> Brightness & Contrast</li>
-                        <li><i class="fas fa-check"></i> Social Media Ready</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 100/photo</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-music"></i></div>
-                    <h3>Voice Over (Urdu/English)</h3>
-                    <p>Professional voice over for your promotional video, ad, or announcement — Urdu or English, male or female voice.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Urdu or English</li>
-                        <li><i class="fas fa-check"></i> Male/Female Voice</li>
-                        <li><i class="fas fa-check"></i> Script Writing Included</li>
-                        <li><i class="fas fa-check"></i> HD Audio Quality</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 500</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="it"">
-                    <div class="service-icon"><i class="fas fa-file-word"></i></div>
-                    <h3>Document & CV Design</h3>
-                    <p>Professional CV/resume, cover letter, or business document design — stand out from the crowd with a polished look.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> CV / Resume Design</li>
-                        <li><i class="fas fa-check"></i> Cover Letter</li>
-                        <li><i class="fas fa-check"></i> Business Proposal</li>
-                        <li><i class="fas fa-check"></i> PDF + Editable Format</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 300</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-birthday-cake"></i></div>
-                    <h3>Event & Festival Posters</h3>
-                    <p>Eid, Independence Day, sale offers, grand opening — custom festival and event posters that grab attention!</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Eid / Ramadan Posts</li>
-                        <li><i class="fas fa-check"></i> Sale & Offer Banners</li>
-                        <li><i class="fas fa-check"></i> Grand Opening Design</li>
-                        <li><i class="fas fa-check"></i> WhatsApp + Facebook Size</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 300</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-id-card"></i></div>
-                    <h3>Business Card Design</h3>
-                    <p>First impression matters! Professional business card design with your logo, contact details, and QR code.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Front + Back Design</li>
-                        <li><i class="fas fa-check"></i> QR Code Included</li>
-                        <li><i class="fas fa-check"></i> Print-Ready PDF</li>
-                        <li><i class="fas fa-check"></i> 2 Initial Concepts (extra: Rs. 500 each)</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 500</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card budget data-category="design"">
-                    <div class="service-icon"><i class="fas fa-percent"></i></div>
-                    <h3>Offer & Discount Stickers</h3>
-                    <p>"50% OFF", "Buy 1 Get 1", "New Arrival" — eye-catching offer stickers and price tags for your shop or restaurant.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Discount Stickers</li>
-                        <li><i class="fas fa-check"></i> Price Tags</li>
-                        <li><i class="fas fa-check"></i> Shelf Labels</li>
-                        <li><i class="fas fa-check"></i> Print-Ready Format</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 200</strong></div>
-                    <span class="service-tag budget-tag">Budget</span>
-                </div>
-
-                <div class="service-card mid data-category="design"">
-                    <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3>Monthly Invoice Package</h3>
-                    <p>Professional invoice design + monthly template updates for your business. Includes 5 custom invoice formats and up to 4 edits per month.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 5 Invoice Templates</li>
-                        <li><i class="fas fa-check"></i> Monthly Updates (up to 4 edits)</li>
-                        <li><i class="fas fa-check"></i> Logo + Branding</li>
-                        <li><i class="fas fa-check"></i> Print + Digital Format</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 1,500/mo</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="social"">
-                    <div class="service-icon"><i class="fas fa-images"></i></div>
-                    <h3>Social Media Kit (5 Posts)</h3>
-                    <p>5 professionally designed social media posts with captions and hashtags — perfect for weekly content without the monthly commitment.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 5 Custom Post Designs</li>
-                        <li><i class="fas fa-check"></i> Captions + Hashtags</li>
-                        <li><i class="fas fa-check"></i> Facebook + Instagram</li>
-                        <li><i class="fas fa-check"></i> Story + Post Formats</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="design"">
-                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
-                    <h3>Restaurant Menu Design</h3>
-                    <p>Beautiful, appetizing menu design for your restaurant or cafe — single page, multi-page, or foldable menu with food photos.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Single/Multi Page</li>
-                        <li><i class="fas fa-check"></i> Food Photo Placement</li>
-                        <li><i class="fas fa-check"></i> Price List Formatting</li>
-                        <li><i class="fas fa-check"></i> Print-Ready PDF</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="design"">
-                    <div class="service-icon"><i class="fas fa-portrait"></i></div>
-                    <h3>Photo Editing Bundle (10)</h3>
-                    <p>Get 10 photos professionally edited at a discounted bundle rate — food photos, product shots, or social media content.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 10 Photos Edited</li>
-                        <li><i class="fas fa-check"></i> Color + Light Fix</li>
-                        <li><i class="fas fa-check"></i> Background Cleanup</li>
-                        <li><i class="fas fa-check"></i> Social Media Sizes</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="video"">
-                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Promotional Video (30 sec)</h3>
-                    <p>Short 30-second promotional video for your shop, restaurant, or service — perfect for WhatsApp status and social media ads.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 30 Second Video</li>
-                        <li><i class="fas fa-check"></i> Text + Logo Overlay</li>
-                        <li><i class="fas fa-check"></i> Background Music</li>
-                        <li><i class="fas fa-check"></i> WhatsApp + FB Ready</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 2,500</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="social"">
-                    <div class="service-icon"><i class="fas fa-gift"></i></div>
-                    <h3>Festival Package (3 Posts)</h3>
-                    <p>Complete festival marketing package — 3 posts for Eid, Ramadan, Independence Day, or any special occasion with matching story designs.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 3 Festival Posts</li>
-                        <li><i class="fas fa-check"></i> Story Designs</li>
-                        <li><i class="fas fa-check"></i> Offer Graphics</li>
-                        <li><i class="fas fa-check"></i> Caption + Hashtags</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 1,500</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="design"">
-                    <div class="service-icon"><i class="fas fa-id-badge"></i></div>
-                    <h3>Business Card + Logo Combo</h3>
-                    <p>Logo design + business card combo package — get your brand identity started with a professional logo and matching business cards.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 1 Logo Design</li>
-                        <li><i class="fas fa-check"></i> Business Card (Front+Back)</li>
-                        <li><i class="fas fa-check"></i> 3 Logo Concepts</li>
-                        <li><i class="fas fa-check"></i> Print-Ready Files</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 3,000</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="web"">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>WhatsApp Catalog Setup</h3>
-                    <p>Set up your WhatsApp Business catalog with product photos, prices, and descriptions — customers can browse and order directly.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Product Catalog Setup</li>
-                        <li><i class="fas fa-check"></i> Up to 20 Products</li>
-                        <li><i class="fas fa-check"></i> Photo + Price + Description</li>
-                        <li><i class="fas fa-check"></i> Order Message Template</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="design"">
-                    <div class="service-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Brand Color & Font Guide</h3>
-                    <p>Professional brand identity guide — color palette, font selection, and usage rules so all your marketing looks consistent and premium.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Color Palette (5 colors)</li>
-                        <li><i class="fas fa-check"></i> Font Pair Selection</li>
-                        <li><i class="fas fa-check"></i> Usage Guidelines</li>
-                        <li><i class="fas fa-check"></i> PDF Brand Guide</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 2,500</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card mid data-category="social"">
-                    <div class="service-icon"><i class="fas fa-ad"></i></div>
-                    <h3>Facebook Ad Creative</h3>
-                    <p>Eye-catching Facebook/Instagram ad design with copy — ready to run! Includes 2 ad variations and targeting suggestions.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> 2 Ad Variations</li>
-                        <li><i class="fas fa-check"></i> Ad Copy + CTA</li>
-                        <li><i class="fas fa-check"></i> Targeting Suggestions</li>
-                        <li><i class="fas fa-check"></i> A/B Test Ready</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 2,000</strong></div>
-                    <span class="service-tag mid-tag">Standard</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Cybersecurity Audit & Hardening</h3>
-                    <p>Complete security audit of your Linux/Windows systems — vulnerability scanning, firewall config, malware removal, and system hardening to protect your business data.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Vulnerability Scan (Nmap/Nessus)</li>
-                        <li><i class="fas fa-check"></i> Firewall & Network Security</li>
-                        <li><i class="fas fa-check"></i> Malware Detection & Removal</li>
-                        <li><i class="fas fa-check"></i> Security Report + Recommendations</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-server"></i></div>
-                    <h3>Linux Server Setup & Management</h3>
-                    <p>Professional Linux server installation, configuration, and management — web server, file server, VPN, or custom setup for your business needs.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Ubuntu/CentOS Server Setup</li>
-                        <li><i class="fas fa-check"></i> Apache/Nginx Web Server</li>
-                        <li><i class="fas fa-check"></i> SSH, Firewall & Backup Config</li>
-                        <li><i class="fas fa-check"></i> Basic Monitoring Setup</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 7,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Network Setup & Troubleshooting</h3>
-                    <p>Complete office/hotel network installation — router config, WiFi setup, LAN cabling, IP cameras, and network troubleshooting for seamless connectivity.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Router & WiFi Configuration</li>
-                        <li><i class="fas fa-check"></i> LAN Setup & Cabling</li>
-                        <li><i class="fas fa-check"></i> IP Camera / CCTV Network</li>
-                        <li><i class="fas fa-check"></i> Network Troubleshooting</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-database"></i></div>
-                    <h3>Database Setup & Management</h3>
-                    <p>Professional database design, setup, and optimization — MySQL, PostgreSQL, or MongoDB for your business applications and websites.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> MySQL / PostgreSQL / MongoDB</li>
-                        <li><i class="fas fa-check"></i> Database Design & Optimization</li>
-                        <li><i class="fas fa-check"></i> Backup & Recovery Setup</li>
-                        <li><i class="fas fa-check"></i> Performance Tuning</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 6,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI Chatbot Development</h3>
-                    <p>Custom AI-powered chatbot for your website or WhatsApp — automate customer queries, bookings, and support 24/7 without hiring extra staff.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> WhatsApp Chatbot</li>
-                        <li><i class="fas fa-check"></i> Website Chatbot</li>
-                        <li><i class="fas fa-check"></i> Custom Training on Your Data</li>
-                        <li><i class="fas fa-check"></i> Urdu + English Support</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 8,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Custom Software / Script Development</h3>
-                    <p>Need automation? Custom Python/bash scripts, inventory management, billing software, or any custom tool — built exactly for your business workflow.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Python / Bash Automation</li>
-                        <li><i class="fas fa-check"></i> Inventory Management System</li>
-                        <li><i class="fas fa-check"></i> Billing & Invoice Software</li>
-                        <li><i class="fas fa-check"></i> Custom Business Tools</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Cloud Backup & Data Recovery</h3>
-                    <p>Protect your business data with automated cloud backup solutions. Also data recovery from crashed drives, formatted disks, and corrupted storage.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Automated Cloud Backup Setup</li>
-                        <li><i class="fas fa-check"></i> Data Recovery from Damaged Drives</li>
-                        <li><i class="fas fa-check"></i> Data Recovery (HDD/SSD/USB)</li>
-                        <li><i class="fas fa-check"></i> Backup Strategy Guidance</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-desktop"></i></div>
-                    <h3>PC Build, Repair & Optimization</h3>
-                    <p>Custom PC building for offices, gaming, or professional work. Also hardware repair, OS installation, driver issues, and performance optimization.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom PC Assembly</li>
-                        <li><i class="fas fa-check"></i> Hardware Repair & Upgrade</li>
-                        <li><i class="fas fa-check"></i> OS Install (Windows/Linux)</li>
-                        <li><i class="fas fa-check"></i> Performance Optimization</li>
-                    </ul>
-                    <div class="service-price">Starting from <strong>Rs. 3,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
-                </div>
-
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-lock"></i></div>
-                    <h3>Penetration Testing & Ethical Hacking</h3>
-                    <p>Professional penetration testing to find security weaknesses before hackers do. Web app, network, and system pentest with detailed report.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Web Application Pentest</li>
-                        <li><i class="fas fa-check"></i> Network Penetration Testing</li>
-                        <li><i class="fas fa-check"></i> Detailed Vulnerability Report</li>
-                        <li><i class="fas fa-check"></i> Remediation Guidance</li>
+                        <li><i class="fas fa-check"></i> JazzCash Integration</li>
+                        <li><i class="fas fa-check"></i> EasyPaisa Integration</li>
+                        <li><i class="fas fa-check"></i> Bank Transfer API</li>
+                        <li><i class="fas fa-check"></i> SSL + Security Setup</li>
+                        <li><i class="fas fa-check"></i> Transaction Testing</li>
                     </ul>
                     <div class="service-price">Starting from <strong>Rs. 10,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
+                    <span class="service-tag premium-tag">Premium</span>
                 </div>
 
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-video"></i></div>
-                    <h3>CCTV & Surveillance System Setup</h3>
-                    <p>Complete CCTV camera installation and configuration for shops, restaurants, hotels, and offices — with remote viewing and mobile app access.</p>
+                <div class="service-card premium" data-category="premium">
+                    <div class="service-icon"><i class="fas fa-cash-register"></i></div>
+                    <h3>POS System Development</h3>
+                    <p>Custom Point of Sale system for your shop, restaurant, or hotel — billing, inventory, sales reports, and receipt printing all in one.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Camera Installation & Wiring</li>
-                        <li><i class="fas fa-check"></i> DVR/NVR Configuration</li>
-                        <li><i class="fas fa-check"></i> Remote Viewing Setup</li>
-                        <li><i class="fas fa-check"></i> Mobile App Configuration</li>
+                        <li><i class="fas fa-check"></i> Billing + Invoice Generation</li>
+                        <li><i class="fas fa-check"></i> Inventory Management</li>
+                        <li><i class="fas fa-check"></i> Daily/Weekly/Monthly Reports</li>
+                        <li><i class="fas fa-check"></i> Receipt Printer Support</li>
+                        <li><i class="fas fa-check"></i> Multi-User Access</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 20,000</strong></div>
+                    <span class="service-tag premium-tag">Premium</span>
+                </div>
+
+                <div class="service-card premium" data-category="premium">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Business Analytics Dashboard</h3>
+                    <p>Real-time business intelligence dashboard — track sales, customers, orders, and performance metrics from one central panel.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Real-Time Sales Tracking</li>
+                        <li><i class="fas fa-check"></i> Customer Analytics</li>
+                        <li><i class="fas fa-check"></i> Revenue Reports + Charts</li>
+                        <li><i class="fas fa-check"></i> Export to PDF/Excel</li>
+                        <li><i class="fas fa-check"></i> Mobile Friendly Dashboard</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 12,000</strong></div>
+                    <span class="service-tag premium-tag">Premium</span>
+                </div>
+
+                <div class="service-card premium" data-category="premium">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Digital Marketing Training</h3>
+                    <p>Learn digital marketing from an expert! 1-on-1 training covering social media, ads, SEO, and content creation for your business.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 1-on-1 Live Sessions</li>
+                        <li><i class="fas fa-check"></i> Facebook + Instagram Ads</li>
+                        <li><i class="fas fa-check"></i> SEO + Google Ranking</li>
+                        <li><i class="fas fa-check"></i> Content Strategy</li>
+                        <li><i class="fas fa-check"></i> Certificate on Completion</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 5,000/session</strong></div>
+                    <span class="service-tag premium-tag">Premium</span>
+                </div>
+
+                <div class="service-card" data-category="web">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>App Development</h3>
+                    <p>Custom Android & iOS apps for your business — restaurant ordering, e-commerce, booking system, delivery tracking, or any custom mobile solution.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Android + iOS Native Apps</li>
+                        <li><i class="fas fa-check"></i> Flutter Cross-Platform</li>
+                        <li><i class="fas fa-check"></i> Custom UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> Push Notifications</li>
+                        <li><i class="fas fa-check"></i> Play Store + App Store</li>
+                        <li><i class="fas fa-check"></i> Backend + API + Database</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 35,000</strong></div>
+                    <span class="service-tag">Development</span>
+                </div>
+
+                <div class="service-card premium" data-category="premium">
+                    <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Advanced Penetration Testing</h3>
+                    <p>Professional ethical hacking service — find vulnerabilities in your website, network, and systems before criminals exploit them.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Web App + Network Pentest</li>
+                        <li><i class="fas fa-check"></i> Social Engineering Test</li>
+                        <li><i class="fas fa-check"></i> Detailed Security Report</li>
+                        <li><i class="fas fa-check"></i> Fix + Patch Guidance</li>
+                        <li><i class="fas fa-check"></i> Re-Testing After Fixes</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 15,000</strong></div>
+                    <span class="service-tag premium-tag">Premium</span>
+                </div>
+
+                <div class="service-card premium" data-category="premium">
+                    <div class="service-icon"><i class="fas fa-comments"></i></div>
+                    <h3>WhatsApp Chatbot Pro</h3>
+                    <p>Advanced WhatsApp chatbot with AI — handle orders, FAQs, bookings, and customer support automatically 24/7 on WhatsApp.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> AI-Powered Responses</li>
+                        <li><i class="fas fa-check"></i> Order Taking Automation</li>
+                        <li><i class="fas fa-check"></i> Multi-Language (Urdu/English)</li>
+                        <li><i class="fas fa-check"></i> Broadcast Messages</li>
+                        <li><i class="fas fa-check"></i> Analytics Dashboard</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 12,000</strong></div>
+                    <span class="service-tag premium-tag">Premium</span>
+                </div>
+
+                <!-- MALAKWAL HIGH-DEMAND SERVICES -->
+
+                <div class="service-card" data-category="local">
+                    <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Google My Business Setup</h3>
+                    <p>Local listing aur Google Maps pe aana — Malakwal ke customers aapko easily dhundhen. Phone pe call, direction, reviews — sab automatic.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> GMB Profile Create + Verify</li>
+                        <li><i class="fas fa-check"></i> Google Maps Listing</li>
+                        <li><i class="fas fa-check"></i> Customer Reviews Management</li>
+                        <li><i class="fas fa-check"></i> Photos + Posts Upload</li>
+                        <li><i class="fas fa-check"></i> Local SEO Optimization</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 3,000</strong></div>
+                    <span class="service-tag">Local</span>
+                </div>
+
+                <div class="service-card" data-category="restaurant">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Restaurant Digital Ordering</h3>
+                    <p>QR code menu + online ordering system — customers table pe scan karke order de, bill automatic. No app needed, works on any phone.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> QR Code Table Menu</li>
+                        <li><i class="fas fa-check"></i> Online Ordering</li>
+                        <li><i class="fas fa-check"></i> Kitchen Receipt Printer</li>
+                        <li><i class="fas fa-check"></i> Mobile + Desktop Admin</li>
+                        <li><i class="fas fa-check"></i> WhatsApp Order Confirm</li>
                     </ul>
                     <div class="service-price">Starting from <strong>Rs. 8,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
+                    <span class="service-tag">Restaurant</span>
                 </div>
 
-                <div class="service-card premium data-category="it"">
-                    <div class="service-icon"><i class="fas fa-wifi"></i></div>
-                    <h3>WiFi Mesh & Enterprise Network</h3>
-                    <p>Enterprise-grade WiFi mesh network for hotels, restaurants, and large offices — seamless coverage, guest portal, bandwidth management, and monitoring.</p>
+                <div class="service-card" data-category="education">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>School/Academy Management System</h3>
+                    <p>Complete digital solution for schools, colleges, and tuition centers — admissions, fees, attendance, results, SMS alerts to parents.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> WiFi Mesh Installation</li>
-                        <li><i class="fas fa-check"></i> Guest WiFi Setup</li>
-                        <li><i class="fas fa-check"></i> Bandwidth Management</li>
-                        <li><i class="fas fa-check"></i> Network Health Check</li>
+                        <li><i class="fas fa-check"></i> Student Admission + ID Card</li>
+                        <li><i class="fas fa-check"></i> Fee Management + Receipts</li>
+                        <li><i class="fas fa-check"></i> Attendance Tracking</li>
+                        <li><i class="fas fa-check"></i> Result Card Generator</li>
+                        <li><i class="fas fa-check"></i> SMS Alerts to Parents</li>
                     </ul>
-                    <div class="service-price">Starting from <strong>Rs. 7,000</strong></div>
-                    <span class="service-tag premium-tag">High Demand</span>
+                    <div class="service-price">Starting from <strong>Rs. 15,000</strong></div>
+                    <span class="service-tag">Education</span>
                 </div>
 
+                <div class="service-card" data-category="health">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Clinic/Hospital Appointment App</h3>
+                    <p>Online appointment booking for doctors, clinics, labs, and hospitals — patients seat pe baith ke appointment le, timing manage ho, OPD count control.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Online Appointment Booking</li>
+                        <li><i class="fas fa-check"></i> Doctor Schedule Display</li>
+                        <li><i class="fas fa-check"></i> Patient History Records</li>
+                        <li><i class="fas fa-check"></i> SMS/WhatsApp Reminders</li>
+                        <li><i class="fas fa-check"></i> OPD Counter Dashboard</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 12,000</strong></div>
+                    <span class="service-tag">Health</span>
+                </div>
+
+                <div class="service-card" data-category="events">
+                    <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Wedding Hall Booking Website</h3>
+                    <p>Marriage halls, event venues, and banquet rooms need online booking — customers date check karein, hall book karein, advance pay karein. Full automation.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Hall Gallery + Virtual Tour</li>
+                        <li><i class="fas fa-check"></i> Date Availability Calendar</li>
+                        <li><i class="fas fa-check"></i> Online Booking + Advance Pay</li>
+                        <li><i class="fas fa-check"></i> Contract + Invoice Auto</li>
+                        <li><i class="fas fa-check"></i> Admin Dashboard</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 20,000</strong></div>
+                    <span class="service-tag">Events</span>
+                </div>
+
+                <div class="service-card" data-category="agriculture">
+                    <div class="service-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Mandi/Agriculture Digital Presence</h3>
+                    <p>Mandi businesses, agricultural suppliers, and farmers need online presence — daily rates, product catalog, bulk orders, WhatsApp inquiries — all in one place.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Product Catalog (grains, fertilizer)</li>
+                        <li><i class="fas fa-check"></i> Daily Rate Updates</li>
+                        <li><i class="fas fa-check"></i> Bulk Order WhatsApp</li>
+                        <li><i class="fas fa-check"></i> Farmer/Customer Database</li>
+                        <li><i class="fas fa-check"></i> SMS Rate Alerts</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 6,000</strong></div>
+                    <span class="service-tag">Agriculture</span>
+                </div>
+
+                <div class="service-card" data-category="payments">
+                    <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>JazzCash/EasyPaisa Integration</h3>
+                    <p>Shops, restaurants, mandi dealers — sab ko cash ki jagah digital payment chahiye. QR code, payment link, online payment gateway setup.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> JazzCash Merchant Account</li>
+                        <li><i class="fas fa-check"></i> EasyPaisa Merchant Setup</li>
+                        <li><i class="fas fa-check"></i> QR Code Payment (Static + Dynamic)</li>
+                        <li><i class="fas fa-check"></i> Payment Link Generator</li>
+                        <li><i class="fas fa-check"></i> Transaction Reconciliation</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
+                    <span class="service-tag">Payments</span>
+                </div>
+
+                <div class="service-card" data-category="ads">
+                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Facebook/Instagram Local Ads</h3>
+                    <p>Malakwal + surrounding cities mein target karke ads chalayein — restaurants, shops, schools, clinics sab ke liye low budget pe maximum customers.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Hyperlocal Targeting (city radius)</li>
+                        <li><i class="fas fa-check"></i> Ad Creative Design</li>
+                        <li><i class="fas fa-check"></i> Rs. 500/day Budget Plan</li>
+                        <li><i class="fas fa-check"></i> Feed + Story Ads</li>
+                        <li><i class="fas fa-check"></i> Leads + Messages Optimization</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 4,000/mo</strong></div>
+                    <span class="service-tag">Ads</span>
+                
+
+                <div class="service-card premium" data-category="uk-sim">
+                    <div class="service-icon"><i class="fas fa-phone-volume"></i></div>
+                    <h3>UK SIM / Account Setup</h3>
+                    <p>Apne UK ke bhai-behan, relatives ke liye UK number setup ka mukammal service. Hum full handle karte hain — aapko sirf number chahiye, baaki hum karenge.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Virtual Number Account Setup — Rs. 5,000</li>
+                        <li><i class="fas fa-check"></i> Physical SIM Account Setup — Rs. 20,000</li>
+                        <li><i class="fas fa-check"></i> Full Documentation & Setup</li>
+                        <li><i class="fas fa-check"></i> WhatsApp/Email Activation</li>
+                        <li><i class="fas fa-check"></i> Ongoing Support Included</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 5,000</strong></div>
+                    <span class="service-tag">UK SIM</span>
+                </div>
+
+                <div class="service-card premium" data-category="uk-sim">
+                    <div class="service-icon"><i class="fas fa-sim-card"></i></div>
+                    <h3>UK Physical SIM Delivery</h3>
+                    <p>Pakistan se direct UK physical SIM order karen — family ko gift karen ya personal use ke liye. Full activation + setup humein karna hai.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Physical UK SIM Card</li>
+                        <li><i class="fas fa-check"></i> Home Delivery in Pakistan</li>
+                        <li><i class="fas fa-check"></i> Full Activation Support</li>
+                        <li><i class="fas fa-check"></i> Account Registration</li>
+                        <li><i class="fas fa-check"></i> 100% Working Guarantee</li>
+                    </ul>
+                    <div class="service-price">Starting from <strong>Rs. 20,000</strong></div>
+                    <span class="service-tag">UK SIM</span>
+                </div>
+                
+                </div>
+
+                </div>
+                
+    </section>
+
+    <!-- PAYMENT METHODS -->
+    <section class="payment-methods-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="payment.tag"><i class="fas fa-credit-card"></i> Easy Payment</span>
+                <h2 class="section-title" data-i18n="payment.title">Pay <span class="gradient-text">Securely</span></h2>
+                <p class="section-desc" data-i18n="payment.subtitle">Pay via JazzCash or Easypaisa — <strong>50% advance required</strong> before work begins.</p>
+            </div>
+            <div class="payment-methods">
+                <div class="payment-method-card jazzcash">
+                    <div class="pm-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>JazzCash</h3>
+                    <p>JazzCash details available on request</p>
+                    <div class="qr-wrapper">
+                        <img src="https://quickchart.io/qr?text=https://wa.me/923194051964?text=JazzCash%20Payment%20Details%20Chahiye&size=200" alt="JazzCash QR" class="qr-image" loading="lazy" width="200" height="200">
+                        <p class="qr-label">Scan to request JazzCash details</p>
+                    </div>
+                    <div class="payment-details">
+                        <p><strong>Status:</strong> Contact for account details</p>
+                        <p><strong>Name:</strong> Zave Digital</p>
+                    </div>
+                    <a href="https://wa.me/923194051964?text=Assalamualaikum!%20Mujhay%20JazzCash%20ke%20account%20details%20chahiye.%20Payment%20krni%20hai." class="btn btn-jazzcash btn-sm" target="_blank">
+                        <i class="fas fa-mobile-alt"></i> Request JazzCash Details
+                    </a>
+                </div>
+
+                <div class="payment-method-card easypaisa">
+                    <div class="pm-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Easypaisa</h3>
+                    <p>Pay directly to our Easypaisa account</p>
+                    <div class="qr-wrapper">
+                        <img src="https://quickchart.io/qr?text=easypaisa://send?account=03127692812&name=Sarmad%20Zave%20Digital&size=200" alt="Easypaisa QR" class="qr-image" loading="lazy" width="200" height="200">
+                        <p class="qr-label">Scan to pay Easypaisa</p>
+                    </div>
+                    <div class="payment-details">
+                        <p><strong>Account:</strong> 0312-7692812</p>
+                        <p><strong>Name:</strong> Sarmad (Zave Digital)</p>
+                    </div>
+                    <a href="https://wa.me/923194051964?text=Assalamualaikum!%20Mujhay%20Easypaisa%20se%20advance%20payment%20krni%20hai.%20Account%2003127692812%20par%20payment%20kar%20di%20hai." class="btn btn-easypaisa btn-sm" target="_blank">
+                        <i class="fas fa-wallet"></i> Pay via Easypaisa
+                    </a>
+                </div>
+            </div>
+            
+            <div class="payment-note">
+                <p><i class="fas fa-shield-alt"></i> <strong>50% advance required</strong> before work begins. Remaining on delivery.</p>
+                <p><i class="fas fa-undo"></i> Not satisfied? Get full refund within 7 days.</p>
             </div>
         </div>
     </section>
@@ -748,9 +887,9 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-star"></i> Why Clients Trust Us</span>
-                <h2 class="section-title">Our <span class="gradient-text">Approach</span></h2>
-                <p class="section-desc">We let our work speak for itself. Here's what makes us different.</p>
+                <span class="section-tag" data-i18n="about.tag"><i class="fas fa-star"></i> Why Clients Trust Us</span>
+                <h2 class="section-title" data-i18n="about.title">Our <span class="gradient-text">Approach</span></h2>
+                <p class="section-desc" data-i18n="about.subtitle">We let our work speak for itself. Here's what makes us different.</p>
             </div>
             <div class="why-grid">
                 <div class="why-item">
@@ -794,7 +933,7 @@
                 <button class="filter-btn" data-filter="ai">AI</button>
             </div>
             <div class="portfolio-grid">
-                <a href="gallery.html#logos" class="portfolio-item" data-category="design">
+                <a href="#portfolio" class="portfolio-item" data-category="design">
                     <div class="portfolio-thumb"><img src="samples/logos/logo1-shield.svg" alt="Logo Designs" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>Logo Designs</h4>
@@ -802,7 +941,7 @@
                         <span class="portfolio-tag">Design</span>
                     </div>
                 </a>
-                <a href="gallery.html#social" class="portfolio-item" data-category="social">
+                <a href="#portfolio" class="portfolio-item" data-category="social">
                     <div class="portfolio-thumb"><img src="samples/social/post1-promo.svg" alt="Social Media Posts" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>Social Media Posts</h4>
@@ -810,7 +949,7 @@
                         <span class="portfolio-tag">Social Media</span>
                     </div>
                 </a>
-                <a href="gallery.html#menus" class="portfolio-item" data-category="design">
+                <a href="#portfolio" class="portfolio-item" data-category="design">
                     <div class="portfolio-thumb"><img src="samples/menus/menu1-restaurant.svg" alt="Menu Designs" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>Menu Designs</h4>
@@ -818,7 +957,7 @@
                         <span class="portfolio-tag">Design</span>
                     </div>
                 </a>
-                <a href="gallery.html#posters" class="portfolio-item" data-category="design">
+                <a href="#portfolio" class="portfolio-item" data-category="design">
                     <div class="portfolio-thumb"><img src="samples/posters/poster1-eid.svg" alt="Posters & Banners" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>Posters & Banners</h4>
@@ -826,7 +965,7 @@
                         <span class="portfolio-tag">Design</span>
                     </div>
                 </a>
-                <a href="gallery.html#cyber" class="portfolio-item" data-category="it">
+                <a href="#portfolio" class="portfolio-item" data-category="it">
                     <div class="portfolio-thumb"><img src="samples/cyber/audit-report.svg" alt="Cybersecurity Reports" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>Cybersecurity Reports</h4>
@@ -834,7 +973,7 @@
                         <span class="portfolio-tag">IT Security</span>
                     </div>
                 </a>
-                <a href="gallery.html#branding" class="portfolio-item" data-category="branding">
+                <a href="#portfolio" class="portfolio-item" data-category="branding">
                     <div class="portfolio-thumb"><img src="samples/cards/card1-front.svg" alt="Business Cards" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>Business Cards & Branding</h4>
@@ -842,7 +981,7 @@
                         <span class="portfolio-tag">Branding</span>
                     </div>
                 </a>
-                <a href="gallery.html#ai" class="portfolio-item" data-category="ai">
+                <a href="#portfolio" class="portfolio-item" data-category="ai">
                     <div class="portfolio-thumb"><img src="samples/ai/chatbot-demo.svg" alt="AI Chatbot Demo" loading="lazy"></div>
                     <div class="portfolio-overlay">
                         <h4>AI Chatbot Demo</h4>
@@ -852,7 +991,7 @@
                 </a>
             </div>
             <div class="portfolio-cta">
-                <a href="gallery.html" class="btn btn-primary"><i class="fas fa-images"></i> View Full Gallery</a>
+                <a href="#portfolio" class="btn btn-primary"><i class="fas fa-images"></i> View Full Gallery</a>
             </div>
         </div>
     </section>
@@ -894,11 +1033,11 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-content">
-                    <span class="section-tag"><i class="fas fa-user"></i> About Us</span>
-                    <h2 class="section-title">Meet <span class="gradient-text">Zave</span></h2>
-                    <p>Hey! I'm <strong>Zave</strong> — a digital marketing specialist and hotel management professional based in <strong>Malakwal, Punjab, Pakistan</strong>.</p>
-                    <p>With hands-on experience in the restaurant industry (running <strong>The Pizza House</strong> at DC Chowk, Sargodha Road, Mandi Bahauddin — famous for our <strong>Cheese Lover</strong> pizza and 9 premium flavors) and a background in hotel management (HTML Level 5 certified), I understand the challenges local businesses face when going digital.</p>
-                    <p>That's why I started <strong>Zave Digital</strong> — to help restaurants, hotels, and small businesses build their online presence, attract more customers, and grow — without breaking the bank.</p>
+                    <span class="section-tag" data-i18n="about.tag2"><i class="fas fa-user"></i> About Us</span>
+                    <h2 class="section-title" data-i18n="about.title2">Meet <span class="gradient-text">Zave</span></h2>
+                    <p data-i18n="about.p1">Hey! I'm <strong>Zave</strong> — a digital marketing specialist and hotel management professional based in <strong>Malakwal, Punjab, Pakistan</strong>.</p>
+                    <p data-i18n="about.p2">With hands-on experience in the restaurant industry (running <strong>The Pizza House</strong> at DC Chowk, Sargodha Road, Mandi Bahauddin — famous for our <strong>Cheese Lover</strong> pizza and 9 premium flavors) and a background in hotel management (HTML Level 5 certified), I understand the challenges local businesses face when going digital.</p>
+                    <p data-i18n="about.p3">That's why I started <strong>Zave Digital</strong> — to help restaurants, hotels, and small businesses build their online presence, attract more customers, and grow — without breaking the bank.</p>
                     <div class="about-credentials">
                         <div class="credential">
                             <i class="fas fa-certificate"></i>
@@ -931,9 +1070,9 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-envelope"></i> Get In Touch</span>
-                <h2 class="section-title">Contact <span class="gradient-text">Us</span></h2>
-                <p class="section-desc">Ready to grow your business? Reach out and let's discuss how we can help.</p>
+                <span class="section-tag" data-i18n="contact.tag"><i class="fas fa-envelope"></i> Get In Touch</span>
+                <h2 class="section-title" data-i18n="contact.title">Contact <span class="gradient-text">Us</span></h2>
+                <p class="section-desc" data-i18n="contact.subtitle">Ready to grow your business? Reach out and let's discuss how we can help.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
@@ -948,7 +1087,7 @@
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h4>Email</h4>
-                            <a href="mailto:sarmadzavian11@gmail.com">sarmadzavian11@gmail.com</a>
+                            <a href="mailto:zavedigital0@gmail.com">zavedigital0@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -976,7 +1115,8 @@
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" method="POST" action="#contactForm">
+                    <input type="hidden" name="csrf_token" id="csrfToken" value="">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -997,6 +1137,7 @@
                             <option value="hotel-mgmt">Hotel Management</option>
                             <option value="digital-marketing">Digital Marketing / Ads</option>
                             <option value="website">Website Development</option>
+                            <option value="app-dev">App Development</option>
                             <option value="seo">SEO & Google Ranking</option>
                             <option value="video">Video Production</option>
                             <option value="other">Other</option>
@@ -1084,22 +1225,341 @@
                 <div class="footer-contact">
                     <h4>Contact</h4>
                     <a href="https://wa.me/923194051964" target="_blank"><i class="fab fa-whatsapp"></i> +92 319 4051964</a>
-                    <a href="mailto:sarmadzavian11@gmail.com"><i class="fas fa-envelope"></i> sarmadzavian11@gmail.com</a>
+                    <a href="mailto:zavedigital0@gmail.com"><i class="fas fa-envelope"></i> zavedigital0@gmail.com</a>
                     <span><i class="fas fa-map-marker-alt"></i> Malakwal, Punjab, Pakistan</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Zave Digital. All rights reserved.</p>
-                <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Mandi Bahauddin</p>
+                <p data-i18n="footer.rights">&copy; 2026 Zave Digital. All rights reserved.</p>
+                <p data-i18n="footer.made">Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Mandi Bahauddin</p>
             </div>
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/923194051964?text=Hi%20Zave!%20I'm%20interested%20in%20your%20services." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- AI ASSISTANT -->
+    <a href="https://wa.me/923194051964?text=Hello%20Zave%20Digital!%20I%20need%20help%20with%20your%20services." class="wa-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-launcher" id="aiLauncher" aria-label="Open AI Assistant">
+            <i class="fas fa-robot"></i>
+            <span class="ai-pulse"></span>
+        </button>
+        <div class="ai-chat-window" id="aiChatWindow">
+            <div class="ai-chat-header">
+                <div class="ai-header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>Zave AI Assistant</h3>
+                        <span class="ai-status"><span class="status-dot"></span> AI Powered — OpenRouter</span>
+                    </div>
+                </div>
+                <button class="ai-close" id="aiClose" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-chat-messages" id="aiMessages">
+                <div class="ai-msg ai-bot">
+                    <div class="ai-msg-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="ai-msg-content">
+                        <p>👋 <strong>Welcome to Zave Digital!</strong></p>
+                        <p>Main aapki madad kar sakta hoon:</p>
+                        <p>• Service suggest karna<br>• Price batana<br>• Website/SEO/Social Media help<br>• Direct WhatsApp par connect karna</p>
+                        <p><em>Type your question in Urdu or English!</em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-quick-actions">
+                <button class="ai-quick-btn" data-msg="I need a website">🌐 Website</button>
+                <button class="ai-quick-btn" data-msg="Mobile repair service">📱 Mobile Repair</button>
+                <button class="ai-quick-btn" data-msg="Social media management">📢 Social Media</button>
+                <button class="ai-quick-btn" data-msg="Google My Business setup">📍 GMB Setup</button>
+                <button class="ai-quick-btn" data-msg="What are your prices?">💰 Prices</button>
+                <button class="ai-quick-btn" data-msg="Contact on WhatsApp">📞 WhatsApp</button>
+            </div>
+            <div class="ai-chat-input-area">
+                <input type="text" id="aiInput" placeholder="Type your message..." autocomplete="off">
+                <button id="aiSend" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <script src="js/main.js"></script>
-</body>
+    <script>
+    (function() {
+        'use strict';
+        const launcher = document.getElementById('aiLauncher');
+        const chatWindow = document.getElementById('aiChatWindow');
+        const closeBtn = document.getElementById('aiClose');
+        const sendBtn = document.getElementById('aiSend');
+        const input = document.getElementById('aiInput');
+        const messagesContainer = document.getElementById('aiMessages');
+        const quickBtns = document.querySelectorAll('.ai-quick-btn');
+
+        if (!launcher || !chatWindow) return;
+
+        let isOpen = false;
+
+        function toggleChat() {
+            isOpen = !isOpen;
+            chatWindow.classList.toggle('active', isOpen);
+            if (isOpen) {
+                setTimeout(() => input.focus(), 350);
+            }
+        }
+
+        function addMessage(text, isUser) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'ai-msg ' + (isUser ? 'ai-user' : 'ai-bot');
+            const avatarIcon = isUser ? 'user' : 'robot';
+            const avatar = document.createElement('div');
+            avatar.className = 'ai-msg-avatar';
+            const avIcon = document.createElement('i');
+            avIcon.className = 'fas fa-' + avatarIcon;
+            avatar.appendChild(avIcon);
+            const content = document.createElement('div');
+            content.className = 'ai-msg-content';
+            content.innerHTML = text;
+            msgDiv.appendChild(avatar);
+            msgDiv.appendChild(content);
+            messagesContainer.appendChild(msgDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        const OPENROUTER_KEY = (function(){
+            try {
+                let k = localStorage.getItem('zave_openrouter_key') || '';
+                if ((!k || k.length < 10) && window.ZAVE_OPENROUTER_KEY) {
+                    k = window.ZAVE_OPENROUTER_KEY;
+                }
+                if ((!k || k.length < 10)) {
+                    k = localStorage.getItem('zave_openrouter_key') || '';
+                }
+                return k.trim();
+            } catch (e) {
+                return '';
+            }
+        })();
+        const OPENROUTER_MODEL = 'google/gemma-4-31b-it:free';
+        const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+
+        async function aiReply(text) {
+            if (!OPENROUTER_KEY) return getSmartReply(text);
+            try {
+                const res = await fetch(OPENROUTER_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json','Authorization':'Bearer '+OPENROUTER_KEY},
+                    body: JSON.stringify({
+                        model: OPENROUTER_MODEL,
+                        messages: [
+                            {role:'system', content:'You are Zave Digital AI assistant for Malakwal, Pakistan. Help with digital services: websites, mobile repair, SEO, social media. Always mention 50% advance rule for every service. Reply in Roman Urdu or English only.'},
+                            {role:'user', content:text}
+                        ]
+                    })
+                });
+                const data = await res.json();
+                if (data.choices && data.choices[0]) {
+                    return data.choices[0].message.content;
+                }
+                return getSmartReply(text);
+            } catch (e) {
+                return getSmartReply(text);
+            }
+        }
+
+        function getSmartReply(msg) {
+            const lower = msg.toLowerCase();
+            const urduKeywords = {
+                'website': 'website',
+                'ویب سائٹ': 'website',
+                'web': 'website',
+                'social media': 'social',
+                'سمارٹ فون': 'mobile',
+                'mobile repair': 'mobile',
+                'موبائل': 'mobile',
+                'frp': 'mobile',
+                'pattern': 'mobile',
+                'password': 'mobile',
+                'bootloop': 'mobile',
+                ' unlocked': 'mobile',
+                'gmb': 'gmb',
+                'google my business': 'gmb',
+                'گوگل بزنس': 'gmb',
+                'peyment': 'pos',
+                'qr': 'pos',
+                'pos': 'pos',
+                'price': 'price',
+                'قیمت': 'price',
+                'kitna': 'price',
+                'packages': 'price',
+                'contact': 'contact',
+                'whatsapp': 'whatsapp',
+                'واٹس ایپ': 'whatsapp',
+                'call': 'contact',
+                'number': 'contact',
+                'help': 'help',
+                'madad': 'help',
+                'seo': 'seo',
+                'rank': 'seo',
+                'ads': 'ads',
+                'ایڈز': 'ads',
+                'home': 'home',
+                'services': 'services',
+                'portfolio': 'portfolio',
+                'uk': 'uk-sim',
+                'sim': 'uk-sim',
+                'number': 'uk-sim',
+                'account': 'uk-sim',
+                'virtual': 'uk-sim',
+                'physical': 'uk-sim'
+            };
+
+            let category = 'general';
+            for (const [key, val] of Object.entries(urduKeywords)) {
+                if (lower.includes(key)) {
+                    category = val;
+                    break;
+                }
+            }
+
+            const replies = {
+    'website': '<p><strong>Website Development</strong></p><p>5-page responsive website: Modern Design + SSL + FREE Domain + Hosting + WhatsApp Integration + SEO Setup</p><p><strong>50% OFF</strong> — Rs. 15,000 (was Rs. 30,000)</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20a%20website.%20Please%20share%20details." class="ai-whatsapp-btn" target="_blank">WhatsApp Order</a>',
+    'mobile': '<p><strong>Mobile Repair Services</strong></p><p>Software-only: Detect+Password Rs. 1,000, FRP Rs. 1,500, Bootloop Rs. 1,500, Data Recovery Rs. 2,500</p><p><strong>Combo Pack:</strong> Rs. 3,500 (was Rs. 6,000)</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20mobile%20repair%20service." class="ai-whatsapp-btn" target="_blank">Book Mobile Repair</a>',
+    'social': '<p><strong>Social Media Management</strong></p><p>Facebook, Instagram, TikTok | 12 posts/month | 4 reels/month | weekly report</p><p><strong>Price:</strong> Rs. 7,500/month</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hi!%20I%20need%20Social%20Media%20Management." class="ai-whatsapp-btn" target="_blank">Get Started</a>',
+    'gmb': '<p><strong>Google My Business Pro</strong></p><p>Setup + Verification + Ranking + Reviews + Maps Optimization</p><p><strong>Price:</strong> Rs. 4,500</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hello!%20I%20want%20Google%20My%20Business%20Setup." class="ai-whatsapp-btn" target="_blank">Order GMB</a>',
+    'pos': '<p><strong>POS + Payment System</strong></p><p>JazzCash/EasyPaisa + QR Menu + Inventory + Sales Dashboard</p><p><strong>Price:</strong> Rs. 12,000</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hi!%20I%20need%20POS%20System." class="ai-whatsapp-btn" target="_blank">Get POS Demo</a>',
+    'price': '<p><strong>Best Deals</strong></p><p>Website Rs. 15,000 | Mobile Repair Rs. 3,500 | Social Media Rs. 7,500/mo | GMB Rs. 4,500 | POS Rs. 12,000</p><p>All services require 50% advance to start</p><a href="https://wa.me/923194051964?text=Hello!%20I%20want%20pricing." class="ai-whatsapp-btn" target="_blank">Get Quote</a>',
+    'whatsapp': '<p><strong>Direct WhatsApp</strong></p><p>+92 319 4051964</p><a href="https://wa.me/923194051964?text=Hello%20Zave%20Digital!" class="ai-whatsapp-btn" target="_blank">Open WhatsApp</a>',
+    'seo': '<p><strong>SEO & Google Ranking</strong></p><p>Audit, Keywords, On-page/Off-page SEO, Monthly Report</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hi!%20I%20need%20SEO." class="ai-whatsapp-btn" target="_blank">Get SEO Plan</a>',
+    'ads': '<p><strong>Facebook & Instagram Ads</strong></p><p>Ad Copy, Targeting, Budget Optimization, Daily Report</p><p>⚠️ 50% advance required to start work</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20Facebook%20Ads." class="ai-whatsapp-btn" target="_blank">Boost Sales</a>',
+    'uk-sim': '<p><strong>UK SIM / Account Setup</strong></p><p>Virtual Number Account Setup: Rs. 5,000 | Physical SIM Delivery: Rs. 20,000</p><p>Full setup handled by us. Perfect for UK relatives, family, or personal use.</p><p>⚠️ 50% advance required to start</p><a href="https://wa.me/923194051964?text=Hello!%20I%20need%20UK%20SIM%20setup.%20Please%20share%20details." class="ai-whatsapp-btn" target="_blank">Book UK SIM Setup</a>',
+    'home': '<p><strong>Welcome to Zave Digital</strong></p><p>We provide Website, Mobile Repair, Social Media, GMB, POS, SEO & Ads services in Malakwal.</p><p>Need help? Choose a quick option below or type your question.</p>',
+    'services': '<p><strong>Our Services</strong></p><p>Website Development | Mobile Repair | Social Media | Google My Business | POS System | SEO | Facebook Ads</p><p>Tell me which service you need, I will share exact pricing.</p>',
+    'contact': '<p><strong>Contact Zave Digital</strong></p><p>WhatsApp: +92 319 4051964<br>Email: zavedigital0@gmail.com<br>Location: Malakwal, Punjab</p><a href="https://wa.me/923194051964?text=Hello%20Zave%20Digital!" class="ai-whatsapp-btn" target="_blank">Chat on WhatsApp</a>',
+    'help': '<p><strong>Main Zave AI hoon</strong></p><p>Main ye kar sakta hoon: Service suggest karna, Price batana, Website/SEO help, WhatsApp par connect karna</p><p>Type your question in Urdu or English!</p>',
+};
+
+if (replies[category]) return replies[category];
+
+return '<p><strong>Thanks for your message!</strong></p><p>Zave Digital services: Website, Mobile Repair, Social Media, GMB, POS, SEO, Ads</p><p>⚠️ 50% advance required to start any service.</p><a href="https://wa.me/923194051964?text=Hello%20Zave%20Digital!" class="ai-whatsapp-btn" target="_blank">WhatsApp Us</a>';
+}
+
+        async function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+            addMessage(text, true);
+            input.value = '';
+            setTimeout(async () => {
+                const reply = await aiReply(text);
+                addMessage(reply, false);
+            }, 500 + Math.random() * 500);
+        }
+
+        launcher.addEventListener('click', toggleChat);
+        closeBtn.addEventListener('click', toggleChat);
+        sendBtn.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        quickBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                input.value = btn.getAttribute('data-msg');
+                sendMessage();
+            });
+        });
+
+    })();
+    </script>
+
+    <script src="js/i18n.js?v=101"></script>
+    <script src="js/main.js?v=101"></script>
+    <script>
+    (function() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const data = {
+                    name: formData.get('name'),
+                    phone: formData.get('phone'),
+                    email: formData.get('email'),
+                    service: formData.get('service') || 'General',
+                    message: formData.get('message'),
+                    amount: 0,
+                    payment_method: 'easypaisa'
+                };
+
+                const apiUrl = 'https://zave-digital-api.onrender.com' || 'http://localhost:8000';
+                const res = await fetch(apiUrl + '/api/order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+                if (result.success) {
+                    alert('Order received! Invoice sent to your WhatsApp: ' + result.order_id);
+                    form.reset();
+                } else {
+                    alert('Order saved! We will contact you shortly on WhatsApp.');
+                    form.reset();
+                }
+            } catch (err) {
+                alert('Order received! We will contact you on WhatsApp shortly.');
+                form.reset();
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        });
+    })();
+    </script>
+
+    <!-- SERVICE FILTER + CARD CLICK (inline, CSP-safe) -->
+    <script>
+    (function() {
+        function initFilters() {
+            var btns = document.querySelectorAll('.category-filter .filter-btn');
+            var cards = document.querySelectorAll('.service-card');
+            if (!btns.length || !cards.length) return;
+            btns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    btns.forEach(function(b){ b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var f = btn.getAttribute('data-filter');
+                    cards.forEach(function(card) {
+                        var show = (f === 'all') || (card.getAttribute('data-category') === f);
+                        card.style.display = show ? '' : 'none';
+                        card.style.opacity = show ? '1' : '0';
+                    });
+                });
+            });
+            // Card click -> WhatsApp inquiry
+            cards.forEach(function(card) {
+                card.style.cursor = 'pointer';
+                card.setAttribute('title', 'Click karke WhatsApp par inquiry karo');
+                card.addEventListener('click', function() {
+                    var name = (card.querySelector('h3') || {}).textContent || 'Service';
+                    var cat = card.getAttribute('data-category') || '';
+                    var msg = encodeURIComponent('Hello Zave Digital! I\'m interested in:\n\nService: ' + name.trim() + '\nCategory: ' + cat + '\n\nPlease share details & pricing.');
+                    window.open('https://wa.me/923194051964?text=' + msg, '_blank');
+                });
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initFilters);
+        } else {
+            initFilters();
+        }
+    })();
+    </script>
+    </body>
 </html>

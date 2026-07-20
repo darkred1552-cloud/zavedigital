@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Zave for Patients — Urdu Voice AAC</title>
+<meta name="description" content="Offline Urdu AAC app for speech-impaired patients. Tap a card to speak.">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo">🩺 <span data-i18n="appTitle">زاوے فار پیشکش</span></div>
+    <div style="display:flex;gap:8px">
+      <button id="testSoundBtn" aria-label="Test sound" class="icon-btn" style="background:var(--accent2);border-color:transparent">🔊</button>
+      <button id="ttsToggle" aria-label="Toggle TTS" class="icon-btn" style="background:var(--accent2);border-color:transparent">🔊 TTS ON</button>
+      <button id="infoBtn" aria-label="About" class="icon-btn">ℹ️</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="quick-access">
+      <h2 data-i18n="quickTitle">فوری رسائی</h2>
+      <div class="cards-grid" id="quickGrid"></div>
+    </section>
+
+    <section class="categories">
+      <h2 data-i18n="catTitle">زمرے</h2>
+      <div class="cat-grid" id="catGrid"></div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay hidden"></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
