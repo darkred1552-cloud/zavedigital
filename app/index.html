@@ -3,61 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zave Digital v4.0 — AI-Powered Digital Agency Platform</title>
-    <meta name="description" content="Zave Digital v4.0 — AI Chatbot, Admin Panel, Push Notifications, Digital Services across Pakistan.">
+
+    <!-- SEO Primary -->
+    <title>Zave Digital v4.4 — AI-Powered Digital Agency | Pakistan's Leading App</title>
+    <meta name="description" content="Zave Digital v4.4 — Super AI Chatbot, Analytics Dashboard, Live Portfolio, EasyPaisa Payment, Admin Panel. Digital marketing, websites, SEO, AI services across Pakistan.">
+    <meta name="keywords" content="zave digital, digital agency pakistan, AI chatbot, website development, social media marketing, SEO, malakwal, mandi bahauddin">
+    <meta name="author" content="Sarmad Zavian">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://darkred1552-cloud.github.io/zavedigital/app/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zave Digital v4.4 — AI-Powered Digital Agency Platform">
+    <meta property="og:description" content="Super AI Chatbot, Analytics Dashboard, Live Portfolio, EasyPaisa Payment, Push Notifications & more.">
+    <meta property="og:image" content="https://darkred1552-cloud.github.io/zavedigital/assets/og-image.png">
+    <meta property="og:url" content="https://darkred1552-cloud.github.io/zavedigital/app/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_PK">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zave Digital v4.4 — AI Digital Agency">
+    <meta name="twitter:description" content="Super AI, Analytics, Live Portfolio — Pakistan ki digital agency app">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6C5CE7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zave Digital">
+    <link rel="apple-touch-icon" href="https://darkred1552-cloud.github.io/zavedigital/assets/icon-192.png">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Zave Digital",
+        "operatingSystem": "Android",
+        "applicationCategory": "BusinessApplication",
+        "description": "AI-Powered Digital Agency Platform — Websites, Social Media, SEO, AI Chatbot",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PKR"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Sarmad Zavian",
+            "email": "sarmadzavian10@gmail.com"
+        }
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #0f0f1a;
             color: #e0e0e0;
             line-height: 1.6;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         /* Hero */
         .hero {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            padding: 60px 0 40px;
+            padding: 70px 0 50px;
             text-align: center;
             border-bottom: 1px solid rgba(108, 92, 231, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(108, 92, 231, 0.08) 0%, transparent 50%);
+            animation: pulse 6s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
         }
         .hero h1 {
-            font-size: 2.5em;
-            background: linear-gradient(135deg, #6C5CE7, #a29bfe);
+            font-size: 2.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6C5CE7, #a29bfe, #48DBFB);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            position: relative;
         }
-        .hero p { font-size: 1.1em; color: #a0a0b0; margin-bottom: 8px; }
+        .hero p { font-size: 1.1em; color: #a0a0b0; margin-bottom: 6px; position: relative; }
         .hero .badge {
-            display: inline-block;
-            background: rgba(108, 92, 231, 0.2);
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(108, 92, 231, 0.15);
             color: #a29bfe;
-            padding: 4px 16px;
+            padding: 8px 20px;
             border-radius: 20px;
             font-size: 0.85em;
             border: 1px solid rgba(108, 92, 231, 0.3);
-            margin-top: 8px;
+            margin-top: 12px;
+            position: relative;
         }
+        .hero .badge span { color: #fff; }
 
         /* Sections */
-        section { padding: 50px 0; }
+        section { padding: 60px 0; }
         section:nth-child(even) { background: #14142a; }
         h2 {
             text-align: center;
-            font-size: 1.8em;
+            font-size: 2em;
+            font-weight: 700;
             color: #fff;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
         h2 span { color: #6C5CE7; }
 
         /* Download Cards */
         .download-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
             margin: 0 auto;
         }
@@ -65,26 +147,27 @@
             background: #1a1a2e;
             border: 1px solid #2a2a4a;
             border-radius: 16px;
-            padding: 24px;
+            padding: 28px 24px;
             text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.3s;
         }
         .download-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             border-color: #6C5CE7;
         }
-        .download-card .icon { font-size: 2em; margin-bottom: 8px; }
-        .download-card h3 { color: #fff; margin-bottom: 4px; }
-        .download-card .size { color: #888; font-size: 0.85em; margin-bottom: 12px; }
-        .download-card .desc { color: #aaa; font-size: 0.9em; margin-bottom: 16px; }
+        .download-card .icon { font-size: 2.2em; margin-bottom: 10px; }
+        .download-card h3 { color: #fff; margin-bottom: 4px; font-size: 1.1em; }
+        .download-card .size { color: #888; font-size: 0.85em; margin-bottom: 10px; }
+        .download-card .desc { color: #aaa; font-size: 0.88em; margin-bottom: 18px; line-height: 1.4; }
         .btn {
             display: inline-block;
             background: #6C5CE7;
             color: white;
-            padding: 10px 28px;
+            padding: 12px 32px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95em;
             transition: background 0.2s, transform 0.2s;
         }
         .btn:hover { background: #5a4bd1; transform: scale(1.05); }
@@ -93,9 +176,9 @@
             border: 2px solid #6C5CE7;
             color: #a29bfe;
         }
-        .btn-secondary:hover { background: rgba(108, 92, 231, 0.1); }
+        .btn-secondary:hover { background: rgba(108, 92, 231, 0.12); }
 
-        /* Features */
+        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -105,17 +188,32 @@
             background: #1a1a2e;
             border: 1px solid #2a2a4a;
             border-radius: 14px;
-            padding: 20px;
+            padding: 22px 18px;
             text-align: center;
+            transition: border-color 0.2s;
         }
-        .feature-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .feature-card:hover { border-color: #6C5CE7; }
+        .feature-card .emoji { font-size: 2.2em; margin-bottom: 10px; }
         .feature-card h3 { color: #fff; font-size: 1em; margin-bottom: 6px; }
-        .feature-card p { color: #999; font-size: 0.85em; }
+        .feature-card p { color: #999; font-size: 0.85em; line-height: 1.4; }
+
+        /* What's New Badge */
+        .new-badge {
+            display: inline-block;
+            background: #00B894;
+            color: white;
+            font-size: 0.7em;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
 
         /* Services */
         .service-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 10px;
         }
         .service-item {
@@ -126,9 +224,70 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: border-color 0.2s;
         }
+        .service-item:hover { border-color: #6C5CE7; }
         .service-item .name { color: #ddd; font-size: 0.9em; }
         .service-item .price { color: #6C5CE7; font-weight: 700; }
+
+        /* Blog */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+        .blog-card {
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            border-radius: 14px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: #6C5CE7;
+        }
+        .blog-card .tag {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.15);
+            color: #a29bfe;
+            font-size: 0.75em;
+            padding: 3px 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .blog-card h3 { color: #fff; font-size: 1em; margin-bottom: 8px; }
+        .blog-card p { color: #999; font-size: 0.85em; line-height: 1.5; }
+        .blog-card .date {
+            display: block;
+            margin-top: 12px;
+            color: #666;
+            font-size: 0.78em;
+        }
+
+        /* Changelog */
+        .changelog {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .changelog-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .changelog-item .version {
+            background: #6C5CE7;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .changelog-item p { color: #bbb; font-size: 0.9em; }
 
         /* Contact */
         .contact-info {
@@ -136,52 +295,25 @@
             background: #1a1a2e;
             border: 1px solid #2a2a4a;
             border-radius: 16px;
-            padding: 30px;
+            padding: 34px;
             max-width: 500px;
             margin: 0 auto;
         }
-        .contact-info a {
-            color: #a29bfe;
-            text-decoration: none;
-        }
+        .contact-info a { color: #a29bfe; text-decoration: none; }
         .contact-info a:hover { text-decoration: underline; }
         .contact-info .whatsapp-btn {
             display: inline-block;
             background: #25D366;
             color: white;
-            padding: 12px 32px;
+            padding: 14px 36px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            margin: 12px 0;
+            font-size: 1.05em;
+            margin: 14px 0;
+            transition: background 0.2s, transform 0.2s;
         }
-        .contact-info .whatsapp-btn:hover { background: #20bd59; }
-
-        /* How to install */
-        .install-steps {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .install-step {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
-            align-items: flex-start;
-        }
-        .install-step .num {
-            background: #6C5CE7;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85em;
-            flex-shrink: 0;
-        }
-        .install-step p { color: #bbb; font-size: 0.9em; }
+        .contact-info .whatsapp-btn:hover { background: #20bd59; transform: scale(1.05); }
 
         /* Footer */
         footer {
@@ -191,12 +323,17 @@
             color: #666;
             font-size: 0.85em;
         }
+        footer a { color: #6C5CE7; text-decoration: none; }
+        .footer-links { margin-bottom: 8px; }
+        .footer-links a { color: #888; margin: 0 10px; font-size: 0.9em; }
 
         /* Responsive */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8em; }
-            h2 { font-size: 1.4em; }
+            .hero h1 { font-size: 1.9em; }
+            h2 { font-size: 1.5em; }
             .download-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+            .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -205,11 +342,12 @@
 <!-- Hero -->
 <div class="hero">
     <div class="container">
-        <h1>🚀 Zave Digital v4.0</h1>
-        <p>AI-Powered Digital Agency Platform</p>
-        <p style="color: #888; font-size: 0.9em;">Websites · Social Media · SEO · AI Chatbot · Admin Panel · Push Notifications</p>
+        <h1>🚀 Zave Digital v4.4</h1>
+        <p>AI-Powered Digital Agency Platform — All Pakistan</p>
+        <p style="color: #888; font-size: 0.9em;">Websites · Social Media · SEO · AI Chatbot · Admin Panel · Analytics</p>
         <div class="badge">
-            <span>🤖</span> Super AI · <span>🎤</span> Voice Input · <span>📱</span> Auto-Order · <span>🔐</span> Admin Panel
+            <span>🤖</span> Super AI · <span>🎤</span> Voice · <span>📊</span> Analytics · <span>🗺️</span> Location
+            <span>💳</span> EasyPaisa · <span>🔐</span> Admin Panel
         </div>
     </div>
 </div>
@@ -217,35 +355,35 @@
 <!-- Download -->
 <section>
     <div class="container">
-        <h2>📲 Download <span>Zave Digital v4.0</span> App</h2>
+        <h2>📲 Download <span>Zave Digital v4.4</span></h2>
         <p style="text-align: center; color: #888; margin-bottom: 24px;">
-            Super AI &bull; Admin Panel &bull; Push Notifications &bull; Voice Input
+            Analytics Dashboard &bull; Location Services &bull; Live Portfolio &bull; EasyPaisa &bull; Super AI
         </p>
         <div class="download-grid">
             <div class="download-card">
                 <div class="icon">📱</div>
                 <h3>ARM64 (Recommended)</h3>
                 <div class="size">~21 MB</div>
-                <div class="desc">For most modern Android phones (Samsung, Xiaomi, Oppo, Vivo, Pixel, OnePlus — 2020+)</div>
-                <a href="downloads/ZaveDigital-v4.0-arm64.apk" class="btn" download>⬇ Download v4.0</a>
+                <div class="desc">Modern Android phones — Samsung, Xiaomi, Oppo, Vivo, Pixel, OnePlus</div>
+                <a href="downloads/ZaveDigital-v4.0-arm64.apk" class="btn" download>⬇ Download v4.4</a>
             </div>
             <div class="download-card">
                 <div class="icon">📱</div>
                 <h3>ARMv7a</h3>
                 <div class="size">~18 MB</div>
-                <div class="desc">For older phones (2015-2019) and budget devices</div>
-                <a href="downloads/ZaveDigital-v4.0-armeabi.apk" class="btn btn-secondary" download>⬇ Download v4.0</a>
+                <div class="desc">Older phones (2015–2019) and budget Android devices</div>
+                <a href="downloads/ZaveDigital-v4.0-armeabi.apk" class="btn btn-secondary" download>⬇ Download v4.4</a>
             </div>
             <div class="download-card">
                 <div class="icon">💻</div>
                 <h3>x86_64</h3>
                 <div class="size">~23 MB</div>
-                <div class="desc">For Chromebooks, emulators, and PC-based Android</div>
-                <a href="downloads/ZaveDigital-v4.0-x86_64.apk" class="btn btn-secondary" download>⬇ Download v4.0</a>
+                <div class="desc">Chromebooks, Android emulators & PC-based Android</div>
+                <a href="downloads/ZaveDigital-v4.0-x86_64.apk" class="btn btn-secondary" download>⬇ Download v4.4</a>
             </div>
         </div>
         <p style="text-align: center; margin-top: 16px; color: #888; font-size: 0.85em;">
-            ⚠️ Unknown sources enable karein: Settings → Security → Install Unknown Apps
+            ⚠️ Settings → Security → Install Unknown Apps enable karein
         </p>
     </div>
 </section>
@@ -254,22 +392,22 @@
 <section>
     <div class="container">
         <h2>📖 How to <span>Install</span></h2>
-        <div class="install-steps">
-            <div class="install-step">
-                <div class="num">1</div>
-                <p>Download the correct APK for your phone (ARM64 recommended)</p>
+        <div class="changelog" style="max-width: 550px;">
+            <div class="changelog-item">
+                <div class="version">1</div>
+                <p>Download the APK for your phone (ARM64 recommended for most devices)</p>
             </div>
-            <div class="install-step">
-                <div class="num">2</div>
-                <p>Open the downloaded APK file from your notifications or Downloads folder</div>
+            <div class="changelog-item">
+                <div class="version">2</div>
+                <p>Open the downloaded APK from notifications or Downloads folder</p>
             </div>
-            <div class="install-step">
-                <div class="num">3</div>
+            <div class="changelog-item">
+                <div class="version">3</div>
                 <p>Tap "Install" — if asked, enable "Install from unknown sources"</p>
             </div>
-            <div class="install-step">
-                <div class="num">4</div>
-                <p>Open the app, sign in with Google or Email, and explore Zave Digital v4.0!</p>
+            <div class="changelog-item">
+                <div class="version">4</div>
+                <p>Open & sign in — Google or Email. Explore AI, analytics, portfolio & more!</p>
             </div>
         </div>
     </div>
@@ -282,43 +420,53 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="emoji">🤖</div>
-                <h3>Super AI v4.0</h3>
-                <p>Voice input + text — Urdu/Punjabi/English mein baat karein. AI auto-order banaye!</p>
+                <h3>Super AI v4</h3>
+                <p>Voice + text — Urdu/Punjabi/English. AI auto-order, service assist, insights</p>
             </div>
             <div class="feature-card">
-                <div class="emoji">🎤</div>
-                <h3>Voice Input</h3>
-                <p>Bolein — AI sunega! Speech-to-text se seedha AI se baat karein</p>
+                <div class="emoji">📊</div>
+                <h3>Analytics Dashboard <span class="new-badge">NEW</span></h3>
+                <p>Revenue charts, order trends, popular services, user growth — real-time insights</p>
             </div>
             <div class="feature-card">
-                <div class="emoji">🛒</div>
-                <h3>AI Auto-Order</h3>
-                <p>"Mujhe website chahiye" bolein → AI order create kare automatically</p>
+                <div class="emoji">🗺️</div>
+                <h3>Location Services <span class="new-badge">NEW</span></h3>
+                <p>Select your city — area-based pricing, Malakwal, MBDin, Lahore & more</p>
             </div>
             <div class="feature-card">
-                <div class="emoji">🔐</div>
-                <h3>Admin Panel</h3>
-                <p>Full admin dashboard — orders, users, portfolio, notifications manage karein</p>
+                <div class="emoji">💳</div>
+                <h3>EasyPaisa Payment <span class="new-badge">NEW</span></h3>
+                <p>QR code, reference number, receipt upload — smoother payment flow</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🖼️</div>
+                <h3>Live Portfolio</h3>
+                <p>Search, filter, review system — real-time Firestore portfolio with ratings</p>
             </div>
             <div class="feature-card">
                 <div class="emoji">🔔</div>
                 <h3>Push Notifications</h3>
-                <p>Real FCM push notifications — order updates, payment alerts, status changes</p>
-            </div>
-            <div class="feature-card">
-                <div class="emoji">📊</div>
-                <h3>AI Insights</h3>
-                <p>Admin AI Assistant — business insights, top services, revenue analytics</p>
-            </div>
-            <div class="feature-card">
-                <div class="emoji">💳</div>
-                <h3>Payment</h3>
-                <p>JazzCash & EasyPaisa — secure payment with confirmation</p>
+                <p>Real FCM — order updates, payment alerts, status changes instantly</p>
             </div>
             <div class="feature-card">
                 <div class="emoji">🔐</div>
-                <h3>Secure Auth</h3>
-                <p>Google Sign-In + Email login with OTP verification</p>
+                <h3>Admin Panel</h3>
+                <p>Full dashboard — orders, users, portfolio, reviews, notifications, analytics</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🛒</div>
+                <h3>AI Auto-Order</h3>
+                <p>"Mujhe website chahiye" — AI detects intent & creates order instantly</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">⭐</div>
+                <h3>Reviews & Ratings</h3>
+                <p>Submit reviews with photos, admin approval, star ratings on portfolio</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🎤</div>
+                <h3>Voice AI</h3>
+                <p>Speech-to-text input + text-to-speech output. Urdu fully supported</p>
             </div>
         </div>
     </div>
@@ -339,6 +487,64 @@
             <div class="service-item"><span class="name">🎵 TikTok & Reels Marketing</span><span class="price">Contact us</span></div>
             <div class="service-item"><span class="name">💬 WhatsApp Chatbot</span><span class="price">Rs. 12,000</span></div>
             <div class="service-item"><span class="name">📊 Analytics Dashboard</span><span class="price">Rs. 8,000</span></div>
+            <div class="service-item"><span class="name">📧 Bulk WhatsApp</span><span class="price">Rs. 5,000</span></div>
+            <div class="service-item"><span class="name">🔐 Cybersecurity Audit</span><span class="price">Rs. 10,000</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog / Articles -->
+<section>
+    <div class="container">
+        <h2>📝 Latest <span>Articles</span></h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="tag">Digital Marketing</div>
+                <h3>How AI is Changing Digital Marketing in Pakistan</h3>
+                <p>AI-powered chatbots, automated ads, and smart analytics — how Pakistani businesses can leverage AI for growth in 2026.</p>
+                <span class="date">July 2026</span>
+            </div>
+            <div class="blog-card">
+                <div class="tag">Web Development</div>
+                <h3>Website vs E-commerce Store: What's Right for Your Business?</h3>
+                <p>A complete guide to choosing between a simple website and a full e-commerce solution for Pakistani businesses.</p>
+                <span class="date">June 2026</span>
+            </div>
+            <div class="blog-card">
+                <div class="tag">Social Media</div>
+                <h3>Social Media Marketing for Local Businesses in Punjab</h3>
+                <p>Tips for Facebook, Instagram, and TikTok marketing specifically for businesses in Malakwal, MBDin, and surrounding cities.</p>
+                <span class="date">May 2026</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Changelog -->
+<section>
+    <div class="container">
+        <h2>📋 <span>Changelog</span></h2>
+        <div class="changelog">
+            <div class="changelog-item">
+                <div class="version">v4.4</div>
+                <p>📊 Analytics Dashboard — Revenue, orders, user growth charts<br>🗺️ Location Services — City selection, area-based pricing<br>💳 EasyPaisa integration — QR, reference, receipt upload</p>
+            </div>
+            <div class="changelog-item">
+                <div class="version">v4.3</div>
+                <p>🖼️ Live Portfolio — Search, filter, Firestore live data<br>⭐ Reviews & Ratings — Submit, approve, show in portfolio<br>☁️ Firebase Storage — Image upload for portfolio & reviews</p>
+            </div>
+            <div class="changelog-item">
+                <div class="version">v4.2</div>
+                <p>🤖 Super AI — Voice input/output, auto-order, 1000 token context<br>🔔 Push Notifications — FCM, Firebase Cloud Functions<br>🔄 Model fallback — Gemma → Local knowledge</p>
+            </div>
+            <div class="changelog-item">
+                <div class="version">v4.1</div>
+                <p>🔐 Admin Panel — Dashboard, orders, portfolio, users, notifications<br>👥 User Roles — Auto-admin assign, Firebase Auth</p>
+            </div>
+            <div class="changelog-item">
+                <div class="version">v4.0</div>
+                <p>🔑 Firebase Auth — Email/Password + Google Sign-In<br>📦 Online Ordering — Firestore CRUD, status tracking<br>💵 Payment — JazzCash, EasyPaisa, Bank Transfer</p>
+            </div>
         </div>
     </div>
 </section>
@@ -350,26 +556,41 @@
         <div class="contact-info">
             <p style="font-size: 1.2em; color: #fff; margin-bottom: 4px;">Sarmad Zavian</p>
             <p style="color: #888; margin-bottom: 16px;">Owner — Zave Digital</p>
-            <a href="https://wa.me/923194051964" class="whatsapp-btn" target="_blank">
+            <a href="https://wa.me/923194051964" class="whatsapp-btn" target="_blank" rel="noopener">
                 💬 WhatsApp: +92 319 4051964
             </a>
             <p style="margin: 12px 0;">
                 📧 <a href="mailto:sarmadzavian10@gmail.com">sarmadzavian10@gmail.com</a>
             </p>
             <p style="color: #888; font-size: 0.9em;">
-                📍 Malakwal, Mandi Bahauddin, Punjab<br>
+                📍 Malakwal, Mandi Bahauddin, Punjab — Serving All Pakistan<br>
                 🕐 Mon–Sat: 11AM – 8PM
             </p>
         </div>
     </div>
 </section>
 
+<!-- Footer -->
 <footer>
     <div class="container">
+        <div class="footer-links">
+            <a href="https://wa.me/923194051964" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:sarmadzavian10@gmail.com">Email</a>
+            <a href="#top">Home</a>
+        </div>
         <p>© 2026 <strong>Zave Digital</strong> — All Pakistan. All rights reserved.</p>
-        <p style="margin-top: 4px;">Built with ❤️ in Malakwal</p>
+        <p style="margin-top: 4px;">Built with ❤️ in Malakwal, Punjab</p>
     </div>
 </footer>
+
+<!-- Service Worker for PWA -->
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('PWA Service Worker registered'))
+        .catch(() => console.log('SW registration skipped (offline or no HTTPS)'));
+}
+</script>
 
 </body>
 </html>
